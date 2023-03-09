@@ -40,64 +40,63 @@
 					<!-- Post -->
 						<section class="post">
 							<header class="major">
-								<h2>Client Consultation</a></h2>
+								<h2>Critical Evaluation</a></h2>
 								<p></p>
 							</header>
-							<p><span class="image left"><img src="../images/clientConsultation.png" alt="" /></span>
-							<h3>The Client Meeting</h3>
-								During our meeting with Apian, we asked the finalised questions that we wrote
-							prior to the meeting. We received either answers or notes for follow up. These were noted in 
-							the google Doc to log meetings that we created.</p>
-							
-							<h3>Answers to our previous questions</h3>
 							<p>
-								<h4>Who exactly is going to use the application?</h4>
-								Estates & Facilities management staffwho organise, e.g. 
-								porters and , helideck personnel and in some cases, transport 
-								facilities, Laboratory staff, Pharmacy department staff
-								<br>
-								What are porters?
-								<br>
-								Porters are staff who move patients and equipment around the hospital.
-								<br>
+							<h3>User Interface</h3>
+							It's important to mention that our project consists of two parts, an Android Application that scans 
+							for BLE devices and a Web ApplicationThroughout the development of our project, we made sure to keep in mind that our users are medical staffs. This means that the UI/UX and workflow of the 
+							overall system must be clear and straightforward. In order to achieve this, we kept close contact with our client and ask them for feedback after every design
+						iteration. The client even helped us out by providing direct feedback with their respective UI/UX employee. Some key UI/UX design we've evaluated: </p>
 
-								<h4>For the web application, is it going to be used on mobiles? Should we support mobiles, 
-								have usable designs for them?</h4>
-								Both mobile and desktop. Should be web based and PWA for mobile. 
-								<br>
 
-								<h4>What BLE devices are we going to use for location tracking?</h4>
-								UCL recommends Airtags; we could also use other BLE tags 
-								Airtags can only emit a pinging sound. 
-								To be confirmed and agreed upon after more research.
-								<br>
+						<ul>
+							<li>The main page of the web app is the Live Monitoring Page. This is where medical staff dispatchers would most likely spend a lot of the time seeing. We made 
+								sure to color code the porters on the map based on their availability. Moreover, on the table to the right of the map, we clearly show the availability status of porters
+								 by color coding the cell.
+							</li>
+							<li>The delivery request function is also located on the Live Monitoring Page since it would make sense for users to see who are available or not and making a request based on that. </li>
+							<li>With regards to navigating to other pages, it doesn't get impler as using a classic navigation bar and highlighting the page the user is seeing at present. If users want to see 
+								delivery history made in the past by porters they may navigate to 
+							</li>
+							<li>
+								With respect to our Android Application, the app is meant to be used by porters walking around the hospitals in order for medical staff to track them with the use of beacons placed around hospitals.
+								Hence, the app is really simple with clear design and instruction for porters. Porters can either accept or decline a request made by the medical staff on the app. The option to accept or decline is really clear
+								due to the color and the size of the button. 
 
-								<h4>What is already done/implemented from Apian side? Mostly thinking about the 
-								integration of our app into the existing system.</h4>
-								Nothing.
-								<br>
 
-								<h4>Regarding the SharePoint solution, if it’s gonna have an equivalent UI, what’s the 
-								point of A-B testing? (also note for developers, it may be worth thinking about how 
-								to minimize duplication/effort required to develop two separate solutions)
-								<br></h4>
-								What criteria are going to be used to prioritise work? Who provides the information 
-								on it?
+							</li>
+						  </ul>
+
+						
+							
+							<h3>Functionalities</h3>
+							<p>
 								
-								<br>
-								<h4>How should emergencies be handled? Eg. What should the porter do if they’re in the 
-								middle of a delivery? How to interrupt (or not) ongoing deliveries from technical 
-								and from business side?
-								<br></h4>
-								<h4>With regards to tracking porters in a multi story building, do you already have 
-								a solution to this? We were thinking of using the porter’s smartphone to find out 
-								interior tracking and to know which floor the porters are in.
-								<br></h4>
-								<h4>How can we track individual high priority assets and equipment? Is this within the 
-								scope of the Apian? The alternative would be returning equipment to storage asap 
-								after use and a porter to check if equipment is available in storage (slower)
-								<br></h4>
+								We've always prioritise the client's requirement of this project. All the "Must Have" that are required, we've succesfully finished and implemented. 
+								here are some of them:
+								<ul>
+									<li>
+										Create a bluetooth scanning Anroid app that scans for beacons and if it comes close to a beacon it then sends the MAC address to our web app. 
+									</li>
+									<li>
+										Live monitor porters through the use of the Android App and beacons placed around the hospital. 
+									</li>
+									<li>
+										Create a working web app which has the following functionalities: Live Monitoring, Delivery Logs, Send Requests to porters.
+									</li>
+
+								</ul>
+								In terms of tracking porters, we ran into a bit of trouble due to the beacon's signal strength. Tracking porters with 100% accuracy would most likely need 
+								multiple beacons surrounding the area at all times for the app to scan it successfully and sends the MAC Address back to our web app. This is called triangluation where we use the distance and signal strength
+								provided by the three closest beacons to the porter in order to accurately locate where the porter is. We wrote the algorithm for this and proposed it to our client. Due to privacy reasons, said by the client, we had to scratch it and proposed
+								a much simple solution. The current solution  is to place more beacons around the pick-up/delivery area so we are still able to keep track of which porters are closest and available for a delivery.
+
+				
 							</p>
+
+							<h3>Stability-Efficiency</h3>
 							<ul class="actions special">
 								<li><a href="../Research.html" class="button">Back</a></li>
 							</ul>
