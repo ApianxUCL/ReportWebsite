@@ -186,8 +186,8 @@
 							<h3>Implementing requirements 1 & 2</h3>
 							<p>
 								To design our application, we followed an iterative design approach. We felt that this would be the right approach as we were fortunate enough to participate
-								in weekly meetings with our client, where we coult obtain constructive criticism on our solutions and iterate over them until we reach a product that both
-								parites were happy with. As you can observe below in Figure 2, our first iteration involved a name box for porters to enter their name and press 'Submit' to
+								in weekly meetings with our client, where we could obtain constructive criticism on our solutions and iterate over them until we reach a product that both
+								parties were happy with. As you can observe below in Figure 2, our first iteration involved a name box for porters to enter their name and press 'Submit' to
 								validate their identity. Furthermore, the three buttons observed in the bottom half of the screen each triggered a unique message that was interpreted
 								by our Twilio SMS service to determine what a porter had responded to the delivery request. This implementation also made it easy to fulfill another core
 								requirement (P0) which stated: " The app must allow a porter to indicate that they have completed a delivery. " This was easily achieved by adding a 'Delivery
@@ -223,7 +223,7 @@
 								however this raises two great concerns:
 								<ol>
 									<li>A phone that is constantly scanning for BLE beacons is likely to pick up multiple Bluetooth devices per second, especially in a hospital setting where there are thousands of
-										specialised equipment. As a result, the aforementioned implementation would lead to multiple HTTP requests sent per second, creating unecessary web traffic.
+										specialised equipment. As a result, the aforementioned implementation would lead to multiple HTTP requests sent per second, creating unnecessary web traffic.
 									</li>
 									<li>
 										If the signal strength picked up by a specific beacon changes, then that is considered a new scan result, so a phone could potentially transmit the same beacon multiple times
@@ -236,7 +236,7 @@
 								beacons detected within that timeframe. 
 								<br/><br/>
 								Our next concern revolved around potential duplicate scan results, upon change in beacon signal strength. To overcome this, we stored detected beacons inside a HashMap, where
-								the key was a beacon's MAC-Address. As a result, whenever a beacon that was already in the HashMap was detected, its value was overwitten by the latest entry. This HashMap also
+								the key was a beacon's MAC-Address. As a result, whenever a beacon that was already in the HashMap was detected, its value was overwritten by the latest entry. This HashMap also
 								acted as a buffer to hold beacons detected for 5 seconds, and was emptied whenever its contents were transmitted.
 								<br/>
 								A more technical explanation with snippets of code can be observed below in Figure 3:
@@ -357,12 +357,12 @@
 								could cause compatibility issues, we made use of the Firebase Authentication SDK, which provided us with a rich set of libraries; specifically Firebase Cloud Messaging (FCM); to manage
 								user authentication and authorization.
 								<br/><br/>
-								Overall, Firebase's token authentication system offered a much needed uppgrade to our login system, by generating a unique and secure token for each user, which is used to
+								Overall, Firebase's token authentication system offered a much needed upgrade to our login system, by generating a unique and secure token for each user, which is used to
 								authenticate subsequent requests to protected resources within the application.
 							</p>
 							<h3>Setting up and connecting Firebase to our mobile application</h3>
 							<p>
-								Connecting our mobile app to our Firebase project was quite simple. It involved supplying our app's SHA Certificate to our Firebase project, which generated a custom json file
+								Connecting our mobile app to our Firebase project was quite simple. It involved supplying our app's SHA Certificate to our Firebase project, which generated a custom JSON file
 								that was placed in our app's project directory to gain access to all relevant Google Firebase libraries we wanted to use. To import the necessary libraries, we then just added
 								a few lines of code to our app's dependencies which specified that we wanted to use Firebase's messaging and token services.
 							</p>
