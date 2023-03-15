@@ -39,30 +39,160 @@
 				<div id="main">
 
 					<!-- Post -->
-						<section class="post">
-							<header class="major">
-								<h2>System Architecture</h2>
-								<p></p>
-							</header>
-							<p><img src="images/Apian-SysDiagram.png" width="900" alt="" />
-								Our project consists of a mobile application and a website. 
-                                Porters will have a mobile phone with them and our application allows beacons to send their signal and the app will display available MAC addresses for nearby beacons. We then process these MAC addresses and send a POST request to our Spring Boot backend web server.
-                                Then the porter’s live location will be seen on our website based on the nearest beacon. Our system will then allow the medical dispatcher to send a request for delivery based on the nearest porter to the pick-up location.
-							</p>
-							
-						</section>
-						
-				
+					<section class="post">
+						<header class="major">
+							<h2>System Architecture</h2>
+							<p></p>
+						</header>
+						<img src="images/System Architecture.png" width="100%" alt="" />
+						<p>
+						<h3>Our solution consists of a <b>mobile application</b> and a <b>web application</b>:</h3>
+						</p>
+						<p>
+							Porters will have our mobile phone application installed on their work phones. This application is
+							split into two fragments:
+						<ul>
+							<li><b>Login Fragment: </b>Handles all the logic for a porter to securely login into our PorterBLE
+								system,
+								including the use of a one-time authentication pin. Once a user has been authenticated, the app
+								then
+								establishes a secure, two-way Firebase connection with our web application, so that the two can
+								communicate
+								swiftly and securely.</li>
+							<li><b>Scanner Fragment: </b>Scans for Bluetooth beacons and updates the backend with the latest
+								beacon information
+								every 5 seconds. Allows porters to declare themselves as available/unavailable for deliveries,
+								accept or reject
+								incoming delivery requests and also indicate that they have completed a delivery.</li>
+						</ul>
+						With regards to our web application, usability and delivery speed were our two main concerns. We are
+						proud to have
+						designed a web application that hospital staff can use to quickly create delivery requests which are
+						fulfilled at a
+						quick pace due to our efficient porter selection request system in the backend. A brief overview of the
+						web app:
+						<br />
+						<br />
+						<h3>Frontend</h3>
+						<p>In the world of software development, choosing the right technology stack is crucial for creating
+							successful and scalable applications. Recently, we had the opportunity to build a frontend for our
+							application using the React JavaScript framework, and it was an excellent decision for our team.</p>
+		
+						<p>React is a popular open-source JavaScript library that allows developers to build user interfaces
+							(UI) by breaking down complex UI elements into smaller, reusable components. React's virtual DOM
+							efficiently updates the UI and delivers a smooth user experience. It is also highly customizable,
+							allowing developers to add third-party libraries, which can speed up development time.</p>
+		
+						<p>We chose React for several reasons. Firstly, it is an efficient tool for developing complex
+							applications that require many UI elements and interactions. Additionally, the use of components in
+							React makes it easier to reuse code and maintain consistency across the application.</p>
+		
+						<p>Another significant advantage of React is that it is well-documented and supported by a large
+							community of developers. This means that when we encountered any issues or needed to add new
+							features, we had a vast array of resources available to help us.</p>
+		
+						<p>For our application, we also needed to receive instant updates about a porter's position and any
+							delivery responses. To achieve this, we used websockets, which are a technology that enables
+							real-time communication between a client and a server.</p>
+		
+						<p>Websockets allowed us to receive updates from the server without having to make frequent requests for
+							new data. This not only reduced server load but also improved the overall user experience by
+							providing real-time information.</p>
+		
+						<p>We started by creating a WebSocket instance in our React component and then using the 'react-stomp'
+							library to connect to the server. We then set up event listeners for incoming data and used the
+							state to update the UI when the server sent new information.</p>
+		
+						<p>Overall, using React and websockets proved to be an excellent combination for our application's
+							frontend. React allowed us to create a highly responsive and customizable UI, while websockets
+							enabled real-time communication with the server, which was crucial for our application's
+							functionality.</p>
+		
+						<p>In conclusion, choosing the right technology stack is a crucial decision for building successful
+							applications. React's ability to create complex UI elements using reusable components and its large
+							community of developers make it an excellent choice for building frontend applications.
+							Additionally, the use of websockets allows for real-time communication and reduces server load,
+							which ultimately improves the user experience.</p>
+		
+						<p>As well as using React and websockets, we also hosted our application using Firebase.
+							Firebase provides a simple and reliable way to host web
+							applications and provides several useful features such as authentication, cloud storage.</p>
+		
+						<p>Hosting our application using Firebase was a straightforward process. We first created a Firebase
+							account and then used the Firebase CLI to deploy our application. We also configured our Firebase
+							project to use SSL to ensure that our application was secure.</p>
+		
+						<p>Firebase's hosting service also provides automatic scaling, which means that our application can
+							handle traffic spikes without any additional configuration. This is essential for ensuring that our
+							application is always available, even during peak usage.</p>
+		
+						<h3>Backend</h3>
+		
+						<p>In today's digital age, creating scalable and reliable backend services is essential for building
+						successful applications. Recently, we had the opportunity to design our backend service using the Spring
+						Boot framework, Google Cloud SQL PostgreSQL for a database, and deployed our app with Google Cloud Run.</p>
+		
+						<p>Spring Boot is a popular open-source Java framework that allows developers to create standalone,
+						production-grade applications quickly. It is designed to simplify the development process by providing
+						preconfigured libraries and tools for building web applications.</p>
+		
+						<p>One of the reasons we chose Spring Boot was its simplicity and ease of use. The framework's
+						auto-configuration and starter dependencies allow developers to quickly build and deploy applications
+						with minimal configuration. Additionally, Spring Boot's community support and extensive documentation
+						make it an excellent choice for building robust backend services.</p>
+		
+						<p>For our database, we chose Google Cloud SQL PostgreSQL. PostgreSQL is a popular open-source relational
+						database management system that is known for its reliability, scalability, and extensibility. Google
+						Cloud SQL is a fully managed relational database service that makes it easy to set up, maintain, and
+						administer PostgreSQL databases on Google Cloud Platform.</p>
+		
+						<p>Google Cloud SQL PostgreSQL provides several useful features, such as automatic backups, replication,
+						and high availability, that ensure our application's data is always available and secure. Additionally,
+						the integration with Google Cloud Platform allows for easy scaling and maintenance of our database,
+						which is crucial for handling large amounts of data.</p>
+		
+						<p>To deploy our application, we chose Google Cloud Run, a serverless compute platform that enables
+						developers to run containers in a fully managed environment. Cloud Run abstracts away the underlying
+						infrastructure, which allows developers to focus on writing code rather than managing servers.</p>
+		
+						<p>Google Cloud Run also provides automatic scaling, which means our application can handle traffic spikes
+						without any additional configuration. This is essential for ensuring that our backend service is always
+						available and responsive, even during peak usage.</p>
+		
+						<p>Our backend service receives updates from the users through the mobile app and sends processed updates
+						to the UI. It also sends SMS messages and push notifications to the porters. To achieve this, we used
+						several APIs and services, such as Twilio for sending SMS messages and Firebase Cloud Messaging for push
+						notifications.</p>
+		
+						<p>Overall, using Spring Boot, Google Cloud SQL PostgreSQL, and deploying our app with Google Cloud Run
+						proved to be an excellent combination for designing our backend service. Spring Boot's simplicity and
+						ease of use allowed us to quickly build and deploy our application, while Google Cloud SQL PostgreSQL
+						and Google Cloud Run provided a scalable and reliable infrastructure for our database and backend
+						service.</p>
+		
+						<p>By using these technologies, we were able to create a robust backend service that processed updates from
+						the mobile app, sent notifications to the porters, and updated the UI in real-time. We were also able to
+						scale our application automatically, ensuring that our service was always available and responsive to
+						user requests.</p>
+		
+						For more details and technical information about our implementation, you can check <a
+							href="Implementation.html">our implementation articles</a>
+						which explain how each component of our system was created.
+						</p>
+		
+					</section>
+		
+		
 				</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		
+				<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.scrollex.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
