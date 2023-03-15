@@ -2,6 +2,25 @@
 <html>
 	<head>
 		<title>Research</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+		$(function() {
+			var numFeatures = $('.feature-container').length;
+			var currentFeature = 0;
+
+			$('.prev-btn').click(function() {
+			$('.feature-container').eq(currentFeature).hide();
+			currentFeature = (currentFeature - 1 + numFeatures) % numFeatures;
+			$('.feature-container').eq(currentFeature).show();
+			});
+
+			$('.next-btn').click(function() {
+			$('.feature-container').eq(currentFeature).hide();
+			currentFeature = (currentFeature + 1) % numFeatures;
+			$('.feature-container').eq(currentFeature).show();
+			});
+		});
+		</script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -44,9 +63,528 @@
 								<h2>Android App Implementation</a></h2>
 								<p></p>
 							</header>
-							<p><span class="image main"><img src="../images/Apian Resources/App Iterations.png" alt="" class="iterationsBg" /></span>
-							<h3>App Requirements</h3>
-								WIP Image is ugly still.</p>
+							<span class="image main"><img src="../images/Apian Resources/App Iterations.png" alt="" class="iterationsBg" /></span>
+							<h2>App Requirements</h2>
+							<p>The mobile application is a fundamental component of our solution. Therefore, before we even started working on its
+								implementation, we had to make sure that its requirements were very well established:
+							</p>
+							<div class="implementation-container">
+								<div class="feature-container">
+									<h3>P0 (Essential product features - cannot launch without them):</h3>
+									<ul>
+									<li>The app must be able to detect nearby Bluetooth Low Energy (BLE) devices along with their MAC-addresses and relative signal strength indicator value (RSSI) which is a measure of how close a beacon is to a phone.</li>
+									<li>The app must be able to transmit all beacons detected to the web-application, so that porters can be tracked.</li>
+									<li>The app must allow a porter (user) to respond to delivery requests made.</li>
+									<li>The app must allow a porter to indicate that they have completed a delivery.</li>
+									<li>The app must be easy to use for porters so that their daily tasks are not slowed down by trying to navigate it.</li>
+									<li>The app must be able to be re-used on the same device by multiple porters with distinct identities, to enable re-usability of NHS work phones.</li>
+									</ul>
+								</div>
+								
+								<div class="feature-container" style="display:none;">
+									<h3>P1 (Important product features):</h3>
+									<ul>
+									<li>The app should allow porters to login to the hospital servers securely with their credentials.</li>
+									<li>The app should authenticate users who successfully login, to ensure that they are real porters.</li>
+									<li>The app should allow porters to indicate their availability to fulfill delivery requests throughout the day.</li>
+									<li>The app should be exported as an APK file with Apian branding so it looks professional.</li>
+									<li>The app should allow porters to stay logged in by caching their login details, so they don't have to login again every time it is launched.</li>
+									<li>The app should allow porters to log out, so it can be re-used on the same device by other porters.</li>
+									<li>The app should scan in the background for BLE beacons and transmit them to the backend, without the screen having to be switched on.</li>
+									</ul>
+								</div>
+								
+								<div class="feature-container" style="display:none;">
+									<h3>P2 (Nice to have product features, but the first launch can be made without them):</h3>
+									<ul>
+									<li>The app could display the latest request made along with the delivery locations that need to be reached</li>
+									<li>The app could trigger a notification every time a request is made.</li>
+									</ul>
+								</div>
+								<div class="buttons-container">
+									<button class="prev-btn">&#9650;</button>
+									<button class="next-btn">&#9660;</button>
+								</div>
+							</div>  
+							<h2>Team Background</h2>
+							<p>As mentioned previously, the mobile application is a core requirement of our project set out by Apian. Unfortunately, prior
+								to this project, no one from the team had experience building mobile applications, so our project partners suggested that
+								we design an Android app solution, and pointed out various resources that we could use to get started on our implementation,
+								including Android Developers and LinkedIn Learning.
+							</p>
+							<h2>Initial Approach</h2>
+							<p>The first step was to successfully implement a foundational part of our Android application, which was the ability to scan for
+								BLE devices. This was a difficult task to implement, as we were just getting used to the Android environment and were still
+								learning how fragments, activities and services interact in the Android development ecosystem.
+								<br/>
+								Another obstacle that we had to overcome was that a lot of resources and tutorials that we found online on BLE scanning,
+								provided classes and methods that were deprecated, so in the end we also had to implement our own version of a method to
+								deal with BLE scanning callbacks.
+								<br/>
+								After many hours of time and effort, we had our first sample application, which was just a single-fragment app that scanned
+								for and displayed the nearest Bluetooth devices (including BLE beacons) along with their MAC addresses:
+							</p>
+							<span class="image main"><img src="../images/First App Implementation.png" alt="" class="iterationBg" />
+								<p class="description">Figure 1: First app implementation, allows user to start and stop scanning for BLE devices. Also able to
+									distinguish and filter between BLE beacons and regular Bluetooth devices.
+								</p>
+							</span>
+							<p>The first implementation provided a great learning experience and an important step towards designing the desired product.</p>
+							<h2>Next Steps: Fulfilling Other Core App Requirements</h2>
+							<p>
+								After presenting the initial prototype to our clients in one of our weekly meetings and obtaining positive feedback from them,
+								we felt confident moving onto the next step, which was to tick off some other essential requirements <b>(P0)</b> of our application, such
+								as <b>(1) allowing porters to respond to requests</b> and <b>(2) identify themselves while using the app.</b>
+							</p>
+							<h3>Requirement 1: Allowing porters to respond to requests</h3>
+							<p>
+								The main task at hand here was to decide via which method porters would communicate with our web application. The obvious choice in this
+								case would be to use some form of HTTP-based communications.<br/>
+								However, after discussing this with our clients, we were able to obtain some very valuable insights about why using SMS-based communication
+								instead for a start, could be much more practical:
+								<ul>
+									<li>Firstly, when considering the way requests are currently fulfilled by porters, we observed that this is done using SMS devices
+										called pagers. Thus, moving forward with an SMS-based solution would make product adoption smoother.
+									</li>
+									<li>
+										Another key consideration we observed was that not every corner of a hospital has strong enough bandwidth and thus, HTTP requests
+										may not deliver in such scenarios where hospital basements or remote locations experience poor connectivity. This also makes
+										our solution more scalable as it could be even adopted in hospitals located in rural or underdeveloped regions where internet
+										infrastructure is limited.
+									</li>
+									<li>
+										One of, if not the most important consideration, that needs to be made when designing a product to be used in hospitals, is how
+										well that product responds to emergencies. Our solution must be robust and efficient. This is something we took very seriously as
+										a team, and through research we found that <b>"Just 15% of hospitals across UK are on the official 'protected sites' list, meaning they
+										would qualify for power during a national blackout."</b><sub>[1]</sub> As a result, we need to design a solution that can respond to situations where
+										power - through backup generators for example, may be very limited and can only be used to power essential equipment, leaving hospitals
+										without any bandwidth. Furthermore, this doesn't just apply to the very rare cases of national power outages, as we also observed that,
+										last year during winter, hospitals had to make emergency plans in response to limited gas supplies and winter power loss fears.<sub>[2]</sub>
+									</li>
+								</ul>
+								At the same time, we also acknowledge that SMS communication is not the most secure method we could use to interact with porters. This is because,
+								SMS messages are not encrypted by default <sub>[3]</sub> which means that any sensitive information, such as medical records or personal details, could potentially
+								be intercepted by malicious third parties. This would pose a significant security risk for hospitals. In contrast, a HTTP-based communication
+								channel, like Firebase Messaging, offers a range of encryption and security options which can protect sensitive patient data. Firebase messaging uses
+								end-to-end encryption to secure messages in transit, which means that messages are encrypted from the sender to the recipient, ensuring that each request
+								will only be directed to and read by the intended porter.
+								<br/>
+								<br/>
+								<b>To conclude our case study,</b> we decided that the first implementations of our solution would make use of SMS responses handled by a central Twilio
+								service, and moving forward, we would migrate this service to a Firebase Messaging implementation, keeping SMS as the fallback system in case of emergencies
+								causing network or power disruptions, ensuring that delivery requests can still be received and processed promptly. We felt that this was the right way to
+								move forward, as most hospitals in the UK have the power capability and technology infrastructure to benefit from a web-centred solution which can provide
+								significant improvements in request efficiency, potentially saving human lives.
+							</p>
+							<h3>Requirement 2: Allowing porters to identify themselves</h3>
+							<p>
+								Whilst we acknowledge that UK hospitals have access to significant technology, we recognize the importance of minimizing excess technology and redirecting
+								funds to invest in more critical equipment. With this consideration in mind, we believe hospitals should only provide enough devices to cover the maximum
+								number of porters on shift at the same time, rather than investing in one work phone for each porter. By allowing porters to reuse the phones with a unique
+								identity on our app, we can reduce excess technology and save funds for more critical equipment.
+							</p>
+							<h3>Implementing requirements 1 & 2</h3>
+							<p>
+								To design our application, we followed an iterative design approach. We felt that this would be the right approach as we were fortunate enough to participate
+								in weekly meetings with our client, where we coult obtain constructive criticism on our solutions and iterate over them until we reach a product that both
+								parites were happy with. As you can observe below in Figure 2, our first iteration involved a name box for porters to enter their name and press 'Submit' to
+								validate their identity. Furthermore, the three buttons observed in the bottom half of the screen each triggered a unique message that was interpreted
+								by our Twilio SMS service to determine what a porter had responded to the delivery request. This implementation also made it easy to fulfill another core
+								requirement (P0) which stated: " The app must allow a porter to indicate that they have completed a delivery. " This was easily achieved by adding a 'Delivery
+								Complete' button with the same functionality as the 'Accept' and 'Reject' buttons.
+							</p>
+							<span class="image main"><img src="../images/Second App Implementation.png" alt="" class="iterationBg" />
+								<p class="description">Figure 2: Second app implementation, allows user to identify themselves via the name text box, whereby the submit button verifies
+									that the name corresponds to a valid porter name in the backend. Each button in the bottom of the screen triggers a different SMS message sent to our
+									Twilio phone number.
+								</p>
+							</span>
+							<p>
+								To further explain the functionality of the 'sendSMS' Kotlin function above, firstly, a PendingIntent object was created. A PendingIntent is essentially a token
+								that is used when an external function is called (in this case a function of the SMSManager class) which allows a user to be notified as to whether the function was
+								successful. In our case, the Pending Intent was passed onto the function 'sendTextMessage' which obtained an instance of the mobile phone's SMS Manager to send a
+								text message. Having objects like the intent described above, made testing the application much easier for us.
+								<br/><br/>
+								For this initial iteration, the way a porter was verified was through a <b>HTTP POST</b> to the backend that was triggered every time a user clicked on 'Submit'.
+								The HTTP response code of this POST was observed, and if the relevant code was received, i.e. verification was successful, a pop-up message welcoming the user was
+								displayed. If the verification was unsuccessful, a pop-up message informing the user of this was displayed, and the messages including beacon info that were transmitted
+								to the backend would be ignored.
+								<br/>
+								This implementation also fulfilled another core requirement (P0): "The app must be able to be re-used on the same device by multiple porters with distinct identities, to enable
+								re-usability of NHS work phones." However, this was only the initial step into getting a porter verified and we knew we could improve a lot in this scenario.
+							</p>
+							<h3>Implementing final core requirements</h3>
+							<p>
+								By this stage, the only core requirements that were left to fulfill were transmitting identified Bluetooth beacons to the backend, whilst also keeping the app simple to use, so
+								it doesn't slow down porters trying to navigate it.
+								<br/><br/>
+								Since beacon data would be transmitted via HTTP POST, it was crucial for us to limit the number of requests sent to the backend, so as to keep server traffic low and enhance
+								performance, which in turn would mean porters can receive and respond to requests swiftly. A naive approach would be to send a HTTP request whenever a beacon was identified,
+								however this raises two great concerns:
+								<ol>
+									<li>A phone that is constantly scanning for BLE beacons is likely to pick up multiple Bluetooth devices per second, especially in a hospital setting where there are thousands of
+										specialised equipment. As a result, the aforementioned implementation would lead to multiple HTTP requests sent per second, creating unecessary web traffic.
+									</li>
+									<li>
+										If the signal strength picked up by a specific beacon changes, then that is considered a new scan result, so a phone could potentially transmit the same beacon multiple times
+										within a few seconds if a user keeps walking around; which is very much the case for porters who have to move constantly around a hospital to fulfill deliveries.
+									</li>
+								</ol>
+								To avoid these concerns, firstly we had to decide how often we would need to update a porter's location. Given that the average walking speed for adults is less than 1.4 m/s <sub>[4]</sub> , we
+								decided that updating porters' positions every 5 seconds would be more than satisfactory for the purposes of our project. To do this, we created a Runnable object in our
+								Android application, which would be executed every 5 seconds as a background process, so it doesn't interfere with the main UI thread, which would send a HTTP POST of all
+								beacons detected within that timeframe. 
+								<br/><br/>
+								Our next concern revolved around potential duplicate scan results, upon change in beacon signal strength. To overcome this, we stored detected beacons inside a HashMap, where
+								the key was a beacon's MAC-Address. As a result, whenever a beacon that was already in the HashMap was detected, its value was overwitten by the latest entry. This HashMap also
+								acted as a buffer to hold beacons detected for 5 seconds, and was emptied whenever its contents were transmitted.
+								<br/>
+								A more technical explanation with snippets of code can be observed below in Figure 3:
+							</p>
+							<span class="image main"><img src="../images/Sending Beacons.png" alt="" class="iterationBg" />
+								<p class="description">Figure 3: Description of how beacons are identified and transmitted to the backend.
+								</p>
+							</span>
+							<p>
+								With this implementation, we had also ticked off our final P0 requirement, which aimed to make the experience of using the app straightforward for porters. All they have
+								to do is enter their name, click on the scan button to start tracking themselves, and respond to requests by clicking the buttons in the bottom-half of the screen. Overall,
+								all core app requirements had been completed at this stage.
+							</p>
+							<h2>Separation of Concerns</h2>
+							<p>
+								After informing our clients that we had met the core app requirements that were essential for the first launch, we then looked to iterate over our current
+								implementation to make it more robust whilst also implementing other important (P1) features.
+							</p>
+							<h3>Login Screen</h3>
+							<span class="image main"><img src="../images/Login Iterations.png" alt="" class="iterationBg" />
+								<p class="description">Figure 4: Login screen iterations.
+								</p>
+							</span>
+							<p>
+								The most obvious improvement which could be made based on our previous implementations was the login functionality, which was not up to industry standards. Especially when it
+								comes to hospitals, privacy is key; hospital records should be kept confidential, and no one should be able to pretend that they are a porter.
+								<br/><br/>
+								As a result, we created a new Login Fragment, which would act as a page allowing porters to login and verify themselves before being allowed to perform other work-related
+								operations. This fragment was supported by the Login template provided in Android Studio, which allowed us to create a robust login functionality, with a LoginViewModel class
+								to handle data input by the user through the fragment, and would make the relevant requests to the server to authenticate a user through the LoginDataSource class. The UML diagram
+								for the login functionality can be found below:
+							</p>
+							<span class="image main"><img src="../images/Login UML.png" alt="" class="iterationBgBigger" />
+								<p class="description">Figure 5: Unified Modelling Language (UML) diagram overview of Login functionality.
+								</p>
+							</span>
+							<p>
+								As you can observe from the 'LoginFragment' class, there are a few protected functions called onCreateView, onViewCreated, onDestroyView etc. These are some fundamental functions which run during the lifecycle
+								of a fragment, which android developers have to override a lot of times to add functionality to their applications. For further clarification as to what each function does
+								in a fragment's lifecycle, please refer to the image below:
+							</p>
+							<span class="image main"><img src="../images/Fragment Lifecycle.png" alt="" class="iterationBg" />
+								<p class="description">Figure 6: Android Fragment Lifecycle Overview. <sub>[5]</sub>
+								</p>
+							</span>
+							<p>The table below describes what each function is responsible for: <sub>[5]</sub></p>
+							<table>
+								<tr>
+									<td><b>Method</b></td>
+									<td><b>Description</b></td>
+								</tr>
+								<tr>
+									<td>onAttach()</td>
+									<td>The very first method to be called when the fragment has been associated with the activity. This method executes only once during the lifetime of a fragment.</td>
+								</tr>
+								<tr>
+									<td>onCreate()</td>
+									<td>This method initializes the fragment by adding all the required attributes and components.</td>
+								</tr>
+								<tr>
+									<td>onCreateView()</td>
+									<td>System calls this method to create the user interface of the fragment. The root of the fragment’s layout is returned as the View component by this method to draw the UI.</td>
+								</tr>
+								<tr>
+									<td>onViewCreated()</td>
+									<td>It indicates that the activity has been created in which the fragment exists. View hierarchy of the fragment also instantiated before this function call. </td>
+								</tr>
+								<tr>
+									<td>onStart()</td>
+									<td>The system invokes this method to make the fragment visible on the user’s device.</td>
+								</tr>
+								<tr>
+									<td>onResume()</td>
+									<td>This method is called to make the visible fragment interactive.</td>
+								</tr>
+								<tr>
+									<td>onPause()</td>
+									<td>It indicates that the user is leaving the fragment. System call this method to commit the changes made to the fragment. </td>
+								</tr>
+								<tr>
+									<td>onStop()</td>
+									<td>Method to terminate the functioning and visibility of fragment from the user’s screen. </td>
+								</tr>
+								<tr>
+									<td>onDestoyView()</td>
+									<td>System calls this method to clean up all kinds of resources as well as view hierarchy associated with the fragment.</td>
+								</tr>
+								<tr>
+									<td>onDestroy()</td>
+									<td>It is called to perform the final clean up of fragment’s state and its lifecycle.</td>
+								</tr>
+								<tr>
+									<td>onDetach()</td>
+									<td>The system executes this method to disassociate the fragment from its host activity.</td>
+								</tr>
+							</table>
+							<br/>
+							<p>
+								To give an example of how these functions were implemented in our application, below you can observe how we coded the 'onViewCreated' function. This is called after the 'onCreateView' function, by which
+								point, the view of our application has been initialised, including text boxes and buttons, so in the 'onViewCreated' function our task was to bind these text boxes to private class String variables and also
+								bind the buttons on screen to the relevant class Buttons which trigger their own private method when clicked.
+							</p>
+							<span class="image main"><img src="../images/Login OnViewCreated.png" alt="" class="iterationLightBg" />
+								<p class="description">Figure 7: Login 'onViewCreated' code
+								</p>
+							</span>
+							<h3>Making Login More Secure</h3>
+							<p>
+								At this point, we had a fully functional login page, where porters' login credentials were verified against our backend server database records to check whether there was
+								a match. If this authentication process was successful, the backend would then generate a one-time pin and trigger the Twilio service to send this PIN via SMS to the phone number associated with
+								the porter's account. Finally, if this one-time pin was entered correctly, the LoginFragment notified the MainActivity to set up and switch to the Scanner Fragment, which
+								holds the remaining functionality of our application. However, while this approach provided some degree of security, we have already established in this article that SMS should
+								not be considered a secure method of communication due to the inherent vulnerabilities of the SMS protocol. As such, we decided that additional layers of security were required
+								to protect the hospital data we were working with and ensure secure communication between the server and our application.
+								<br/><br/>
+								This is where Firebase's secure token authentication system addressed our concerns by giving our mobile application the ability to generate a token for robust server communications.
+								We decided to use this as our website and database were already being hosted on Firebase, as per our clients' request, so instead of searching for some other external tool which
+								could cause compatibility issues, we made use of the Firebase Authentication SDK, which provided us with a rich set of libraries; specifically Firebase Cloud Messaging (FCM); to manage
+								user authentication and authorization.
+								<br/><br/>
+								Overall, Firebase's token authentication system offered a much needed uppgrade to our login system, by generating a unique and secure token for each user, which is used to
+								authenticate subsequent requests to protected resources within the application.
+							</p>
+							<h3>Setting up and connecting Firebase to our mobile application</h3>
+							<p>
+								Connecting our mobile app to our Firebase project was quite simple. It involved supplying our app's SHA Certificate to our Firebase project, which generated a custom json file
+								that was placed in our app's project directory to gain access to all relevant Google Firebase libraries we wanted to use. To import the necessary libraries, we then just added
+								a few lines of code to our app's dependencies which specified that we wanted to use Firebase's messaging and token services.
+							</p>
+							<h3>Firebase Messaging implementation steps</h3>
+							<p>
+								Now that we had access to all the necessary resources, we moved on to implement the new feature. Upon launching our app and specifically the Login Fragment, our Firebase Messaging
+								Service must be called and supplied with our app's current context. In android development, context acts as an interface to global information about the application environment.
+								It is an abstract class whose implementation is provided by the Android system and allows access to application-specific resources and classes, as well as up-calls for
+								application-level operations, <sub>[6]</sub> which the service needs. More specifically, it needs to access system services like the NotificationManager, to create push notifications
+								when a delivery request is received and LocalBroadcastManager to flag a request via an internal broadcast while the app is running. It is also essential to supply the app's context to the service
+								to prevent any potential crashes due to memory leaks.
+								<br>
+								Thankfully, it is fairly simple to pass on context between classes in Android:
+							</p>
+							<span class="image main"><img src="../images/Passing Context.png" alt="" class="iterationBg" />
+								<p class="description">Figure 8: Obtaining context from 'onAttach' method which is called first in a Fragment's lifecycle and passing it onto our Firebase Messaging Service
+								</p>
+							</span>
+							<p>
+								Moving onto how we defined our service, we had to tailor Firebase's Messaging System to fit our application's data flow.
+								<br/><br/>
+								In our service implementation, we defined a method called generateToken() which obtains the Firebase Instance of the app that is running and retrieves its corresponding FCM
+								token. We call this method when a user successfully enters the correct one-time pin in the login page. 
+								<br/>
+								The token will be used to provide a secure messaging channel for Firebase to send delivery requests to our application. However, we also needed to ensure that our backend
+								had this token, so we overrode the service’s ‘onNewToken’ method, which is triggered automatically whenever there is a request to generate a new FCM token:
+							</p>
+							<span class="image main"><img src="../images/New Token.png" alt="" class="iterationBg" />
+								<p class="description">Figure 9: How our Firebase Messaging behaves whenever a new token is generated.
+								</p>
+							</span>
+							<p>
+								Now that we were sure that a token could be generated and distributed successfully, we moved on to define what actions our application would take upon receiving a Firebase
+								message i.e. a delivery request. For this, we overrode another service method, called 'onMessageReceived' which is triggered whenever Firebase uses a device's FCM token to
+								send a message to it.
+								<br/><br/>
+								In the method, we retrieved a message's title and body and obtained an instance of the NotificationManager class to generate and push a notification with the contents of the
+								received message. We also created a local broadcast to inform our Scanner Fragment of this request, so it could update its user views to allow a porter navigating the app
+								during the request to be able to view and respond to it.
+								<br/><br/>
+								This is what a delivery notification request looks like from our app:
+							</p>
+							<span class="image main"><img src="../images/Notification Request.jpg" alt="" class="iterationSmallBg" />
+								<p class="description">Figure 10: Sample notification request
+								</p>
+							</span>
+							<p>After successfully implementing Firebase token authentication and messaging, we were able to tick off some important (P1) product requirements:
+								<ul>
+									<li>The app should allow porters to login to the hospital servers securely with their credentials.</li>
+									<li>The app should authenticate users who successfully login, to ensure that they are real porters.</li>
+								</ul>
+								On top of that, we were also able to tick off all our P2 requirements, which stated:
+								<ul>
+									<li>The app could display the latest request made along with the delivery locations that need to be reached.</li>
+									<li>The app could trigger a notification every time a request is made.</li>
+								</ul>
+							</p>
+							<h2>Improving porter (user) experience</h2>
+							<p>
+								As we have already stated, user experience was a top priority for our mobile application, as we didn't want to slow down porters trying to perform their daily tasks.
+								<br/>
+								As of the current implementation seen so far, whenever a porter launched our application, they had to sign in with their name and phone number, enter the one-time pin
+								received and the app would then trigger a new FCM token for them and send it to the backend. During a normal work day, however, a porter may need to launch our app
+								multiple times, and having to log in every single time would be both tiring and expensive.
+							</p>
+							<h3>Caching login</h3>
+							<p>
+								The solution to this problem would be to save a porter's credentials whenever they log in whilst also allowing them an option to log out, which would preserve the core
+								requirement of phone re-usability between multiple porters.
+							</p>
+							<span class="image main"><img src="../images/Caching Login.png" alt="" class="iterationBg" />
+								<p class="description">Figure 11: How user credentials are cached upon successful verification
+								</p>
+							</span>
+							<p>
+								As you can see in the figure above, we were able to save user credentials in cache app memory. The next thing we did was add code to our Login Fragment which attempted
+								to gain access to shared preferences upon launch of the fragment. If it was successful, the login process was skipped and the Scanner Fragment was setup straight away,
+								whereas if it obtained <b>null</b> from trying to access these preferences, that meant that no one was signed in, so it would display the login page as normal.
+								<br/><br/>
+								This implementation made it easy to code the log out functionality, as all we had to do was add a button to our Scanner Fragment, which cleared the shared preferences of
+								the app and took the user back to the Login Fragment.
+								<br/><br/>
+								Caching login allowed us to fulfill two more P1 requirements which stated:
+								<ul>
+									<li>The app should allow porters to stay logged in by caching their login details, so they don't have to login again every time it is launched.</li>
+									<li>The app should allow porters to log out, so it can be re-used on the same device by other porters.</li>
+								</ul>
+							</p>
+							<h3>Indicating availability</h3>
+							<p>
+								As you will have read in our 'Research' section, when speaking to porters and our partner company, Apian, one of the biggest problems we discovered when it comes to the
+								current request system used in hospitals, is that whenever there is a delivery request, all porters are notified on their pagers, regardless if they are on break or even
+								fulfilling another delivery.
+								<br/>
+								Therefore, we felt it would be very useful for porters if they had the option to indicate via the app whether they are available or not to serve delivery requests.
+								<br/><br/>
+								We thought of a neat way to achieve this which was to replace the buttons for 'Start Scanning' and 'Stop Scanning' to 'Available' and 'Unavailable' respectively:
+							</p>
+							<span class="image main"><img src="../images/Availability App.png" alt="" class="iterationBg" />
+								<p class="description">Figure 12: New button labels to match availability status and their corresponding code
+								</p>
+							</span>
+							<p>
+								As you can observe in Figure 12 above, the code snippets are labelled 1-5 so that we can further explain their functionality:
+								<ol>
+									<li>When a button is clicked, it must be hidden and the other must be shown.</li>
+									<li>Starts / Stops the scan process for BLE beacons.</li>
+									<li>Manages the functionality seen in Figure 3 which handles the sending of beacons every 5 seconds to the backend. When the 'Available' button is clicked, the
+										handler is called to start executing the HTTP posts to the backend, whereas when the 'Unavailable' button is called, the buffer of currently detected beacons
+										is cleared and the handler stops transmitting.
+									</li>
+									<li>Sends a HTTP POST to the backend to indicate a porter's availability, depending on which of the two buttons was clicked.</li>
+									<li>Creates the relevant Toast (pop-up message) to reflect whether a porter is available or not to make deliveries.</li>
+								</ol>
+								Implementing this allowed us to complete yet another important app requirement which revolved around porters being able to indicate their availability to meet delivery
+								requests via the app.
+							</p>
+							<h3>Revamping Scanner Fragment User Interface</h3>
+							<p>
+								In terms of functionality, most requirements had been implemented by this point. However, the Scanner Fragment was not looking very appealing to use, especially compared
+								to the Login Fragment. Furthermore, there was no way for a porter to view the current (if any) request they were meant to respond to on the Fragment view.
+								<br/><br/>
+								Our next step, therefore, was to make use of the local broadcast transmitted by our Firebase Messaging Service so as to retrieve the request in our Scanner Fragment and
+								display it in a 'TextView' object:
+							</p>
+							<span class="image main"><img src="../images/Sending Request.png" alt="" class="iterationBg" />
+								<p class="description">Figure 13: Sending local broadcast from Firebase service and retrieving it in Scanner Fragment
+								</p>
+							</span>
+							<p>
+								Again, we made use of a fundamental fragment method, this time the 'onCreate' method, to ensure that the broadcast receiver is setup and listening for requests before
+								the views of the fragment are even initialised.
+								<br/><br/>
+								Moving on to the final step of the revamp, it was now time to focus on the design of our Scanner Fragment since all other features were working end-to-end. Our main goal
+								for this was to have a fragment screen that was intuitive to use, whilst also looking neat and tidy with the Apian colour scheme. We are proud to say that our final design
+								met all these targets.
+							</p>
+							<span class="image main"><img src="../images/Scanner Fragment Final Design.png" alt="" class="iterationBg" />
+								<p class="description">Figure 14: Final Scanner Fragment screen design
+								</p>
+							</span>
+							<p>
+								As you have noticed, there is no longer a view of the nearest BLE devices. This was only a debugging mechanism that we intended to use during development which we ultimately
+								got rid off because porters do not care to see which beacons are near them or their MAC-addresses.
+							</p>
+							<h3>Packaging the app</h3>
+							<p>
+								Now that we were happy with how the app looked and behaved, we exported it as an APK through Android Studio and distributed it to our client, as a sample app, so we could get
+								their thoughts on the user interface and experience. Being able to export the app as an APK with professional branding also ticked off our penultimate app requirement.
+							</p>
+							<span class="image main"><img src="../images/App Icon Design.png" alt="" class="iterationBg" />
+								<p class="description">Figure 15: Our Apian branded app icon
+								</p>
+							</span>
+							<h2>Implementing the Final Requirement</h2>
+							<p>
+								We were now approaching the end of our implementation process, with the only requirement left to meet being: <b>The app should scan in the background for BLE beacons and
+								transmit them to the backend, without the screen having to be switched on.</b> Evidently, porters should not have to be on their phones, making sure the app is active all
+								the time to ensure that their location is being updated. They should only have to indicate that they are available, triggering the app to start scanning, and they should only
+								have to interact with the app when they receive a notification request. All the rest should be taken care of by the app while the porters' devices are in their pockets as they
+								are fulfilling their day-to-day tasks and deliveries.
+								<br/><br/>
+								In android development, this is not a difficult task to achieve as essentially what we had to do was keep our Scanner Fragment active in a foreground service. A foreground service is
+								a service that performs operations even when a user is not interacting with the application that launched it. It is a service that the user is actively aware of and isn’t
+								a candidate for the system to kill when low on memory.<sub>[7]</sub> This is crucial for our application and is the reason we chose to run our app on a foreground rather than
+								background service which can get terminated at any time by the operating system, especially with the latest versions of Android that constantly try to optimize battery
+								performance.
+								<br/><br/>
+								To implement our final requirement, we coded the Scanner Fragment to launch the service when the 'Available' button is clicked and stop the service to preserve battery when
+								the 'Unavailable' button is clicked. We also implemented the service to acquire a WakeLock as shown below in Figure 16:
+							</p>
+							<span class="image main"><img src="../images/WakeLockService.png" alt="" class="iterationBg" />
+								<p class="description">Figure 16: Foreground 'Wake Lock Service' implementation
+								</p>
+							</span>
+							<p>
+								This was the final and crucial component of our solution which ensured that the app could continue to scan for BLE beacons in the background without being interrupted by the
+								device's operating system. We demonstrated this implementation to our clients, showing that a porter's location kept being updated on our web application's frontend every 5 seconds
+								without us having to navigate the app, and they were very pleased with this implementation, which wrapped up multiple months of learning android development, coding and debugging.
+							</p>
+							<h2>Final app implementation</h2>
+							<span class="image main"><img src="../images/Final App Flow.png" alt="" class="iterationBgBigger" />
+								<p class="description">Figure 17: Final App Implementation Data Flow
+								</p>
+							</span>
+							<h2>Bibliography</h2>
+							<p>
+								<ol>
+									<li>
+										Turner, C. (2023). Majority of hospitals not protected by the emergency power plan. The Telegraph.
+										[online] 17 Feb. Available at: https://www.telegraph.co.uk/politics/2022/12/14/majority-hospitals-not-protected-emergency-power-plan-energy/
+										[Accessed 5 Mar. 2023].
+									</li>
+									<li>
+										Lawson, A. and correspondent, A.L.E. (2022). English hospitals make emergency plans amid winter power loss fears. The Guardian.
+										[online] 12 Dec. Available at: https://www.theguardian.com/business/2022/dec/12/english-hospitals-emergency-plans-power-nhs-trusts
+										[Accessed 5 Mar. 2023].
+									</li>
+									<li>
+										Hoffman, C. (2022). Why SMS Text Messages Aren’t Private or Secure. How-To Geek.
+										[online] 10 Nov. Available at: https://www.howtogeek.com/709373/why-sms-text-messages-arent-private-or-secure/
+										[Accessed 5 Mar. 2023].
+									</li>
+									<li>
+										Fletcher, J. (2022). Average walking speed: Comparisons by age, sex, and walking for health.
+										[online] Medical News Today. Available at: https://www.medicalnewstoday.com/articles/average-walking-speed
+										[Accessed 13 Mar. 2023].
+									</li>
+									<li>
+										Mishra, R. (2020). Fragment Lifecycle in Android.
+										[online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/fragment-lifecycle-in-android/ [Accessed 14 Mar. 2023].
+									</li>
+									<li>
+										Android Developers. (2023). Android Developers > Docs > Reference > Context.
+										[online] Available at: https://developer.android.com/reference/android/content/Context [Accessed 14 Mar. 2023].
+									</li>
+									<li>
+										Dholakia, J. (2020). Foreground Services in Android.
+										[online] Medium. Available at: https://medium.com/@engineermuse/foreground-services-in-android-e131a863a33d [Accessed 15 Mar. 2023].
+									</li>
+								</ol>
+							</p>
 							<ul class="actions special">
 								<li><a href="../Implementation.html" class="button">Back</a></li>
 							</ul>

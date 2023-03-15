@@ -4854,12 +4854,36 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   border-radius: 3%;
   background-image: linear-gradient(
     to right,
-    rgb(230, 187, 0),
+    rgb(230, 157, 0),
     rgb(241, 198, 80),
     rgb(255, 216, 108)
   );
   width: 75%!important;
   height: 75%!important;
+}
+
+.iterationLightBg {
+  border-radius: 3%;
+  width: 75%!important;
+  height: 75%!important;
+}
+
+.iterationSmallBg {
+  border-radius: 7%;
+  width: 35%!important;
+  height: 35%!important;
+}
+
+.iterationBgBigger {
+  border-radius: 3%;
+  background-image: linear-gradient(
+    to right,
+    rgb(230, 157, 0),
+    rgb(241, 198, 80),
+    rgb(255, 216, 108)
+  );
+  width: 96%!important;
+  height: 96%!important;
 }
 
 .description {
