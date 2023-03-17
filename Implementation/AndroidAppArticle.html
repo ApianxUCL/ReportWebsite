@@ -60,10 +60,21 @@
 					<!-- Post -->
 						<section class="post">
 							<header class="major">
-								<h2>Android App Implementation</a></h2>
+								<h2>Android App Implementation
+									<h3 class="subheadingLinks">
+										<a href="#requirements">Requirements</a>
+										<a href="#approach">Initial Approach</a>
+										<a href="#core-requirements">Implementing core requirements</a>
+										<a href="#fragment-split">Splitting Fragments</a>
+										<a href="#enhancing-security">Enhancing Security</a>
+										<a href="#enhancing-ux">Enhancing User Experience</a>
+										<a href="#final-implementation">Final Implementation</a>
+									</h3>
+								</h2>
 								<p></p>
 							</header>
 							<span class="image main"><img src="../images/Apian Resources/App Iterations.png" alt="" class="iterationsBg" /></span>
+							<section id="requirements">
 							<h2>App Requirements</h2>
 							<p>The mobile application is a fundamental component of our solution. Therefore, before we even started working on its
 								implementation, we had to make sure that its requirements were very well established:
@@ -106,6 +117,8 @@
 									<button class="next-btn">&#9660;</button>
 								</div>
 							</div>  
+							</section>
+							<section id="approach">
 							<h2>Team Background</h2>
 							<p>As mentioned previously, the mobile application is a core requirement of our project set out by Apian. Unfortunately, prior
 								to this project, no one from the team had experience building mobile applications, so our project partners suggested that
@@ -130,6 +143,8 @@
 								</p>
 							</span>
 							<p>The first implementation provided a great learning experience and an important step towards designing the desired product.</p>
+							</section>
+							<section id="core-requirements">
 							<h2>Next Steps: Fulfilling Other Core App Requirements</h2>
 							<p>
 								After presenting the initial prototype to our clients in one of our weekly meetings and obtaining positive feedback from them,
@@ -250,6 +265,8 @@
 								to do is enter their name, click on the scan button to start tracking themselves, and respond to requests by clicking the buttons in the bottom-half of the screen. Overall,
 								all core app requirements had been completed at this stage.
 							</p>
+							</section>
+							<section id="fragment-split">
 							<h2>Separation of Concerns</h2>
 							<p>
 								After informing our clients that we had met the core app requirements that were essential for the first launch, we then looked to iterate over our current
@@ -343,6 +360,8 @@
 								<p class="description">Figure 7: Login 'onViewCreated' code
 								</p>
 							</span>
+							</section>
+							<section id="enhancing-security">
 							<h3>Making Login More Secure</h3>
 							<p>
 								At this point, we had a fully functional login page, where porters' login credentials were verified against our backend server database records to check whether there was
@@ -420,6 +439,8 @@
 									<li>The app could trigger a notification every time a request is made.</li>
 								</ul>
 							</p>
+							</section>
+							<section id="enhancing-ux">
 							<h2>Improving porter (user) experience</h2>
 							<p>
 								As we have already stated, user experience was a top priority for our mobile application, as we didn't want to slow down porters trying to perform their daily tasks.
@@ -517,6 +538,8 @@
 								<p class="description">Figure 15: Our Apian branded app icon
 								</p>
 							</span>
+							</section>
+							<section id="final-implementation">
 							<h2>Implementing the Final Requirement</h2>
 							<p>
 								We were now approaching the end of our implementation process, with the only requirement left to meet being: <b>The app should scan in the background for BLE beacons and
@@ -548,6 +571,7 @@
 								<p class="description">Figure 17: Final App Implementation Data Flow
 								</p>
 							</span>
+							</section>
 							<h2>Bibliography</h2>
 							<p>
 								<ol>

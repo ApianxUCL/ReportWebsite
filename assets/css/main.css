@@ -4977,3 +4977,17 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   background-color: rgba(252, 188, 13, 0.678);
   color: #383838!important;
 }
+
+.subheadingLinks {
+  background-color: #c0c0c018;
+}
+
+.subheadingLinks a {
+  color: rgba(146, 135, 104, 0.452)!important;
+  margin-right: 2rem;
+}
+
+.subheadingLinks a:hover {
+  color: rgb(255, 70, 163)!important;
+  margin-right: 2rem;
+}

@@ -41,7 +41,17 @@
 					<!-- Post -->
 					<section class="post">
 						<header class="major">
-							<h2>System Architecture</h2>
+							<h2>System DESIGN<br/>
+								<h3 class="subheadingLinks">
+									<a href="#architecture">Architecture</a>
+									<a href="#site-map">Site Map</a>
+									<a href="#sequence-diagram">Sequence Diagram</a>
+									<a href="#data-storage">Data Storage</a>
+									<br/>
+									<a href="#discussion">Design Discussion</a>
+									<a href="#detailed">Detailed Architecture</a>
+								</h3>
+							</h2>
 							<p></p>
 						</header>
 						<h3>Our solution consists of a <b>mobile application</b> and a <b>web application</b>:</h3>
@@ -79,10 +89,17 @@
 								exchange.
 							</li>
 						</ul>
-						<span class="image main"><img src="./images/System Architecture Diagram.png" alt="" class="systemBg" />
-							<p class="descriptionSystem">Figure 1: System Architecture Overview.
+						<section id="architecture">
+						<h3>System Architecture</h3>
+							<p>It was crucial for us to plan out a system architecture that would facilitate swift communication between our mobile
+								application and web application.
 							</p>
-						</span>
+							<span class="image main"><img src="./images/System Architecture Diagram.png" alt="" class="systemBg" />
+								<p class="descriptionSystem">Figure 1: System Architecture Overview.
+								</p>
+							</span>
+						</section>
+						<section id="site-map">
 						<h2>Site Map</h2>
 						<p>Our aim, as with all other components was to make our website as intuitive to use as possible. It was imperative to do so,
 							as in a hospital setting, staff will want to navigate our applications as swiftly as possible; we did not want to design
@@ -111,14 +128,20 @@
 							<p class="descriptionSystem">Figure 2: Web Application Site Map.
 							</p>
 						</span>
+						</section>
+						<section id="sequence-diagram">
 						<h2>Sequence Diagram</h2>
 						<p>@Anyone willing</p>
+						</section>
+						<section id="data-storage">
 						<h2>Data Storage</h2>
 						<p>@Modestas can you provide brief reasoning behind relations , also maybe brief overview</p>
 						<span class="image main"><img src="./images/ER Diagram.png" alt="" class="systemBg3" />
 							<p class="descriptionSystem">Figure 3: ER Diagram.
 							</p>
 						</span>
+						</section>
+						<section id="discussion">
 						<h2>System Design Discussion</h2>
 						<h3>Web Application</h3>
 						With regards to our web application, usability and delivery speed were our two main concerns. We are
@@ -249,7 +272,8 @@
 							href="Implementation.html">our implementation articles</a>
 							which explain how each component of our system was created.
 						</p>
-
+						</section>
+						<section id="detailed">
 						<h2>Detailed system overview</h2>
 						<p>For more details regarding what each component of our system is responsible for, please consult the image
 							below:
@@ -258,6 +282,7 @@
 							<p class="descriptionSystem">Figure 4: Detailed System Architecture Component Description.
 							</p>
 						</span>
+						</section>
 		
 					</section>
 		
