@@ -4841,6 +4841,15 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   background: #014055;
 }
 
+.systemBg {
+  background-image: linear-gradient(
+    to right,
+    rgb(23, 182, 255),
+    rgb(0, 243, 243)
+  );
+  border-radius: 5%;
+}
+
 .iterationsBg {
   background-image: linear-gradient(
     to right,
@@ -4888,6 +4897,12 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 
 .description {
   color:#5f4902;
+  font-size:large;
+  margin-bottom: -40px!important;
+}
+
+.descriptionSystem {
+  color:#000a42;
   font-size:large;
   margin-bottom: -40px!important;
 }
