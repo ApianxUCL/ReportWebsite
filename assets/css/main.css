@@ -4952,6 +4952,32 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   height: 100%;
 }
 
+.slideshow-container {
+  height: 910px;
+  overflow: hidden;
+}
+
+.slideshow-container h3 {
+  text-align: center;
+  padding-top: 50px;
+  margin-right: 6rem;
+}
+
+.slideshow-container img {
+  margin-bottom: -4rem;
+}
+
+.slideshow-buttons {
+  display: inline-block;
+}
+
+.prevBtn,
+.nextBtn {
+  margin-left: 3rem;
+  border-radius: 100%;
+  background-color: rgb(22, 142, 255);
+}
+
 .buttons-container {
   width: 20%;
   display: inline-block;

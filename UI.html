@@ -1,7 +1,26 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>System Design</title>
+		<title>UI Design</title>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script>
+			    $(document).ready(function() {
+				var numSlides = $('.slide-container').length;
+				var currentSlide = 0;
+			
+				$('.prevBtn').click(function() {
+					$('.slide-container').eq(currentSlide).hide();
+					currentSlide = (currentSlide - 1 + numSlides) % numSlides;
+					$('.slide-container').eq(currentSlide).show();
+				});
+			
+				$('.nextBtn').click(function() {
+					$('.slide-container').eq(currentSlide).hide();
+					currentSlide = (currentSlide + 1) % numSlides;
+					$('.slide-container').eq(currentSlide).show();
+				});
+			});
+		</script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -41,47 +60,72 @@
 					<!-- Post -->
 						<section class="post">
 							<header class="major">
-								<h2>UI/UX</h2>
-                                <h4>Sketch 1</h4>
-								
+								<h2>User Interface Design
+									<h3 class="subheadingLinks">
+										<a href="#initial-sketches">Initial Paper Sketches</a>
+										<a href="#figma-wireframes">Figma Prototyping</a>
+										<a href="#web-design">Website User Interface</a>
+									</h3>
+								</h2>
 							</header>
-							<p>
-                                <img src="images/APIAN_sketch.jpg" width="420" alt="" style="float: left;"/>
-                                <img src="images/APIAN_sketch_2.jpg" width="420" alt="" />
-                                <img src="images/APIAN_sketch_3.jpg" width="420" alt="" style="float: left;" />
-                                <img src="images/APIAN_sketch_4.jpg" width="420" alt="" />
-                                
-                                <p>After consulting with our client with regards to the different requirements our project should have, we started sketching our first design by hand drawing. 
-                                Some of the important requirements of the website is that the medical staff dispatcher should be able to:</p>
-
-                                <ul>
-                                    <li>Track live location of porters. </li>
-                                    <li>View which porters are available or not.</li>
-                                    <li>Send delivery requests to available porters based on the nearest location to pick-up point. </li>
-                                </ul>
-
-                                As seen in our first sketch, simplicity and usability is our main priority. We don’t want users to have a hard time navigating our website. 
-                                There’s a home page which consists of a nav bar to choose between the live monitoring and delivery details page. The live monitoring page consists of markers for porters and on the side it shows which porters are available and you may sort the porters by distance (closest to pick-up point). Once you click on an available porter it then sends you to a delivery request page. The delivery details page shows the history and on-going deliveries.
-                                 This is to make sure the medical staff has a complete history of which porters are delivering which supplies. 
-
-							</p>
-                            <header class="major">
-                                <h4>Sketch 2</h4>
-							</header>
-                            <p>
-                                <img src="images/APIAN_sketch_5.jpg" width="420" alt="" style="float: left;"/>
-                                <img src="images/APIAN_sketch_6.jpg" width="420" alt="" />
-                                <img src="images/APIAN_sketch_7.jpg" width="420" alt="" style="float: left;" />
-                                <img src="images/APIAN_sketch_8.jpg" width="420" alt="" />
-                                <p>For our second sketch, it was still pretty much similar to the first one although we made subtle changes such as adding a view option in the live monitoring page to see different parts of the hospital. 
-                                Moreover, we created a table for the delivery request page to make things much more organized. The purpose of this sketch is just for comparison with our first one before proceeding to create interfaces on Figma. </p>
-
-
-
-                            </p>
-							<header class="major">
-                                <h4>Sketch 3 (Figma)</h4>
-							</header>
+							<h3>Client Requirements</h3>                          
+                                <p>
+									Upon consultation with our client, we identified the crucial requirements for our web design project in a hospital setting.
+									As a result, we embarked on sketching our initial design, primarily using hand-drawn techniques on a tablet.<br/><br/>
+									Our first sketch was crucial to us, as it had to incorporate a number of client-identified key features including:
+									<ul>
+										<b>The ability for medical staff dispatchers to:</b>
+										<li>Track the live location of porters</li>
+										<li>View the availability of porters</li>
+										<li>Send delivery requests to available porters based on factors like:
+											<ul>
+												<li>Their proximity to the pick-up point</li>
+												<li>Their availability</li>
+											</ul>
+										</li>
+									</ul>
+								</p>
+								<section id="initial-sketches">
+								<h3>Initial Sketches</h3> 
+								<div class="slideshow-container">
+									<div class="slideshow-buttons">
+										<button class="prevBtn">&#9664;</button>
+										<button class="nextBtn">&#9654;</button>
+									</div>
+									<div class="slide-container">
+										<h3>Sketch 1:</h3>
+										<img src="images/APIAN_sketch.jpg" width="45%" alt=""/>
+										<img src="images/APIAN_sketch_2.jpg" width="45%" alt=""/>
+										<img src="images/APIAN_sketch_3.jpg" width="45%" alt=""/>
+										<img src="images/APIAN_sketch_4.jpg" width="45%" alt=""/>
+									</div>
+									<div class="slide-container">
+										<h3>Sketch 2:</h3>
+										<img src="images/APIAN_sketch_5.jpg" width="45%" alt=""/>
+										<img src="images/APIAN_sketch_6.jpg" width="45%" alt=""/>
+										<img src="images/APIAN_sketch_7.jpg" width="45%" alt=""/>
+										<img src="images/APIAN_sketch_8.jpg" width="45%" alt=""/>
+									</div>
+								</div>
+								<p>
+									In our first sketch, usability and simplicity were our main priorities, so that hospital staff do not experience any difficulties
+									when it comes to navigating our website. As a result, we designed a home page that features a navigation bar to allow users to switch between the live monitoring and
+									delivery details page effortlessly.<br/>
+									The live monitoring page comprises markers for porters, displaying their availability on the side. We have also incorporated a feature that enables
+									users to sort the porters by distance, ensuring that the nearest porter is assigned to a particular delivery request. Clicking on an available
+									porter sends the user to the delivery request page.<br/>
+									The delivery details page features a comprehensive history of on-going deliveries, allowing the medical staff to monitor which porters are delivering
+									which supplies.<br/><br/>
+									Our second sketch is an improvement of the first, with subtle changes to enhance usability. We have added a view option in the live monitoring page,
+									enabling users to see different parts of the hospital. We have also created a table on the delivery request page, which promotes organization and ease
+									of access.<br/>
+									The sketches seen above are preliminary designs, created for the purpose of comparison before proceeding to the interface design stage using Figma.
+									As mentioned previously, our sketches ensured that the final design is user-friendly, intuitive, and efficient for medical staff in a hospital setting,
+									so that deliveries can be fulfilled as quickly as possible.
+								</p>
+								</section>
+							<section id="figma-wireframes">
+								<h3>Figma Prototyping</h3> 
 							<p>
 								<img src="images/Apian_Figma_1.png" width="420" alt="" style="float: left;"/>
                                 <img src="images/Apian_Figma_2.png" width="420" alt="" style="margin: 0px 10px 20px 30px;"/>
@@ -95,9 +139,7 @@
 									We also paid attention to detail such as coloring and made the theme similar to the Apian Logo. 
 								</p>
 							</p>
-							<header class="major">
-                                <h4>Sketch 4 (Figma)</h4>
-							</header>
+							<h3>Figma Iterations</h3>
 							<p>
 								<img src="images/Apian_Figma_Feedback_1.png" width="420" alt="" style="float: left;"/>
                                 <img src="images/Apian_Figma_Feedback_2.png" width="420" alt="" style="margin: 0px 10px 20px 30px;"/>
@@ -112,13 +154,9 @@
 
 
 								We considered all the feedback she gave us and we made slight changes to the previous design.
-
-
-
 							</p>
-							<header class="major">
-                                <h4>Website 1</h4>
-							</header>
+							</section>
+							<section id="web-design">
 							<p>
 								<img src="images/Apian_CurrentWeb_1.png" width="420" alt="" style="float: left;"/>
                                 <img src="images/Apian_CurrentWeb_2.png" width="420" alt="" style="margin: 0px 10px 20px 30px;"/>
@@ -129,9 +167,7 @@
 									Most of these additional features were added after going back and forth with our client. </p>
 								
 							</p>
-							<header class="major">
-                                <h4>Final Website</h4>
-							</header>
+							<h3>Final Website</h3>
 							<p>
 								<img src="images/Apian_FinalWeb_1.png" width="420" alt="" style="float: left;"/>
                                 <img src="images/Apian_FinalWeb_2.png" width="420" alt="" style="margin: 0px 10px 20px 30px;"/>
@@ -143,6 +179,7 @@
 								to highlight important actions with bright or dark colors.  </p>
 								
 							</p>
+							</section>
 							
 
 							
