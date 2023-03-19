@@ -49,9 +49,9 @@
 					<h2>System Testing
 						<h3 class="subheadingLinks">
 							<a href="#unit-testing">Unit Testing</a>
+							<a href="#device-compat-testing">Device Compatibility Testing</a>
 							<a href="#manual-testing">Manual Testing</a>
-							<a href="#integration-testing">Integration Testing</a>
-							<br />
+							<a href="#integration-testing">Integration Testing</a>						
 							<a href="#user-testing">User Acceptance Testing</a>
 						</h3>
 					</h2>
@@ -103,6 +103,142 @@
 							To unit test our Android application, we made use of ...
 						</p>
 				</section>
+				<section id="device-compat-testing">
+					<h3>Device Compatibility / Cross Device Testing</h3>
+					<p>
+						Device compatibility testing is a crucial and indispensable aspect of mobile app development. This testing involves analyzing an
+						app's seamless operation across diverse hardware and software configurations, which was particularly important in our specific
+						circumstances:
+						<ul>
+							<li>Firstly, due to the wide range of Android devices used in different UK hospitals, we had to ensure that our app was compatible
+								with a variety of devices.
+							</li>
+							<li>Secondly, we had to account for emergency scenarios where backup devices may be used, such as scenarios
+								where porters' devices run out of battery or malfunction. In such scenarios, the app must operate flawlessly on the backup devices,
+								which required us to undergo comprehensive device compatibility testing.
+							</li>
+						</ul>
+						To accomplish this level of testing, we debugged our application on multiple Android-based platforms, utilizing a range of physical devices
+						from Samsung, Xiaomi, and Google, including smartphones and tablets. Additionally, we made use of the device emulator feature in Android Studio
+						to simulate other devices, which proved useful for initial testing but was limited in terms of testing BLE scanning and other hardware-specific
+						features, as it could only provide virtual machines. Therefore, we prioritized testing on non-emulator devices to ensure comprehensive and
+						accurate testing of our application's features and functionality. By conducting such testing, we could confidently ensure that our app would
+						operate seamlessly on a wide range of devices, delivering optimal user experience to our customers.<br/><br/>
+						We implemented device compatibility testing to ensure that the user experience of our application was consistent across a range of devices.
+						This involved designing a scalable layout and optimizing it for different screen sizes and resolutions, ensuring that our app could perform
+						optimally on any device. Such testing proved to be essential in identifying bugs where certain buttons on some screens were centered and
+						clickable, whereas on smaller devices, these buttons were hidden due to layout offsets in our XML fragment files. This discovery prompted
+						us to develop with screen scalability in mind, and in the end, we were able to achieve a consistent look and behavior on all devices:
+						<span class="image main"><img src="images/Device Compatibility Testing.png" alt=""
+							class="testingBg" />
+							<p class="descriptionTesting">Left: Testing app layout on devices with different screen resolutions.<br/>Right: Testing
+								application functionality on Android emulator.
+							</p>
+						</span>
+ 						We utilized device compatibility testing to identify potential bugs resulting from software variations, such as differences in Android versions
+						 or manufacturer-specific software systems like Samsung’s OneUI, which overwrites several of Android’s base features. Additionally, we aimed to
+						 identify bugs that may arise from diverse hardware specifications, such as RAM capacity, which could become overwhelmed by continuous BLE scanning.
+						 By performing such testing, we were able to identify and address compatibility issues that may impact the functionality of our app, such as a
+						 notification issue:<br/>
+						 <code>android.app.<b>RemoteServiceException: Bad notification for startForeground</b><br/>
+							<div style="font-size: smaller;">at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1973)<br/>
+							 at android.os.Handler.dispatchMessage(Handler.java:107)<br/>
+							 at android.os.Looper.loop(Looper.java:224)<br/>
+							 at android.app.ActivityThread.main(ActivityThread.java:7562)<br/>
+							 at java.lang.reflect.Method.invoke(Native Method)<br/>
+							 at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:539)<br/>
+							 at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:950)</div></code><br/>
+						The above error did not appear on our physical Samsung device which, at the time, was running Android 13.0. However, we got the error above on our
+						physical Xiaomi device running a slightly lower version of Android. Further investigation revealed that the two devices had different code
+						specifications for how notifications should be triggered. As a result, we made adjustments to the declarations of Notification Channels in our code
+						to ensure compatibility with both devices, allowing us to produce notifications on both devices without encountering any errors.<br/><br/>
+						As part of our commitment to delivering a high-quality product to our client, we ensured that all device compatibility tests were thoroughly documented:
+						<table>
+							<tr>
+							  <th></th>
+							  <th>Samsung</th>
+							  <th>Xiaomi</th>
+							  <th>Google</th>
+							  <th>Emulator</th>
+							</tr>
+							<tr>
+								<td>HTTP POST working</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+							</tr>
+							<tr>
+								<td>HTTP GET working</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+							</tr>
+							<tr>
+								<td>Triggers Foreground Service</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+							</tr>
+							<tr>
+								<td>Generates Firebase Token</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td>Sends SMS</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>N/A</td>
+							</tr>  
+							<tr>
+							  <td>Receives Firebase Message</td>
+							  <td>&#10003;</td>
+							  <td>&#10003;</td>
+							  <td>&#10003;</td>
+							  <td>N/A</td>
+							</tr>
+							<tr>
+							  <td>Scans for BLE beacons</td>
+							  <td>&#10003;</td>
+							  <td>&#10003;</td>
+							  <td>&#10003;</td>
+							  <td>N/A</td>
+							</tr>
+							<tr>
+							  <td>Triggers Notification</td>
+							  <td>&#10003;</td>
+							  <td>&#10003;</td>
+							  <td>&#10003;</td>
+							  <td>&#10003;</td>
+							</tr>
+							<tr>
+								<td>Runs app in background (Screen on)</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+							</tr>
+							<tr>
+								<td>Runs app in background (Screen off)</td>
+								<td>&#10007;</td>
+								<td>&#10003;</td>
+								<td>&#10003;</td>
+								<td>N/A</td>
+							</tr>
+						  </table>
+						  
+						This documentation will serve as a valuable resource for our client in the future, particularly in the event of any new bugs or issues that may arise. By
+						providing this documentation, our client can refer back to the tests conducted and use them as a reference point to identify potential causes of any new
+						bugs. This approach not only ensured that our client had the necessary information to troubleshoot any issues but also demonstrated our commitment to
+						transparency and accountability throughout the development process.
+					</p>
+				</section>
 				<section id="integration-testing">
 					<h3>Integration Testing</h3>
 					<p>
@@ -142,12 +278,23 @@
 				<section id="manual-testing">
 					<h3>Manual Testing</h3>
 					<p>
-						Manual testing was also an essential part of our testing process. We conducted manual tests to
-						verify
-						the application's functionality and ensure that it met the requirements. This included testing
-						the application's user interface, functionality, and usability to ensure that it was intuitive
-						and
-						easy to use.
+						In addition to our automated testing procedures, manual testing was a vital aspect of our mobile app development process. Manual testing
+						allowed us to thoroughly evaluate the functionality of our application and ensure that it met all the required specifications. We
+						conducted these tests to verify the app's user interface, functionality, and usability, guaranteeing that the user experience was
+						intuitive and straightforward.<br/><br/>
+						We conducted manual testing to simulate potential hospital scenarios where porters would repeatedly close and launch their application,
+						switch between apps, and log in and out of the system multiple times. These tests were crucial because they provided us with valuable
+						insights into how our application would operate in real-world hospital scenarios, allowing us to identify and address any potential issues.<br/><br/>
+						During our manual testing, we discovered a significant battery-draining design flaw that had gone unnoticed. As mentioned in our previous
+						article outlining our mobile app implementation, we had launched a foreground service from our app that enabled the device to scan for BLE
+						beacons in the background and transmit them to the backend every 5 seconds. However, when we conducted manual testing by repeatedly closing
+						and launching the app, we observed that the beacons were being transmitted more frequently than every 5 seconds. Upon investigation, we
+						discovered that every time the user launched the app and clicked on 'Available' to start scanning, a new secondary service was created
+						if they had not pressed 'Unavailable' before closing the app, which stops the foreground service.<br/><br/>
+						To address this issue, we implemented a factory design model for our foreground service. The factory model ensured that at any given time,
+						there would be a maximum of one foreground service running per device. This approach enabled us to prevent multiple foreground services from
+						launching simultaneously and ensure that the app would transmit beacon data to the backend every 5 seconds, providing optimal performance and
+						battery life.
 					</p>
 				</section>
 				<section id="user-testing">
@@ -187,11 +334,13 @@
 						methodologies,
 						including JUnit, MockMVC, Jest, React Testing Library, manual testing, and user testing, to
 						ensure
-						that our application met the requirements and delivered a seamless user experience. By testing
+						that our application met the requirements and delivered a seamless user experience.
+						Ultimately, we strived to deliver a bug-free and optimized web and mobile app that could operate seamlessly
+						on a range of devices, ensuring a positive user experience for our client, and by testing
 						our
-						application thoroughly, we were able to identify and fix issues early in the development process
-						and
-						ensure that our application provided a high-quality user experience.
+						applications thoroughly, we were able to identify and fix issues early in the development process
+						to
+						ensure that our solution was up to standards.
 					</p>
 				</section>
 

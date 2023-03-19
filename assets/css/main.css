@@ -4841,6 +4841,16 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   background: #014055;
 }
 
+.testingBg {
+  background-image: linear-gradient(
+    to right,
+    rgb(238, 52, 255),
+    rgb(255, 36, 182)
+  );
+  border-radius: 5%;
+  width: 80%!important;
+}
+
 .uiBg {
   background-image: linear-gradient(
     to right,
@@ -4933,6 +4943,12 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 
 .description {
   color:#5f4902;
+  font-size:large;
+  margin-bottom: -40px!important;
+}
+
+.descriptionTesting {
+  color:#3b003d;
   font-size:large;
   margin-bottom: -40px!important;
 }
