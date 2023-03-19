@@ -3735,7 +3735,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   line-height: 4rem;
   margin: -4rem auto 0 auto;
   overflow: hidden;
-  padding: 0 2rem 0 0;
+  padding: 0 0 0 0;
   position: relative;
   width: calc(100% - 4rem);
   max-width: 72rem;
@@ -3836,7 +3836,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   display: block;
   font-size: 0.8rem;
   outline: none;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 #nav ul.links li a:hover {
@@ -4841,6 +4841,51 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   background: #014055;
 }
 
+.uiBg {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 184, 52),
+    rgb(255, 216, 110)
+  );
+  border-radius: 5%;
+}
+
+.systemBg {
+  background-image: linear-gradient(
+    to right,
+    rgb(23, 182, 255),
+    rgb(0, 243, 243)
+  );
+  border-radius: 5%;
+}
+
+.systemBg2 {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 77, 77),
+    rgb(255, 31, 31)
+  );
+  border-radius: 5%;
+}
+
+.systemBg3 {
+  background-image: linear-gradient(
+    to right,
+    rgb(77, 255, 91),
+    rgb(0, 243, 122)
+  );
+  border-radius: 5%;
+}
+
+.systemBg4 {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 208, 77),
+    rgb(243, 109, 0)
+  );
+  border-radius: 5%;
+}
+
 .iterationsBg {
   background-image: linear-gradient(
     to right,
@@ -4854,7 +4899,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   border-radius: 3%;
   background-image: linear-gradient(
     to right,
-    rgb(230, 187, 0),
+    rgb(230, 157, 0),
     rgb(241, 198, 80),
     rgb(255, 216, 108)
   );
@@ -4862,8 +4907,38 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   height: 75%!important;
 }
 
+.iterationLightBg {
+  border-radius: 3%;
+  width: 75%!important;
+  height: 75%!important;
+}
+
+.iterationSmallBg {
+  border-radius: 7%;
+  width: 35%!important;
+  height: 35%!important;
+}
+
+.iterationBgBigger {
+  border-radius: 3%;
+  background-image: linear-gradient(
+    to right,
+    rgb(230, 157, 0),
+    rgb(241, 198, 80),
+    rgb(255, 216, 108)
+  );
+  width: 96%!important;
+  height: 96%!important;
+}
+
 .description {
   color:#5f4902;
+  font-size:large;
+  margin-bottom: -40px!important;
+}
+
+.descriptionSystem {
+  color:#000a42;
   font-size:large;
   margin-bottom: -40px!important;
 }
@@ -4895,6 +4970,34 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   height: 100%;
 }
 
+.slideshow-container {
+  height: 920px;
+  overflow: hidden;
+  padding-top: 3rem;
+}
+
+.slideshow-container h3 {
+  text-align: center;
+  padding-top: 50px;
+  margin-right: 6rem;
+  margin-bottom: -0.4rem;
+}
+
+.slideshow-container img {
+  margin-bottom: -4rem;
+}
+
+.slideshow-buttons {
+  display: inline-block;
+}
+
+.prevBtn,
+.nextBtn {
+  margin-left: 3rem;
+  border-radius: 100%;
+  background-color: rgb(255, 220, 22);
+}
+
 .buttons-container {
   width: 20%;
   display: inline-block;
@@ -4919,4 +5022,18 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 .next-btn:hover {
   background-color: rgba(252, 188, 13, 0.678);
   color: #383838!important;
+}
+
+.subheadingLinks {
+  background-color: #c0c0c018;
+}
+
+.subheadingLinks a {
+  color: rgba(146, 135, 104, 0.452)!important;
+  margin-right: 2rem;
+}
+
+.subheadingLinks a:hover {
+  color: rgb(255, 70, 163)!important;
+  margin-right: 2rem;
 }
