@@ -1,142 +1,152 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Research</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Research</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="../index.html" class="logo">PorterBLE</a>
-					</header>
+<body class="is-preload">
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="../Requirements.html">Requirements</a></li>
-							<li class="active"><a href="../Research.html">Research</a></li>
-							<li><a href="../Algorithms.html">Algorithms</a></li>
-							<li><a href="../UI.html">UI</a></li>
-							<li><a href="../System.html">System</a></li>
-							<li><a href="../Implementation.html">Implementation</a></li>
-							<li><a href="../Testing.html">Testing</a></li>
-							<li><a href="../Evaluation.html">Evaluation</a></li>
-							<li><a href="../Appendices.html">Appendices</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://github.com/ApianxUCL" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-				<!-- Main -->
-				<div id="main">
+		<!-- Header -->
+		<header id="header">
+			<a href="../index.html" class="logo">PorterBLE</a>
+		</header>
 
-					<!-- Post -->
-						<section class="post">
-							<header class="major">
-								<h2>Related Projects</a></h2>
-							</header>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="../Requirements.html">Requirements</a></li>
+				<li class="active"><a href="../Research.html">Research</a></li>
+				<li><a href="../Algorithms.html">Algorithms</a></li>
+				<li><a href="../UI.html">UI</a></li>
+				<li><a href="../System.html">System</a></li>
+				<li><a href="../Implementation.html">Implementation</a></li>
+				<li><a href="../Testing.html">Testing</a></li>
+				<li><a href="../Evaluation.html">Evaluation</a></li>
+				<li><a href="../Appendices.html">Appendices</a></li>
+			</ul>
+			<ul class="icons">
+				<li><a href="https://github.com/ApianxUCL" class="icon brands fa-github"><span
+							class="label">GitHub</span></a></li>
+			</ul>
+		</nav>
 
-							<h3>Introduction</h3>
+		<!-- Main -->
+		<div id="main">
 
-							<p><span class="image left"><img src="../images/startingOut.png" alt="" /></span>
-								In order to 1. carefully consider possible features for the project to implement 2. 
-							consider areas of extension 3. measure progress 4. follow the merits of existing solutions, 
-							it is important that we conduct a reiview of similar existing projects.</p>
+			<!-- Post -->
+			<section class="post">
+				<header class="major">
+					<h2>Related Projects</a></h2>
+				</header>
 
-							<h3>UBI Solutions: Hospital Assets Tracking</h3>
-							<p>
-								UBI Solutions is a French software company primarily focussed on providing asset 
-							tracking solutions. It creates a variety of solutions for corporations in the food 
-							industry, laundry, retail and more. Typically solutions revolve around using RFID 
-							tags and mobile or fixed readers. [1] However, other solutions are also used and the 
-							company's focus is providing an effective solution tailored to a client.
-							</p>
-							<p>
-								In this review we will look at one solution, picked among many of the projects 
-							due to its similarity to the context of our own project. It was in part picked randomly
-							from several similar projects, due to said projects also being similarly well documented 
-							with similar merits. 
-							</p>
-							<p>
-								UBI Solutions' Hospital Assets Tracking makes use of BLE tags and beacons to track 
-							assets such as bed sheets moving throughout the hospital. They work on a gateway system 
-							where BLE gateways track individual BLE tags throughout the hospital. BLE tags each have 
-							unique identifiers that they transmit. In addition to tracking, the tags are fitted with 
-							shock, temperature and humidity sensors where relevant to track the health of the asset.
-							</p>
-							<p>
-								<b>The main goals of the system are:</b><br>
-								To free up staff time<br>
-								Reducing loss of equipment due to theft<br>
-								Reduce costs due to negligence<br>
-								To reliably log asset usage data<br>
-								Implement automatic preventative care of assets<br>
-							</p>
-							<p>
-								The solution is effective, minimal and cost effective. It has a lot of the features 
-							that we would need for a hospital porter tracking system, where instead of assets we would 
-							track porters. It has some redundant features such as the sensors to detect health of the 
-							asset, however the overall principle is the same. It does however miss 1. a method to 
-							communicate to porters their tasks and 2. a method to decide which porters are optimal for 
-							tasks. Both features missing are quite essential and something we would have to explore 
-							ourselves.
-							</p>
+				<h3>Introduction</h3>
 
-							<h3>Navenio: Hospital Staff Tracking</h3>
+				<p><span class="image left"><img src="../images/startingOut.png" alt="" /></span>
+					In order to 1. carefully consider possible features for the project to implement 2.
+					consider areas of extension 3. measure progress 4. follow the merits of existing solutions,
+					it is important that we conduct a reiview of similar existing projects.</p>
 
-							<p>
-								Navenio is an Oxford based company focussed on increasing ROI of hospitals. They achieve 
-							this with their smartphone based location tracking and task assignment solution to assign tasks.
-							They have utilize a mixture of IUD, GPS and wifi to accurately track staff locations. Further 
-							to this, they utilize a task assignment system and collect logistic data with some amount of 
-							automated processing to generate recommendations to increase efficiency.
-							</p>
-							<p>
-								As mentioned, Navenio's solution utilizes IUD, GPS and wifi to accurately track staff location.
-							They utilize PDR algorithms to adjust for ways a smartphone is held and deep learning based correction 
-							of inertia discrepancies due to positioning of the phone. They also make use of camera data where 
-							possible.GPD and wi-Fi is used to accurately detect when someone enters or exits the building. 
-							The system is interestingly capable of multiple floor location and tracking. Maps of the hospital are 
-							automatically built using historical tracking data of all the staff.
-							</p>
-							<p>
-								<b>The main goals of the system are:</b><br>
-								To free up staff time<br>
-								Optimal assignment of tasks<br>
-								Provide a solution that has no dependency on installing infrastructure<br>
-								To reliably log movement data for efficiency recommendations<br>
-							</p>
-							<p>
-								The solution is effective, minimal and cost effective, installation wise. Development of the algorithms 
-							and potential problems may create heavy costs however. As the solution utilizes AI to accurately location 
-							track, extensive collection of phone movement data is required and will create heavy costs.
-							</p>
+				<h3>UBI Solutions: Hospital Assets Tracking</h3>
+				<p>
+					UBI Solutions is a French software company primarily focussed on providing asset
+					tracking solutions. It creates a variety of solutions for corporations in the food
+					industry, laundry, retail and more. Typically solutions revolve around using RFID
+					tags and mobile or fixed readers. [1] However, other solutions are also used and the
+					company's focus is providing an effective solution tailored to a client.
+				</p>
+				<p>
+					In this review we will look at one solution, picked among many of the projects
+					due to its similarity to the context of our own project. It was in part picked randomly
+					from several similar projects, due to said projects also being similarly well documented
+					with similar merits.
+				</p>
+				<p>
+					UBI Solutions' Hospital Assets Tracking makes use of BLE tags and beacons to track
+					assets such as bed sheets moving throughout the hospital. They work on a gateway system
+					where BLE gateways track individual BLE tags throughout the hospital. BLE tags each have
+					unique identifiers that they transmit. In addition to tracking, the tags are fitted with
+					shock, temperature and humidity sensors where relevant to track the health of the asset.
+				</p>
+				<p>
+					<b>The main goals of the system are:</b><br>
+					To free up staff time<br>
+					Reducing loss of equipment due to theft<br>
+					Reduce costs due to negligence<br>
+					To reliably log asset usage data<br>
+					Implement automatic preventative care of assets<br>
+				</p>
+				<p>
+					The solution is effective, minimal and cost effective. It has a lot of the features
+					that we would need for a hospital porter tracking system, where instead of assets we would
+					track porters. It has some redundant features such as the sensors to detect health of the
+					asset, however the overall principle is the same. It does however miss 1. a method to
+					communicate to porters their tasks and 2. a method to decide which porters are optimal for
+					tasks. Both features missing are quite essential and something we would have to explore
+					ourselves.
+				</p>
 
-							
-							</p>
-							<ul class="actions special">
-								<li><a href="../Research.html" class="button">Back</a></li>
-							</ul>
-						</section>
-						
-				</div>
+				<h3>Navenio: Hospital Staff Tracking</h3>
+
+				<p>
+					Navenio is an Oxford based company focussed on increasing ROI of hospitals. They achieve
+					this with their smartphone based location tracking and task assignment solution to assign tasks.
+					They have utilize a mixture of IUD, GPS and wifi to accurately track staff locations. Further
+					to this, they utilize a task assignment system and collect logistic data with some amount of
+					automated processing to generate recommendations to increase efficiency.
+				</p>
+				<p>
+					As mentioned, Navenio's solution utilizes IUD, GPS and wifi to accurately track staff location.
+					They utilize PDR algorithms to adjust for ways a smartphone is held and deep learning based
+					correction
+					of inertia discrepancies due to positioning of the phone. They also make use of camera data where
+					possible.GPD and wi-Fi is used to accurately detect when someone enters or exits the building.
+					The system is interestingly capable of multiple floor location and tracking. Maps of the hospital
+					are
+					automatically built using historical tracking data of all the staff.
+				</p>
+				<p>
+					<b>The main goals of the system are:</b><br>
+					To free up staff time<br>
+					Optimal assignment of tasks<br>
+					Provide a solution that has no dependency on installing infrastructure<br>
+					To reliably log movement data for efficiency recommendations<br>
+				</p>
+				<p>
+					The solution is effective, minimal and cost effective, installation wise. Development of the
+					algorithms
+					and potential problems may create heavy costs however. As the solution utilizes AI to accurately
+					location
+					track, extensive collection of phone movement data is required and will create heavy costs.
+				</p>
+
+
+				</p>
+				<ul class="actions special">
+					<li><a href="../Research.html" class="button">Back</a></li>
+				</ul>
+			</section>
+
+		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-	</body>
+</body>
+
 </html>

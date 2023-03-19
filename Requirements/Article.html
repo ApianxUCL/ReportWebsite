@@ -1,119 +1,125 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Requirements</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Requirements</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="../index.html" class="logo">PorterBLE</a>
-					</header>
+<body class="is-preload">
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="../Requirements.html">Requirements</a></li>
-							<li><a href="../Research.html">Research</a></li>
-							<li><a href="../Algorithms.html">Algorithms</a></li>
-							<li><a href="../UI.html">UI</a></li>
-							<li><a href="../System.html">System</a></li>
-							<li><a href="../Implementation.html">Implementation</a></li>
-							<li><a href="../Testing.html">Testing</a></li>
-							<li><a href="../Evaluation.html">Evaluation</a></li>
-							<li><a href="../Appendices.html">Appendices</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://github.com/ApianxUCL" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-				<!-- Main -->
-				<div id="main">
+		<!-- Header -->
+		<header id="header">
+			<a href="../index.html" class="logo">PorterBLE</a>
+		</header>
 
-					<!-- Post -->
-						<section class="post">
-							<header class="major">
-								<h2>Initial Requirements</a></h2>
-								<p></p>
-							</header>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li class="active"><a href="../Requirements.html">Requirements</a></li>
+				<li><a href="../Research.html">Research</a></li>
+				<li><a href="../Algorithms.html">Algorithms</a></li>
+				<li><a href="../UI.html">UI</a></li>
+				<li><a href="../System.html">System</a></li>
+				<li><a href="../Implementation.html">Implementation</a></li>
+				<li><a href="../Testing.html">Testing</a></li>
+				<li><a href="../Evaluation.html">Evaluation</a></li>
+				<li><a href="../Appendices.html">Appendices</a></li>
+			</ul>
+			<ul class="icons">
+				<li><a href="https://github.com/ApianxUCL" class="icon brands fa-github"><span
+							class="label">GitHub</span></a></li>
+			</ul>
+		</nav>
 
-							<h3>The Initial Project Briefing</h3>
+		<!-- Main -->
+		<div id="main">
 
-							<p><span class="image left"><img src="../images/initialRequirements.png" alt="" /></span>
-								The initial project briefing we received was as follows: Healthcare drone porter 
-								interface, simulating porters around a hospital with multiple building 
-								sites, and can make use of AirTags, BLE devices and other ways of beacon route 
-								finding. Design a front end UI that is cross platform, as well as a SharePoint 
-								solution with equivalent UI to do an A-B test for comparison of results. 
-								Mimicking the UCL buildings to begin with will be a good starting point. Both 
-								packages should enable a hospital to plot locations of porters, and issue 
-								requests to them via Twilio, demonstrate queue and prioritisation of work, 
-								and integrate with other communication services.
-							</p>
+			<!-- Post -->
+			<section class="post">
+				<header class="major">
+					<h2>Initial Requirements</a></h2>
+					<p></p>
+				</header>
 
-							<h3>Requirements</h3>
-							
-							<p>
-								Using the briefing, we tried to write a list of requirements to base a project 
-								on.
+				<h3>The Initial Project Briefing</h3>
 
-								<h4>Functional requirements</h4>
-								<b>Must have:</b>
-								User should be able to:
-								<br>
-								See the live locations of all the porters
-								<br>
-								See the delivery details (to be added) of each porter
-								<br>
-								Communicate with the porters (one-way)
-								I.e. sending a collection request for samples coming in via drone
-								<br>
-								<b>Nice to have:</b>
-								Communicate with porters (two-way)
-								I.e. a porter to be able to decline a request 
-								<br>
-								See the live locations of all crash calls/integrate into Crash 2222 calls
+				<p><span class="image left"><img src="../images/initialRequirements.png" alt="" /></span>
+					The initial project briefing we received was as follows: Healthcare drone porter
+					interface, simulating porters around a hospital with multiple building
+					sites, and can make use of AirTags, BLE devices and other ways of beacon route
+					finding. Design a front end UI that is cross platform, as well as a SharePoint
+					solution with equivalent UI to do an A-B test for comparison of results.
+					Mimicking the UCL buildings to begin with will be a good starting point. Both
+					packages should enable a hospital to plot locations of porters, and issue
+					requests to them via Twilio, demonstrate queue and prioritisation of work,
+					and integrate with other communication services.
+				</p>
+
+				<h3>Requirements</h3>
+
+				<p>
+					Using the briefing, we tried to write a list of requirements to base a project
+					on.
+
+				<h4>Functional requirements</h4>
+				<b>Must have:</b>
+				User should be able to:
+				<br>
+				See the live locations of all the porters
+				<br>
+				See the delivery details (to be added) of each porter
+				<br>
+				Communicate with the porters (one-way)
+				I.e. sending a collection request for samples coming in via drone
+				<br>
+				<b>Nice to have:</b>
+				Communicate with porters (two-way)
+				I.e. a porter to be able to decline a request
+				<br>
+				See the live locations of all crash calls/integrate into Crash 2222 calls
 
 
 
 
-								<h4>Non-functional requirements</h4>
-								<b>Availability and fault tolerance with backups;</b> since the functionality 
-								of the app can be a matter of life and death, it should have virtually 
-								zero downtime.
-								<br>
-								<b>Extendibility;</b> it should be easy to adapt the website to different buildings
-								<br>
-								<b>Usability;</b> the interface should be intuitive and easy to use
+				<h4>Non-functional requirements</h4>
+				<b>Availability and fault tolerance with backups;</b> since the functionality
+				of the app can be a matter of life and death, it should have virtually
+				zero downtime.
+				<br>
+				<b>Extendibility;</b> it should be easy to adapt the website to different buildings
+				<br>
+				<b>Usability;</b> the interface should be intuitive and easy to use
 
-							</p>
-							
-							
+				</p>
 
-							</p>
-							<ul class="actions special">
-								<li><a href="../Research.html" class="button">Back</a></li>
-							</ul>
-						</section>
-						
-				</div>
+
+
+				</p>
+				<ul class="actions special">
+					<li><a href="../Research.html" class="button">Back</a></li>
+				</ul>
+			</section>
+
+		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-	</body>
+</body>
+
 </html>
