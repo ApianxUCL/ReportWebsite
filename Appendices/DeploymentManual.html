@@ -2,26 +2,7 @@
 <html>
 
 <head>
-    <title>Research</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function () {
-            var numFeatures = $('.feature-container').length;
-            var currentFeature = 0;
-
-            $('.prev-btn').click(function () {
-                $('.feature-container').eq(currentFeature).hide();
-                currentFeature = (currentFeature - 1 + numFeatures) % numFeatures;
-                $('.feature-container').eq(currentFeature).show();
-            });
-
-            $('.next-btn').click(function () {
-                $('.feature-container').eq(currentFeature).hide();
-                currentFeature = (currentFeature + 1) % numFeatures;
-                $('.feature-container').eq(currentFeature).show();
-            });
-        });
-    </script>
+    <title>Deployment Manual</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="../assets/css/main.css" />
@@ -48,10 +29,10 @@
                 <li><a href="../Algorithms.html">Algorithms</a></li>
                 <li><a href="../UI.html">UI</a></li>
                 <li><a href="../System.html">System</a></li>
-                <li class="active"><a href="../Implementation.html">Implementation</a></li>
+                <li><a href="../Implementation.html">Implementation</a></li>
                 <li><a href="../Testing.html">Testing</a></li>
                 <li><a href="../Evaluation.html">Evaluation</a></li>
-                <li><a href="../Appendices.html">Appendices</a></li>
+                <li class="active"><a href="../Appendices.html">Appendices</a></li>
             </ul>
             <ul class="icons">
                 <li><a href="https://github.com/ApianxUCL" class="icon brands fa-github"><span
@@ -65,7 +46,7 @@
             <!-- Post -->
             <section class="post">
                 <header class="major">
-                    <h2>Backend Implementation
+                    <h2>Deployment Manual
                         <h3 class="subheadingLinks">
                             <a href="#backend">Backend</a>
                             <a href="#frontend">Frontend</a>
@@ -139,6 +120,49 @@
                             This will start the React development server. You can access it by navigating to <a
                                 href="http://localhost:3000">http://localhost:3000</a>
                         </li>
+                    </ol>
+                </section>
+                <section id="android-app">
+                    <h2>Android Application</h2>
+                    <ol>
+                        <li>
+                            Install Android Studio from: <a
+                                href="https://developer.android.com/studio">https://developer.android.com/studio</a>
+                            to be able to compile our app source code.
+                        </li>
+                        <li>
+                            In Android Studio, go to <code>File > Open</code> and locate our project folder, which should be called <b>PorterBLE-Scanner</b>.
+                            It may take a few moments for Android Studio to load the folder, sync the Gradle implementationa and install other
+                            dependencies.
+                        </li>
+                        <li>
+                            Next, in Android Studio, navigate to <code>Build > Build Bundle(s) / APK(s) > Build APK(s)</code>
+                        </li>
+                        <li>
+                            The building of the APK file will commence, which may take a couple of minutes, but once this is done, a pop-up message will
+                            appear with a button to click on which shows where the APK file has been created. It should be stored under <code>PorterBLE-Scanner
+                                \ app \ build \ outputs \ apk \ debug</code> and it should be called <b>app-debug.apk</b>
+                        </li>
+                        <li>
+                            Transfer this file to your Android device.
+                        </li>
+                        <li>After this is done, go to the <b>"Settings"</b> app on your device.</li>
+                        <li>Click on <b>"Security and Privacy".</b></li>
+                        <li>Turn on the <b>"Unknown Sources"</b> option to allow the installation of apps from sources other than the Google Play Store.</li>
+                        <li>Go to <b>"My Files"</b> on your device, find the location where you saved the APK file and click on it to start the installation process.</li>
+                        <li>Click on <b>"Install"</b> to start the installation process.</li>
+                        <li>The application needs a few permissions:
+                            <ul>
+                            <li>Go to the <b>"Settings"</b> app on your device.</li>
+                            <li>Click on <b>"Apps & Notifications".</b></li>
+                            <li>Find the <b>PorterBLE Scanner</b> app you just installed and click on it.</li>
+                            <li>Click on <b>"Permissions".</b></li>
+                            <li>Turn on the <b>"Location"</b>, <b>"Nearby Devices"</b> and <b>"Notifications"</b> permissions.<br/>These should be requested
+                            by default by the app, however, make sure they are allowed.</li>
+                            </ul>
+                        </li>
+                        <li>Turn on <b>Bluetooth</b> and <b>Location</b> tracking on your device.</li>
+                        <li>Launch the app.</li>
                     </ol>
                 </section>
                 <br />
