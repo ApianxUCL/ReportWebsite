@@ -4868,6 +4868,15 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   border-radius: 5%;
 }
 
+.systemBg4 {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 208, 77),
+    rgb(243, 109, 0)
+  );
+  border-radius: 5%;
+}
+
 .iterationsBg {
   background-image: linear-gradient(
     to right,
