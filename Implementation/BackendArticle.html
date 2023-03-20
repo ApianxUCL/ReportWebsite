@@ -1,292 +1,294 @@
 <!DOCTYPE HTML>
+
 <html>
+	<head>
+		<title>PorterBLE</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(function () {
+				var numFeatures = $('.feature-container').length;
+				var currentFeature = 0;
 
-<head>
-    <title>Research</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function () {
-            var numFeatures = $('.feature-container').length;
-            var currentFeature = 0;
+				$('.prev-btn').click(function () {
+					$('.feature-container').eq(currentFeature).hide();
+					currentFeature = (currentFeature - 1 + numFeatures) % numFeatures;
+					$('.feature-container').eq(currentFeature).show();
+				});
 
-            $('.prev-btn').click(function () {
-                $('.feature-container').eq(currentFeature).hide();
-                currentFeature = (currentFeature - 1 + numFeatures) % numFeatures;
-                $('.feature-container').eq(currentFeature).show();
-            });
+				$('.next-btn').click(function () {
+					$('.feature-container').eq(currentFeature).hide();
+					currentFeature = (currentFeature + 1) % numFeatures;
+					$('.feature-container').eq(currentFeature).show();
+				});
+			});
+		</script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
 
-            $('.next-btn').click(function () {
-                $('.feature-container').eq(currentFeature).hide();
-                currentFeature = (currentFeature + 1) % numFeatures;
-                $('.feature-container').eq(currentFeature).show();
-            });
-        });
-    </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <noscript>
-        <link rel="stylesheet" href="../assets/css/noscript.css" />
-    </noscript>
-</head>
+			<!-- Header -->
+				<header id="header">
+				<h1 id="logo"><a href="index.html" class="images"><img src="images/ApianLogoWhite.png" alt="" width="155" 
+					height="55" style="background:transparent; padding: 10px;"/></a></h1>
+					<!--navgoeshere-->
+				</header>
 
-<body class="is-preload">
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Requirements</h2>
+							<p>The process of defining and refining project requirements.</p>
+							<!--todo111 fix ordering of section on this page-->
+						</header>
+						<div class="row gtr-150">
+							<div class="col-4 col-12-medium">
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+								<!-- Sidebar -->
+								<section id="sidebar">
+									<section>
+										<h3>Contents</h3>
+										<ol class="actions">
+											<li><a href="#requirements">Requirements</a></li>
+											<li><a href="#approach">Initial Approach</a></li>
+											<li><a href="#code-structure">Code Structure</a></li>
+											<li><a href="#twillio">Twillio</a></li>
+											<li><a href="#firebase-messaging">Firebase Messaging</a></li>
+											<li><a href="#beacon-updates">Beacon updates</a></li>
+											<li><a href="#live-updates">Live updates</a></li>
+											<li><a href="#database-integration">Database integration</a></li>
+											<li><a href="#domain-objects">Domain objects</a></li>
+											<li><a href="#authentication">Authentication</a></li>
+											<li><a href="#deployment">Deployment</a></li>
+											<li><a href="#final-implementation">Final Implementation</a></li>
+										</ol>
+										<br>
+									</section>
 
-        <!-- Header -->
-        <header id="header">
-            <a href="../index.html" class="logo">PorterBLE</a>
-        </header>
+									<section>
+										<h3>Contents</h3>
+										<a href="#" class="image fit"><img src="images/placeholder.png" alt="" /></a>
+									</section>
+								</section>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="links">
-				<li><a href="../Requirements.html">Requirements</a></li>
-				<li><a href="../Research.html">Research</a></li>
-				<li><a href="../Algorithms.html">Algorithms</a></li>
-				<li><a href="../UI.html">UI</a></li>
-				<li><a href="../System.html">System</a></li>
-				<li class="active"><a href="../Implementation.html">Implementation</a></li>
-				<li><a href="../Testing.html">Testing</a></li>
-				<li><a href="../Evaluation.html">Evaluation</a></li>
-				<li><a href="../Appendices.html">Appendices</a></li>
-            </ul>
-            <ul class="icons">
-                <li><a href="https://github.com/ApianxUCL" class="icon brands fa-github"><span
-                            class="label">GitHub</span></a></li>
-            </ul>
-        </nav>
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
 
-        <!-- Main -->
-        <div id="main">
+								<section id="requirements">
+									<h2>Requirements</h2>
+									<p>
+										The backend implementation of our application was a crucial component in ensuring the smooth
+										functioning of the system. It needed to be robust and efficient.
+										In addition, it needed to be able to push real-time to the frontend
+										and process them accurately. We decided to use the Spring Boot framework and Google Cloud SQL
+										PostgreSQL database to implement the backend, along with Google Cloud Run for deployment. In
+										this article, we will discuss our approach to designing and implementing the backend, as well as
+										the tools and technologies we used to ensure its functionality.
+									</p>
+									<h4>
+										Must have:
+									</h4>
+									<ul>
+										<li>Receive pings from porters' phones and push location updates to frontend</li>
+										<li>Inform and assign porters on delivery request</li>
+										<li>Store and query porters</li>
+										<li>Store and query beacons</li>
+										<li>Store and query locations</li>
+									</ul>
+									<h4>
+										Should have:
+									</h4>
+									<ul>
+										<li>Receive and interpret porter responses</li>
+										<li>User Authentication</li>
+									</ul>
+									<h4>
+										Could have:
+									</h4>
+									<ul>
+										<li>Ability to assign deliveries according to priority</li>
+										<li>See the live locations of all crash calls/integrate into Crash 2222 calls.</li>
+										<li>Ability to track individual high priority assets</li>
+									</ul>
+								</section>
+								<section id="approach">
+									<h2>Initial Approach</h2>
+									<p>
+										When we began planning the backend implementation of our application, we considered several
+										options before ultimately deciding on using the Spring Boot framework with Google Cloud SQL
+										PostgreSQL for our database and deploying our app with Google Cloud Run. Some team members had
+										previous experience with Spring Boot and recommended it as a solid choice for our project.
+										Additionally, our client recommended using the Google Cloud stack, which we found to be a
+										reliable and efficient option for our needs. By choosing these technologies, we were able to
+										develop a robust and scalable backend system that could handle real-time updates from the
+										frontend and process them accurately.
+									</p>
+								</section>
+								<section id="code-structure">
+									<h2>Code Structure</h2>
+									<p>
+										To ensure a well-structured and organized codebase for our backend implementation, we decided to
+										utilize the common Spring Boot code structure. This approach allowed us to create a clean,
+										modular codebase that was easy to navigate and maintain. We followed the standard Spring Boot
+										package structure, separating our code into packages for controllers, services, models, and
+										repositories. This helped us to maintain a separation of concerns and ensure that each part of
+										the application had a clear and distinct purpose. By utilizing this common code structure, we
+										were able to develop a robust and reliable backend that was easy to maintain and scale as
+										needed.
+									</p>
+								</section>
+								<section id="twillio">
+									<h2>Twillio integration</h2>
+									<p>
+										As part of our backend implementation, we integrated Twilio's messaging API to send and receive
+										messages to and from the porters. We chose Twilio because it provides a reliable and easy-to-use
+										API for sending and receiving SMS messages, making it ideal for our needs. To integrate Twilio
+										into our backend, we utilized the Twilio Java library and set up our Twilio account with an API
+										key and authentication token. We also added configuration options in our application.yml file
+										that allowed us to easily modify the account SID and auth token as needed. This integration
+										allowed us to provide real-time messaging capabilities to the porters, enabling them to receive
+										important updates and information about their tasks directly through the application.
+										In addition to sending and receiving messages from the porters, we also utilized Twilio for
+										authentication purposes by sending one-time PINs to the users. This ensured that only authorized
+										personnel had access to the system.
+									</p>
+								</section>
+								<section id="firebase-messaging">
+									<h2>Firebase Messaging</h2>
+									<p>
+										We also integrated Firebase Cloud Messaging (FCM) to send push notifications to the users'
+										mobile devices. This allows users to receive real-time updates about their deliveries and other
+										relevant information. The integration was seamless, as we were already using Firebase for
+										hosting, and it allowed us to easily add this important feature to our application. The
+										functionality
+										is configured in FirebaseMessagingConfig.java and the Firebase service account is
+										defined in the firebase-service-account.json file.
+									</p>
+									<p>
+										We send push notification whenever we are requesting a delivery. The logic can be found in
+										DeliveryService.java
+									</p>
+									<p>
+										We identify user's mobile phone by the FCM token which is sent to us and then associated
+										with the porter on POST "/porter/{id}/token/{token}"
+										endpoint whenever user logs in.
+									</p>
+								</section>
+								<section id="beacon-updates">
+									<h2>Beacon updates</h2>
+									<p>
+										We receive beacon pings on POST "/porterPings" from the mobile app. We then map the beacon MAC
+										addresses to their respective locations on the floor plan. Once we have the
+										location information, we update the porter's location in the database based on the nearest
+										beacon.
+									</p>
+								</section>
+								<section id="live-updates">
+									<h2>Live updates</h2>
+									<p>
+										We utilised JPA's EntityListeners to push live updates on any porter updates. We implemented a
+										class named PorterEntityListener that listens for any changes in the Porter entity. Whenever
+										there is a change in the Porter entity, it automatically sends a real-time update to the
+										frontend via websockets, which updates the porter's location on the floor plan in real-time.
+									</p>
+								</section>
+								<section id="database-integration">
+									<h2>Database integration</h2>
+									<p>
+										Our backend implementation utilizes Cloud SQL PostgreSQL for our database.
+										Cloud SQL PostgreSQL is a fully managed relational
+										database service that provides high performance, scalability, and availability. We chose this
+										service because it is compatible with Spring Boot and provides automatic failover and data
+										backup, which is critical for our application's reliability. With Cloud SQL, we were able to set
+										up our database quickly and easily, and we didn't have to worry about infrastructure management.
+										We have local
+										configuration details in the application.yml file, while production configuration can be found
+										in application-prod.yml. You can configure the database by modifying the datasource username,
+										password, and instance-connection-name.
+									</p>
+								</section>
+								<section id="domain-objects">
+									<h2>Domain Objects</h2>
+									<p>
+										We implemented CRUD operations with REST API for our porter, location, delivery, and beacon
+										domain objects. This allows us to create, read, update, and delete records in our database
+										through HTTP requests. For example, to create a new porter, a POST request can be sent to the
+										"/porters" endpoint with the necessary information in the request body. To retrieve all porters,
+										a GET request can be sent to the same endpoint. We implemented similar endpoints for other
+										domain objects as well. By using REST API, we make it easier for other systems to integrate with
+										our system and interact with our data.
+									</p>
+									<p>
+										The object definitions can be found in domain folder, endpoint listeners in controllers folder
+										and logic in services folder, and database interactions in repositories folder.
+									</p>
+								</section>
+								<section id="authentication">
+									<h2>Authentication</h2>
+									<p>
+										For authentication, the user sends a login request to the backend, which triggers the server to
+										send a one-time pin (OTP) via SMS to the user's registered phone number. The user then inputs
+										the OTP in the mobile app, which the app sends back to the server to verify if it is correct. If
+										the OTP is valid, the user is authenticated and granted access to the relevant features of the
+										application. This adds an extra layer of security to ensure that only authorized users can
+										access the system.
+									</p>
+								</section>
+								<section id="deployment">
+									<h2>Deployment</h2>
+									<p>
+										We chose Cloud Run for our backend
+										implementation as it provides a serverless environment and auto-scales based on traffic,
+										reducing the need for infrastructure management. Cloud Run is a fully managed compute platform
+										by Google Cloud that allows us to run
+										containerized applications securely and at scale. The configuration for deploying our
+										application
+										to Cloud Run can be found in the cloudbuild.yaml file. This file specifies the build steps and
+										the Docker image that will be created and deployed to Cloud Run. The deployment process is fully
+										automated and triggered on every code commit, ensuring that the latest changes are always
+										deployed.
+									</p>
+								</section>
+								<section id="final-implementation">
+									<h2>Final Implementation</h2>
+									<p>
+										We were able to successfully implement all the must-have and should-have features in our
+										project's backend. However, due to time constraints, we were not able to complete the could-have
+										features, which included the ability to assign deliveries according to priority, track
+										individual high-priority assets, and integrate with Crash 2222 calls to display live locations
+										of all crash calls. These features could be implemented in the future as per the client's
+										requirements.
+									</p>
+								</section>
+						
+							</div>
+						</div>
+					</div>
+				</div>
 
-            <!-- Post -->
-            <section class="post">
-                <header class="major">
-                    <h2>Backend Implementation
-                        <h3 class="subheadingLinks">
-                            <a href="#requirements">Requirements</a>
-                            <a href="#approach">Initial Approach</a>
-                            <a href="#code-structure">Code Structure</a>
-                            <a href="#twillio">Twillio</a>
-                            <br />
-                            <a href="#firebase-messaging">Firebase Messaging</a>
-                            <a href="#beacon-updates">Beacon updates</a>
-                            <a href="#live-updates">Live updates</a>
-                            <br />
-                            <a href="#database-integration">Database integration</a>
-                            <a href="#domain-objects">Domain objects</a>
-                            <a href="#authentication">Authentication</a>
-                            <a href="#deployment">Deployment</a>
-                            <br />
-                            <a href="#final-implementation">Final Implementation</a>
-                        </h3>
-                    </h2>
-                    <p></p>
-                </header>
-                <section id="requirements">
-                    <h2>Requirements</h2>
-                    <p>
-                        The backend implementation of our application was a crucial component in ensuring the smooth
-                        functioning of the system. It needed to be robust and efficient.
-                        In addition, it needed to be able to push real-time to the frontend
-                        and process them accurately. We decided to use the Spring Boot framework and Google Cloud SQL
-                        PostgreSQL database to implement the backend, along with Google Cloud Run for deployment. In
-                        this article, we will discuss our approach to designing and implementing the backend, as well as
-                        the tools and technologies we used to ensure its functionality.
-                    </p>
-                    <h4>
-                        Must have:
-                    </h4>
-                    <ul>
-                        <li>Receive pings from porters' phones and push location updates to frontend</li>
-                        <li>Inform and assign porters on delivery request</li>
-                        <li>Store and query porters</li>
-                        <li>Store and query beacons</li>
-                        <li>Store and query locations</li>
-                    </ul>
-                    <h4>
-                        Should have:
-                    </h4>
-                    <ul>
-                        <li>Receive and interpret porter responses</li>
-                        <li>User Authentication</li>
-                    </ul>
-                    <h4>
-                        Could have:
-                    </h4>
-                    <ul>
-                        <li>Ability to assign deliveries according to priority</li>
-                        <li>See the live locations of all crash calls/integrate into Crash 2222 calls.</li>
-                        <li>Ability to track individual high priority assets</li>
-                    </ul>
-                </section>
-                <section id="approach">
-                    <h2>Initial Approach</h2>
-                    <p>
-                        When we began planning the backend implementation of our application, we considered several
-                        options before ultimately deciding on using the Spring Boot framework with Google Cloud SQL
-                        PostgreSQL for our database and deploying our app with Google Cloud Run. Some team members had
-                        previous experience with Spring Boot and recommended it as a solid choice for our project.
-                        Additionally, our client recommended using the Google Cloud stack, which we found to be a
-                        reliable and efficient option for our needs. By choosing these technologies, we were able to
-                        develop a robust and scalable backend system that could handle real-time updates from the
-                        frontend and process them accurately.
-                    </p>
-                </section>
-                <section id="code-structure">
-                    <h2>Code Structure</h2>
-                    <p>
-                        To ensure a well-structured and organized codebase for our backend implementation, we decided to
-                        utilize the common Spring Boot code structure. This approach allowed us to create a clean,
-                        modular codebase that was easy to navigate and maintain. We followed the standard Spring Boot
-                        package structure, separating our code into packages for controllers, services, models, and
-                        repositories. This helped us to maintain a separation of concerns and ensure that each part of
-                        the application had a clear and distinct purpose. By utilizing this common code structure, we
-                        were able to develop a robust and reliable backend that was easy to maintain and scale as
-                        needed.
-                    </p>
-                </section>
-                <section id="twillio">
-                    <h2>Twillio integration</h2>
-                    <p>
-                        As part of our backend implementation, we integrated Twilio's messaging API to send and receive
-                        messages to and from the porters. We chose Twilio because it provides a reliable and easy-to-use
-                        API for sending and receiving SMS messages, making it ideal for our needs. To integrate Twilio
-                        into our backend, we utilized the Twilio Java library and set up our Twilio account with an API
-                        key and authentication token. We also added configuration options in our application.yml file
-                        that allowed us to easily modify the account SID and auth token as needed. This integration
-                        allowed us to provide real-time messaging capabilities to the porters, enabling them to receive
-                        important updates and information about their tasks directly through the application.
-                        In addition to sending and receiving messages from the porters, we also utilized Twilio for
-                        authentication purposes by sending one-time PINs to the users. This ensured that only authorized
-                        personnel had access to the system.
-                    </p>
-                </section>
-                <section id="firebase-messaging">
-                    <h2>Firebase Messaging</h2>
-                    <p>
-                        We also integrated Firebase Cloud Messaging (FCM) to send push notifications to the users'
-                        mobile devices. This allows users to receive real-time updates about their deliveries and other
-                        relevant information. The integration was seamless, as we were already using Firebase for
-                        hosting, and it allowed us to easily add this important feature to our application. The
-                        functionality
-                        is configured in FirebaseMessagingConfig.java and the Firebase service account is
-                        defined in the firebase-service-account.json file.
-                    </p>
-                    <p>
-                        We send push notification whenever we are requesting a delivery. The logic can be found in
-                        DeliveryService.java
-                    </p>
-                    <p>
-                        We identify user's mobile phone by the FCM token which is sent to us and then associated
-                        with the porter on POST "/porter/{id}/token/{token}"
-                        endpoint whenever user logs in.
-                    </p>
-                </section>
-                <section id="beacon-updates">
-                    <h2>Beacon updates</h2>
-                    <p>
-                        We receive beacon pings on POST "/porterPings" from the mobile app. We then map the beacon MAC
-                        addresses to their respective locations on the floor plan. Once we have the
-                        location information, we update the porter's location in the database based on the nearest
-                        beacon.
-                    </p>
-                </section>
-                <section id="live-updates">
-                    <h2>Live updates</h2>
-                    <p>
-                        We utilised JPA's EntityListeners to push live updates on any porter updates. We implemented a
-                        class named PorterEntityListener that listens for any changes in the Porter entity. Whenever
-                        there is a change in the Porter entity, it automatically sends a real-time update to the
-                        frontend via websockets, which updates the porter's location on the floor plan in real-time.
-                    </p>
-                </section>
-                <section id="database-integration">
-                    <h2>Database integration</h2>
-                    <p>
-                        Our backend implementation utilizes Cloud SQL PostgreSQL for our database.
-                        Cloud SQL PostgreSQL is a fully managed relational
-                        database service that provides high performance, scalability, and availability. We chose this
-                        service because it is compatible with Spring Boot and provides automatic failover and data
-                        backup, which is critical for our application's reliability. With Cloud SQL, we were able to set
-                        up our database quickly and easily, and we didn't have to worry about infrastructure management.
-                        We have local
-                        configuration details in the application.yml file, while production configuration can be found
-                        in application-prod.yml. You can configure the database by modifying the datasource username,
-                        password, and instance-connection-name.
-                    </p>
-                </section>
-                <section id="domain-objects">
-                    <h2>Domain Objects</h2>
-                    <p>
-                        We implemented CRUD operations with REST API for our porter, location, delivery, and beacon
-                        domain objects. This allows us to create, read, update, and delete records in our database
-                        through HTTP requests. For example, to create a new porter, a POST request can be sent to the
-                        "/porters" endpoint with the necessary information in the request body. To retrieve all porters,
-                        a GET request can be sent to the same endpoint. We implemented similar endpoints for other
-                        domain objects as well. By using REST API, we make it easier for other systems to integrate with
-                        our system and interact with our data.
-                    </p>
-                    <p>
-                        The object definitions can be found in domain folder, endpoint listeners in controllers folder
-                        and logic in services folder, and database interactions in repositories folder.
-                    </p>
-                </section>
-                <section id="authentication">
-                    <h2>Authentication</h2>
-                    <p>
-                        For authentication, the user sends a login request to the backend, which triggers the server to
-                        send a one-time pin (OTP) via SMS to the user's registered phone number. The user then inputs
-                        the OTP in the mobile app, which the app sends back to the server to verify if it is correct. If
-                        the OTP is valid, the user is authenticated and granted access to the relevant features of the
-                        application. This adds an extra layer of security to ensure that only authorized users can
-                        access the system.
-                    </p>
-                </section>
-                <section id="deployment">
-                    <h2>Deployment</h2>
-                    <p>
-                        We chose Cloud Run for our backend
-                        implementation as it provides a serverless environment and auto-scales based on traffic,
-                        reducing the need for infrastructure management. Cloud Run is a fully managed compute platform
-                        by Google Cloud that allows us to run
-                        containerized applications securely and at scale. The configuration for deploying our
-                        application
-                        to Cloud Run can be found in the cloudbuild.yaml file. This file specifies the build steps and
-                        the Docker image that will be created and deployed to Cloud Run. The deployment process is fully
-                        automated and triggered on every code commit, ensuring that the latest changes are always
-                        deployed.
-                    </p>
-                </section>
-                <section id="final-implementation">
-                    <h2>Final Implementation</h2>
-                    <p>
-                        We were able to successfully implement all the must-have and should-have features in our
-                        project's backend. However, due to time constraints, we were not able to complete the could-have
-                        features, which included the ability to assign deliveries according to priority, track
-                        individual high-priority assets, and integrate with Crash 2222 calls to display live locations
-                        of all crash calls. These features could be implemented in the future as per the client's
-                        requirements.
-                    </p>
-                </section>
-                <br />
-                <br />
+			<!-- Footer -->
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+				</footer>
 
-            </section>
-        </div>
+		</div>
 
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.scrollex.min.js"></script>
-        <script src="assets/js/jquery.scrolly.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-</body>
-
+	</body>
 </html>
