@@ -78,7 +78,7 @@
 					</h2>
 					<p></p>
 				</header>
-				<span class="image main"><img src="../images/Apian Resources/App Iterations.png" alt=""
+				<span class="image fit main bottom"><img src="../images/Apian Resources/App Iterations.png" alt=""
 						class="iterationsBg" /></span>
 				<section id="requirements">
 					<h2>App Requirements</h2>
@@ -166,7 +166,7 @@
 						for and displayed the nearest Bluetooth devices (including BLE beacons) along with their MAC
 						addresses:
 					</p>
-					<span class="image main"><img src="../images/First App Implementation.png" alt=""
+					<span class="image fit main bottom"><img src="../images/First App Implementation.png" alt=""
 							class="iterationBg" />
 						<p class="description">Figure 1: First app implementation, allows user to start and stop
 							scanning for BLE devices. Also able to
@@ -275,7 +275,7 @@
 						completed a delivery. " This was easily achieved by adding a 'Delivery
 						Complete' button with the same functionality as the 'Accept' and 'Reject' buttons.
 					</p>
-					<span class="image main"><img src="../images/Second App Implementation.png" alt=""
+					<span class="image fit main bottom"><img src="../images/Second App Implementation.png" alt=""
 							class="iterationBg" />
 						<p class="description">Figure 2: Second app implementation, allows user to identify themselves
 							via the name text box, whereby the submit button verifies
@@ -348,7 +348,7 @@
 					<br />
 					A more technical explanation with snippets of code can be observed below in Figure 3:
 					</p>
-					<span class="image main"><img src="../images/Sending Beacons.png" alt="" class="iterationBg" />
+					<span class="image fit main bottom"><img src="../images/Sending Beacons.png" alt="" class="iterationBg" />
 						<p class="description">Figure 3: Description of how beacons are identified and transmitted to
 							the backend.
 						</p>
@@ -369,7 +369,7 @@
 						implementation to make it more robust whilst also implementing other important (P1) features.
 					</p>
 					<h3>Login Screen</h3>
-					<span class="image main"><img src="../images/Login Iterations.png" alt="" class="iterationBg" />
+					<span class="image fit main bottom"><img src="../images/Login Iterations.png" alt="" class="iterationBg" />
 						<p class="description">Figure 4: Login screen iterations.
 						</p>
 					</span>
@@ -387,7 +387,7 @@
 						the server to authenticate a user through the LoginDataSource class. The UML diagram
 						for the login functionality can be found below:
 					</p>
-					<span class="image main"><img src="../images/Login UML.png" alt="" class="iterationBgBigger" />
+					<span class="image fit main bottom"><img src="../images/Login UML.png" alt="" class="iterationBgBigger" />
 						<p class="description">Figure 5: Unified Modelling Language (UML) diagram overview of Login
 							functionality.
 						</p>
@@ -400,7 +400,7 @@
 						their applications. For further clarification as to what each function does
 						in a fragment's lifecycle, please refer to the image below:
 					</p>
-					<span class="image main"><img src="../images/Fragment Lifecycle.png" alt="" class="iterationBg" />
+					<span class="image fit main bottom"><img src="../images/Fragment Lifecycle.png" alt="" class="iterationBg" />
 						<p class="description">Figure 6: Android Fragment Lifecycle Overview. <sub>[5]</sub>
 						</p>
 					</span>
@@ -474,7 +474,7 @@
 						bind the buttons on screen to the relevant class Buttons which trigger their own private method
 						when clicked.
 					</p>
-					<span class="image main"><img src="../images/Login OnViewCreated.png" alt=""
+					<span class="image fit main bottom"><img src="../images/Login OnViewCreated.png" alt=""
 							class="iterationLightBg" />
 						<p class="description">Figure 7: Login 'onViewCreated' code
 						</p>
@@ -535,7 +535,7 @@
 						<br>
 						Thankfully, it is fairly simple to pass on context between classes in Android:
 					</p>
-					<span class="image main"><img src="../images/Passing Context.png" alt="" class="iterationBg" />
+					<span class="image fit main bottom"><img src="../images/Passing Context.png" alt="" class="iterationBg" />
 						<p class="description">Figure 8: Obtaining context from 'onAttach' method which is called first
 							in a Fragment's lifecycle and passing it onto our Firebase Messaging Service
 						</p>
@@ -554,7 +554,7 @@
 						had this token, so we overrode the service’s ‘onNewToken’ method, which is triggered
 						automatically whenever there is a request to generate a new FCM token:
 					</p>
-					<span class="image main"><img src="../images/New Token.png" alt="" class="iterationBg" />
+					<span class="image fit main bottom"><img src="../images/New Token.png" alt="" class="iterationBg" />
 						<p class="description">Figure 9: How our Firebase Messaging behaves whenever a new token is
 							generated.
 						</p>
@@ -574,7 +574,7 @@
 						<br /><br />
 						This is what a delivery notification request looks like from our app:
 					</p>
-					<span class="image main"><img src="../images/Notification Request.jpg" alt=""
+					<span class="image fit main bottom"><img src="../images/Notification Request.jpg" alt=""
 							class="iterationSmallBg" />
 						<p class="description">Figure 10: Sample notification request
 						</p>
@@ -613,7 +613,7 @@
 						also allowing them an option to log out, which would preserve the core
 						requirement of phone re-usability between multiple porters.
 					</p>
-					<span class="image main"><img src="../images/Caching Login.png" alt="" class="iterationBg" />
+					<span class="image fit main bottom"><img src="../images/Caching Login.png" alt="" class="iterationBg" />
 						<p class="description">Figure 11: How user credentials are cached upon successful verification
 						</p>
 					</span>
@@ -651,7 +651,7 @@
 						We thought of a neat way to achieve this which was to replace the buttons for 'Start Scanning'
 						and 'Stop Scanning' to 'Available' and 'Unavailable' respectively:
 					</p>
-					<span class="image main"><img src="../images/Availability App.png" alt="" class="iterationBg" />
+					<span class="image fit main bottom"><img src="../images/Availability App.png" alt="" class="iterationBg" />
 						<p class="description">Figure 12: New button labels to match availability status and their
 							corresponding code
 						</p>
@@ -688,7 +688,7 @@
 						Messaging Service so as to retrieve the request in our Scanner Fragment and
 						display it in a 'TextView' object:
 					</p>
-					<span class="image main"><img src="../images/Sending Request.png" alt="" class="iterationBg" />
+					<span class="image fit main bottom"><img src="../images/Sending Request.png" alt="" class="iterationBg" />
 						<p class="description">Figure 13: Sending local broadcast from Firebase service and retrieving
 							it in Scanner Fragment
 						</p>
@@ -704,7 +704,7 @@
 						tidy with the Apian colour scheme. We are proud to say that our final design
 						met all these targets.
 					</p>
-					<span class="image main"><img src="../images/Scanner Fragment Final Design.png" alt=""
+					<span class="image fit main bottom"><img src="../images/Scanner Fragment Final Design.png" alt=""
 							class="iterationBg" />
 						<p class="description">Figure 14: Final Scanner Fragment screen design
 						</p>
@@ -722,7 +722,7 @@
 						their thoughts on the user interface and experience. Being able to export the app as an APK with
 						professional branding also ticked off our penultimate app requirement.
 					</p>
-					<span class="image main"><img src="../images/App Icon Design.png" alt="" class="iterationBg" />
+					<span class="image fit main bottom"><img src="../images/App Icon Design.png" alt="" class="iterationBg" />
 						<p class="description">Figure 15: Our Apian branded app icon
 						</p>
 					</span>
@@ -755,7 +755,7 @@
 						the 'Unavailable' button is clicked. We also implemented the service to acquire a WakeLock as
 						shown below in Figure 16:
 					</p>
-					<span class="image main"><img src="../images/WakeLockService.png" alt="" class="iterationBg" />
+					<span class="image fit main bottom"><img src="../images/WakeLockService.png" alt="" class="iterationBg" />
 						<p class="description">Figure 16: Foreground 'Wake Lock Service' implementation
 						</p>
 					</span>
@@ -768,7 +768,7 @@
 						which wrapped up multiple months of learning android development, coding and debugging.
 					</p>
 					<h2>Final app implementation</h2>
-					<span class="image main"><img src="../images/Final App Flow.png" alt="" class="iterationBgBigger" />
+					<span class="image fit main bottom"><img src="../images/Final App Flow.png" alt="" class="iterationBgBigger" />
 						<p class="description">Figure 17: Final App Implementation Data Flow
 						</p>
 					</span>
