@@ -1,217 +1,217 @@
 <!DOCTYPE HTML>
+
 <html>
+	<head>
+		<title>PorterBLE</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
 
-<head>
-	<title>Testing</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
-</head>
-
-<body class="is-preload">
-
-	<!-- Wrapper  -->
-	<div id="wrapper">
-
-		<!-- Header -->
-		<header id="header">
-			<a href="index.html" class="logo">PorterBLE</a>
-		</header>
-
-		<!-- Nav -->
-		<nav id="nav">
-			<ul class="links">
-				<li><a href="Requirements.html">Requirements</a></li>
-				<li><a href="Research.html">Research</a></li>
-				<li><a href="Algorithms.html">Algorithms</a></li>
-				<li><a href="UI.html">UI</a></li>
-				<li><a href="System.html">System</a></li>
-				<li><a href="Implementation.html">Implementation</a></li>
-				<li class="active"><a href="Testing.html">Testing</a></li>
-				<li><a href="Evaluation.html">Evaluation</a></li>
-				<li><a href="Appendices.html">Appendices</a></li>
-			</ul>
-			<ul class="icons">
-				<li><a href="https://github.com/ApianxUCL" class="icon brands fa-github"><span
-							class="label">GitHub</span></a></li>
-			</ul>
-		</nav>
-
-		<!-- Main -->
-		<div id="main">
-
-			<!-- Post -->
-			<section class="post">
-				<header class="major">
-					<h2>System Testing
-						<h3 class="subheadingLinks">
-							<a href="#unit-testing">Unit Testing</a>
-							<a href="#manual-testing">Manual Testing</a>
-							<a href="#integration-testing">Integration Testing</a>
-							<br />
-							<a href="#user-testing">User Acceptance Testing</a>
-						</h3>
-					</h2>
-					<p></p>
+			<!-- Header -->
+				<header id="header">
+				<h1 id="logo"><a href="index.html" class="images"><img src="images/ApianLogoWhite.png" alt="" width="155" 
+					height="55" style="background:transparent; padding: 10px;"/></a></h1>
+					<!--navgoeshere-->
 				</header>
-				<section id="testing-strategy">
-					<h3>Testing Strategy</h3>
-					<p>
-						Testing is a crucial part of the software development process that ensures the quality and
-						reliability
-						of an application. In our project, we used a combination of unit, integration,
-						and user acceptance testing
-						to ensure that our application met the requirements and delivered a seamless user experience.
-					</p>
-				</section>
-				<section id="unit-testing">
-					<h3>Unit Testing</h3>
-					<p>
-						Unit testing is an essential part of our software development process. We utilize unit testing
-						to ensure that individual units of our code, such as methods and functions, function as expected
-						and meet the requirements.
-					</p>
-						<h4>Web Application</h4>
-						<p>
-							We used <b>JUnit</b> as our primary unit testing tool for our backend services, and <b>Jest</b> for our frontend components.
-						</p>
-						<p>
-							JUnit is a popular Java testing framework that is widely used for unit testing. It provides a
-							simple
-							and
-							efficient way to test individual units of code, such as methods and functions, in isolation from
-							the
-							rest of the application. We used JUnit to test the individual components of our backend service,
-							such as
-							controllers, services, and repositories, to ensure they functioned correctly and met the
-							requirements.
-						</p>
-						<p>
-							In addition to backend testing, we also performed frontend testing using Jest. Jest is a popular
-							testing framework for React
-							applications
-							that provides a simple and efficient way to test individual components in isolation. We used
-							Jest to
-							test individual components' functionality, such as rendering and event handling, and ensure they
-							functioned as expected.
-						</p>
-						<h4>Mobile Application</h4>
-						<p>
-							To unit test our Android application, we made use of ...
-						</p>
-				</section>
-				<section id="integration-testing">
-					<h3>Integration Testing</h3>
-					<p>
-						Integration testing is another critical component of our software development process. We use
-						integration testing to verify that different components of our application, such as the backend
-						and
-						frontend, work together correctly and meet the requirements. We use MockMVC and React Testing
-						Library as our primary integration testing tools.
-					</p>
-					<p>
-						MockMVC is a powerful testing framework that is used to test the integration of controllers with
-						the
-						rest of the application. We utilized MockMVC to simulate requests to our application's API
-						endpoints
-						and
-						verify the response from the backend. This helped us to test the integration of our backend
-						components.
-					</p>
-					<p>
-						React Testing Library, on the other hand, allowed us to test the integration of our frontend
-						components
-						with the rest of the application. We used it to simulate user interactions and verify the
-						response
-						from
-						the backend service. This helped us to ensure that our application's frontend components
-						functioned
-						correctly and provided a seamless user experience.
-					</p>
-					<p>
-						We conduct integration testing by creating test cases that simulate the flow of data and
-						interactions between different components of our application. We then run these test cases using
-						our
-						testing tool to verify that the actual output and behavior of our application match the expected
-						output and behavior.
-					</p>
-				</section>
-				<section id="manual-testing">
-					<h3>Manual Testing</h3>
-					<p>
-						Manual testing was also an essential part of our testing process. We conducted manual tests to
-						verify
-						the application's functionality and ensure that it met the requirements. This included testing
-						the application's user interface, functionality, and usability to ensure that it was intuitive
-						and
-						easy to use.
-					</p>
-				</section>
-				<section id="user-testing">
-					<h3>User Acceptance Testing</h3>
 
-					<p>
-						During the testing phase, we invited porters from the hospital to use our application and
-						provide
-						us valuable first-hand feedback. This feedback was crucial in identifying any usability issues
-						and
-						making necessary improvements to the application. We observed the porters as they used the
-						application,
-						noting any issues they encountered or features they found confusing.
-					</p>
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Requirements</h2>
+							<p>The process of defining and refining project requirements.</p>
+						</header>
+						<div class="row gtr-150">
+							<div class="col-4 col-12-medium">
 
-					<p>
-						We also conducted feedback sessions with the porters to gather their thoughts on the
-						application's
-						functionality, usability, and overall experience. This feedback allowed us to make necessary
-						changes
-						to the application and ensure that it met the porters' needs and requirements.
-					</p>
+								<!-- Sidebar -->
+								<section id="sidebar">
+									<section>
+										<h3>Contents</h3>
+										<ol>
+											<li><a href="#unit-testing">Unit Testing</a></li>
+											<li><a href="#manual-testing">Manual Testing</a></li>
+											<li><a href="#integration-testing">Integration Testing</a></li>
+											<li><a href="#user-testing">User Acceptance Testing</a></li>
+										</ol>
+										<br>
+									</section>
 
-					<p>
-						Involving the porters in the testing process was a valuable step in ensuring that our
-						application
-						provided a high-quality user experience and met the needs of its users. Their feedback allowed
-						us to
-						identify and address any issues before the application was deployed, ensuring that it was fully
-						functional and user-friendly.
-					</p>
+									<section>
+										<h3>Contents</h3>
+										<a href="#" class="image fit"><img src="images/placeholder.png" alt="" /></a>
+									</section>
+								</section>
 
-					<p>
-						In conclusion, testing is an essential part of the software development process, and it ensures
-						the
-						quality and reliability of an application. We used a combination of testing tools and
-						methodologies,
-						including JUnit, MockMVC, Jest, React Testing Library, manual testing, and user testing, to
-						ensure
-						that our application met the requirements and delivered a seamless user experience. By testing
-						our
-						application thoroughly, we were able to identify and fix issues early in the development process
-						and
-						ensure that our application provided a high-quality user experience.
-					</p>
-				</section>
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
 
-				<br />
-				<br />
+								<section id="testing-strategy">
+									<h3>Testing Strategy</h3>
+									<p>
+										Testing is a crucial part of the software development process that ensures the quality and
+										reliability
+										of an application. In our project, we used a combination of unit, integration,
+										and user acceptance testing
+										to ensure that our application met the requirements and delivered a seamless user experience.
+									</p>
+								</section>
+								<section id="unit-testing">
+									<h3>Unit Testing</h3>
+									<p>
+										Unit testing is an essential part of our software development process. We utilize unit testing
+										to ensure that individual units of our code, such as methods and functions, function as expected
+										and meet the requirements.
+									</p>
+										<h4>Web Application</h4>
+										<p>
+											We used <b>JUnit</b> as our primary unit testing tool for our backend services, and <b>Jest</b> for our frontend components.
+										</p>
+										<p>
+											JUnit is a popular Java testing framework that is widely used for unit testing. It provides a
+											simple
+											and
+											efficient way to test individual units of code, such as methods and functions, in isolation from
+											the
+											rest of the application. We used JUnit to test the individual components of our backend service,
+											such as
+											controllers, services, and repositories, to ensure they functioned correctly and met the
+											requirements.
+										</p>
+										<p>
+											In addition to backend testing, we also performed frontend testing using Jest. Jest is a popular
+											testing framework for React
+											applications
+											that provides a simple and efficient way to test individual components in isolation. We used
+											Jest to
+											test individual components' functionality, such as rendering and event handling, and ensure they
+											functioned as expected.
+										</p>
+										<h4>Mobile Application</h4>
+										<p>
+											To unit test our Android application, we made use of ...
+										</p>
+								</section>
+								<section id="integration-testing">
+									<h3>Integration Testing</h3>
+									<p>
+										Integration testing is another critical component of our software development process. We use
+										integration testing to verify that different components of our application, such as the backend
+										and
+										frontend, work together correctly and meet the requirements. We use MockMVC and React Testing
+										Library as our primary integration testing tools.
+									</p>
+									<p>
+										MockMVC is a powerful testing framework that is used to test the integration of controllers with
+										the
+										rest of the application. We utilized MockMVC to simulate requests to our application's API
+										endpoints
+										and
+										verify the response from the backend. This helped us to test the integration of our backend
+										components.
+									</p>
+									<p>
+										React Testing Library, on the other hand, allowed us to test the integration of our frontend
+										components
+										with the rest of the application. We used it to simulate user interactions and verify the
+										response
+										from
+										the backend service. This helped us to ensure that our application's frontend components
+										functioned
+										correctly and provided a seamless user experience.
+									</p>
+									<p>
+										We conduct integration testing by creating test cases that simulate the flow of data and
+										interactions between different components of our application. We then run these test cases using
+										our
+										testing tool to verify that the actual output and behavior of our application match the expected
+										output and behavior.
+									</p>
+								</section>
+								<section id="manual-testing">
+									<h3>Manual Testing</h3>
+									<p>
+										Manual testing was also an essential part of our testing process. We conducted manual tests to
+										verify
+										the application's functionality and ensure that it met the requirements. This included testing
+										the application's user interface, functionality, and usability to ensure that it was intuitive
+										and
+										easy to use.
+									</p>
+								</section>
+								<section id="user-testing">
+									<h3>User Acceptance Testing</h3>
+				
+									<p>
+										During the testing phase, we invited porters from the hospital to use our application and
+										provide
+										us valuable first-hand feedback. This feedback was crucial in identifying any usability issues
+										and
+										making necessary improvements to the application. We observed the porters as they used the
+										application,
+										noting any issues they encountered or features they found confusing.
+									</p>
+				
+									<p>
+										We also conducted feedback sessions with the porters to gather their thoughts on the
+										application's
+										functionality, usability, and overall experience. This feedback allowed us to make necessary
+										changes
+										to the application and ensure that it met the porters' needs and requirements.
+									</p>
+				
+									<p>
+										Involving the porters in the testing process was a valuable step in ensuring that our
+										application
+										provided a high-quality user experience and met the needs of its users. Their feedback allowed
+										us to
+										identify and address any issues before the application was deployed, ensuring that it was fully
+										functional and user-friendly.
+									</p>
+				
+									<p>
+										In conclusion, testing is an essential part of the software development process, and it ensures
+										the
+										quality and reliability of an application. We used a combination of testing tools and
+										methodologies,
+										including JUnit, MockMVC, Jest, React Testing Library, manual testing, and user testing, to
+										ensure
+										that our application met the requirements and delivered a seamless user experience. By testing
+										our
+										application thoroughly, we were able to identify and fix issues early in the development process
+										and
+										ensure that our application provided a high-quality user experience.
+									</p>
+								</section>
+				
+							</div>
+						</div>
+					</div>
+				</div>
 
-			</section>
-
+			<!-- Footer -->
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+				</footer>
 
 		</div>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-</body>
-
+	</body>
 </html>

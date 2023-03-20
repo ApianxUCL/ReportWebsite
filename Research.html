@@ -1,118 +1,221 @@
 <!DOCTYPE HTML>
+
 <html>
+	<head>
+		<title>PorterBLE</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
 
-<head>
-	<title>Research</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
-</head>
-
-<body class="is-preload">
-
-	<!-- Wrapper  -->
-	<div id="wrapper">
-
-		<!-- Header -->
-		<header id="header">
-			<a href="index.html" class="logo">PorterBLE</a>
-		</header>
-
-		<!-- Nav -->
-		<nav id="nav">
-			<ul class="links">
-				<li><a href="Requirements.html">Requirements</a></li>
-				<li class="active"><a href="Research.html">Research</a></li>
-				<li><a href="Algorithms.html">Algorithms</a></li>
-				<li><a href="UI.html">UI</a></li>
-				<li><a href="System.html">System</a></li>
-				<li><a href="Implementation.html">Implementation</a></li>
-				<li><a href="Testing.html">Testing</a></li>
-				<li><a href="Evaluation.html">Evaluation</a></li>
-				<li><a href="Appendices.html">Appendices</a></li>
-			</ul>
-			<ul class="icons">
-				<li><a href="https://github.com/ApianxUCL" class="icon brands fa-github"><span
-							class="label">GitHub</span></a></li>
-			</ul>
-		</nav>
-
-		<!-- Main -->
-		<div id="main">
-
-			<!-- Post -->
-			<section class="post">
-				<header class="major">
-					<h2><a href="Research/Article.html">Related Projects Review</h2>
-					<p></p>
+			<!-- Header -->
+				<header id="header">
+				<h1 id="logo"><a href="index.html" class="images"><img src="images/ApianLogoWhite.png" alt="" width="155" 
+					height="55" style="background:transparent; padding: 10px;"/></a></h1>
+					<!--navgoeshere-->
 				</header>
-				<p><span class="image left"><img src="images/startingOut.png" alt="" /></span>
-					Meeting the team members and setting up collaborative tools.</p>
-				<p>
-					Setting up a meeting with our client, discussing project requirements and
-					questions for the client.
-				</p>
-				<ul class="actions special">
-					<li><a href="Research/Article.html" class="button">Full Article</a></li>
-				</ul>
-			</section>
 
-			<!-- Posts -->
-			<section class="posts">
-				<article>
-					<header>
-						<h2><a href="Research/Article1.html">Technology<br />
-								Review</a></h2>
-					</header>
-					<a href="Research/Article1.html" class="image fit"><img src="images/marketAndTechnologyResearch.png"
-							alt="" /></a>
-					<p>
-						<!-- Posts -->
-					</p>
-					<ul class="actions special">
-						<li><a href="Research/Article1.html" class="button">Full Article</a></li>
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Requirements</h2>
+							<p>The process of defining and refining project requirements.</p>
+						</header>
+						<div class="row gtr-150">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+								<section id="sidebar">
+									<section>
+										<h3>Contents</h3>
+										<ol class="actions">
+											<li><a href="#one">Related Projects</a></li>
+											<li><a href="#two">Technology Review</a></li>
+											<li><a href="#three">Bibliography</a></li>
+										</ol>
+										<br>
+									</section>
+
+									<section>
+										<h3>Contents</h3>
+										<a href="#" class="image fit"><img src="images/placeholder.png" alt="" /></a>
+									</section>
+								</section>
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- one -->
+								<section id="one">
+									<h3>Related Projects</h3>									
+									<h4>UBI Solutions: Hospital Assets Tracking</h4>
+									<img src="images/placeholder.png" alt="" />
+									<p>
+										UBI Solutions is a French software company primarily focussed on providing asset
+										tracking solutions. It creates a variety of solutions for corporations in the food
+										industry, laundry, retail and more. Typically solutions revolve around using RFID
+										tags and mobile or fixed readers. [1] However, other solutions are also used and the
+										company's focus is providing an effective solution tailored to a client.
+									</p>
+									<p>
+										In this review we will look at one solution, picked among many of the projects
+										due to its similarity to the context of our own project. It was in part picked randomly
+										from several similar projects, due to said projects also being similarly well documented
+										with similar merits.
+									</p>
+									<p>
+										UBI Solutions' Hospital Assets Tracking makes use of BLE tags and beacons to track
+										assets such as bed sheets moving throughout the hospital. They work on a gateway system
+										where BLE gateways track individual BLE tags throughout the hospital. BLE tags each have
+										unique identifiers that they transmit. In addition to tracking, the tags are fitted with
+										shock, temperature and humidity sensors where relevant to track the health of the asset.
+									</p>
+									<p>
+										<b>The main goals of the system are:</b><br>
+										To free up staff time<br>
+										Reducing loss of equipment due to theft<br>
+										Reduce costs due to negligence<br>
+										To reliably log asset usage data<br>
+										Implement automatic preventative care of assets<br>
+									</p>
+									<p>
+										The solution is effective, minimal and cost effective. It has a lot of the features
+										that we would need for a hospital porter tracking system, where instead of assets we would
+										track porters. It has some redundant features such as the sensors to detect health of the
+										asset, however the overall principle is the same. It does however miss 1. a method to
+										communicate to porters their tasks and 2. a method to decide which porters are optimal for
+										tasks. Both features missing are quite essential and something we would have to explore
+										ourselves.
+									</p>
+
+									<h4>Navenio: Hospital Staff Tracking</h4>
+
+									<p>
+										Navenio is an Oxford based company focussed on increasing ROI of hospitals. They achieve
+										this with their smartphone based location tracking and task assignment solution to assign tasks.
+										They have utilize a mixture of IUD, GPS and wifi to accurately track staff locations. Further
+										to this, they utilize a task assignment system and collect logistic data with some amount of
+										automated processing to generate recommendations to increase efficiency.
+									</p>
+									<p>
+										As mentioned, Navenio's solution utilizes IUD, GPS and wifi to accurately track staff location.
+										They utilize PDR algorithms to adjust for ways a smartphone is held and deep learning based
+										correction
+										of inertia discrepancies due to positioning of the phone. They also make use of camera data where
+										possible.GPD and wi-Fi is used to accurately detect when someone enters or exits the building.
+										The system is interestingly capable of multiple floor location and tracking. Maps of the hospital
+										are
+										automatically built using historical tracking data of all the staff.
+									</p>
+									<p>
+										<b>The main goals of the system are:</b><br>
+										To free up staff time<br>
+										Optimal assignment of tasks<br>
+										Provide a solution that has no dependency on installing infrastructure<br>
+										To reliably log movement data for efficiency recommendations<br>
+									</p>
+									<p>
+										The solution is effective, minimal and cost effective, installation wise. Development of the
+										algorithms
+										and potential problems may create heavy costs however. As the solution utilizes AI to accurately
+										location
+										track, extensive collection of phone movement data is required and will create heavy costs.
+									</p>
+
+								</section>
+
+								<!-- two -->
+								<section id="two">
+									<h3>Technology Review</h3>
+									<img src="images/placeholder.png" alt="" />
+									<p>
+										Following the client meeting, we wrote up requirements, which can be seen in the requirements
+										section of the portfolio blog. In an attempt to try and refine our requirements further
+										we conducted market research. Having set up the relevant communication channels with
+										Apian such as Slack, WhatsApp and Email, we tried to confirm a tech stack with our client.
+										This involved investigating the pricings, discussing budgets and caveats with different
+										technologies and their competitors.
+									<p>
+										Knowing our client was working on a small budget, being a startup, we took a greater
+										focus on budget options for Bluetooth tracking and communication. For instance, we asked
+										the Computer Science help desk what BLE tracking devices they had available to help
+										direct our choices. Furthermore, we explored funding options from UCL, discussing and
+										writing emails to ask what UCL would be willing to fund. For example if UCL could fund a
+										premium firebase subscription.
+									</p>
+									<p>
+										The potential tracking options we considered were, low power BLE beacons which many
+										companies sold. Options we saw included Aruba, Zebra, Moko Smart and many others.
+										We considered GPS, however we knew this might not be feasible for hospitals with
+										many floors especially in the basement for example, so it was decided that this
+										would be a last option. We also considered using bluetooth and GPS in combination
+										for more accurate tracking.
+										<br>
+										At this stage, we could already foresee problems arising. For example, a group member who
+										had prior experience with bluetooth suggested that bluetooth may not be extremely accurate
+										due signal interferences and obstacles blocking signal such as a phone case, and walls,
+										particularly as many doors in hospitals are thick fire doors.
+									</p>
+									<p>
+										We knew that we would likely have to implement a mobile app for porters and a website for
+										administrators in the system. From discussing with Apian we knew that this was usually
+										specific people who assigned tasks to porters but could also be doctors themselves.
+										<br>
+										From this we could tell that we needed to decide on a frontend framework, how to implement
+										the app and how to store data in the backend. Hosting would also need to be handled.
+										As we knew that we were using several different platforms (mobile and web) we immediately
+										knew that React Native was a safe bet due to its performant and cross platform nature.
+										Some of our members also had experience with React Native making it an excellent choice.
+										After discussion we felt that React native would also be a viable option for the mobile app
+										but soon realized the levels of permissions that would be needed would warrant an application
+										and a webpage would not suffice.
+										<br>
+										Our client, Apian who had experience in the area also guided us to use create an Android app.
+										We decided that the app would be best written in Kotlin.
+					
+									</p>
+								</section>
+
+								<!-- three -->
+								<section id="three">
+									<h3>Bibliography</h3>
+									<ul>
+										<li><li>1</li>
+										<li>2</li>
+										<li>3</li>
+										<li>4</li>
+										<li>5</li> 
+									</ul>
+								</section>
+													
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 					</ul>
-				</article>
-				<article>
-					<header>
-						<h2><a href="Research/Article2.html">Summary of <br />
-								Technical Decisions</a></h2>
-					</header>
-					<a href="Research/Article2.html" class="image fit"><img src="images/clientConsultation.png"
-							alt="" /></a>
-					<p>
-						<!-- Posts -->
-					</p>
-					<ul class="actions special">
-						<li><a href="Research/Article2.html" class="button">Full Article</a></li>
-					</ul>
-				</article>
-				<article>
-					<header>
-						<h2><a href="Research/Article3.html">Biibliography<br />
-								and Appendices</a></h2>
-					</header>
-					<a href="Research/Article3.html" class="image fit"><img src="images/placeholder.png" alt="" /></a>
-					<p> </p>
-					<ul class="actions special">
-						<li><a href="Research/Article3.html" class="button">Coming Soon</a></li>
-					</ul>
-				</article>
-			</section>
+				</footer>
+
 		</div>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-</body>
-
+	</body>
 </html>
