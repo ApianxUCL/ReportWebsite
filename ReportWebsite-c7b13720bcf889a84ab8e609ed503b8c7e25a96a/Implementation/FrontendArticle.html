@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Research</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            var numFeatures = $('.feature-container').length;
+            var currentFeature = 0;
+
+            $('.prev-btn').click(function () {
+                $('.feature-container').eq(currentFeature).hide();
+                currentFeature = (currentFeature - 1 + numFeatures) % numFeatures;
+                $('.feature-container').eq(currentFeature).show();
+            });
+
+            $('.next-btn').click(function () {
+                $('.feature-container').eq(currentFeature).hide();
+                currentFeature = (currentFeature + 1) % numFeatures;
+                $('.feature-container').eq(currentFeature).show();
+            });
+        });
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="../index.html" class="logo">PorterBLE</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+				<li><a href="../Requirements.html">Requirements</a></li>
+				<li><a href="../Research.html">Research</a></li>
+				<li><a href="../Algorithms.html">Algorithms</a></li>
+				<li><a href="../UI.html">UI</a></li>
+				<li><a href="../System.html">System</a></li>
+				<li class="active"><a href="../Implementation.html">Implementation</a></li>
+				<li><a href="../Testing.html">Testing</a></li>
+				<li><a href="../Evaluation.html">Evaluation</a></li>
+				<li><a href="../Appendices.html">Appendices</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://github.com/ApianxUCL" class="icon brands fa-github"><span
+                            class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <section class="post">
+                <header class="major">
+                    <h2>Frontend Implementation
+                        <h3 class="subheadingLinks">
+                            <a href="#requirements">Requirements</a>
+                            <a href="#approach">Initial Approach</a>
+                            <a href="#code-structure">Code Structure</a>
+                            <a href="#live-monitoring">Live Monitoring</a>
+                            <a href="#floor-plan">Floor plan</a>
+                            <a href="#beacons-locations">Beacons and Locations</a>
+                            <a href="#porters-deliveries">Porters and Deliveries</a>
+                            <br/>
+                            <a href="#firebase-hosting">Firebase Hosting</a>
+                            <a href="#final-implementation">Final Implementation</a>
+                        </h3>
+                    </h2>
+                    <p></p>
+                </header>
+                <section id="requirements">
+                    <h2>Requirements</h2>
+                    <p>
+                        When it comes to implementing a frontend for a software application, there are several
+                        important requirements that must be taken into consideration. These requirements ensure that
+                        the frontend is not only visually appealing and user-friendly but also functional,
+                        efficient. Implementing a frontend that
+                        meets these requirements is crucial for providing a high-quality user experience and
+                        maximizing the usability and accessibility of the application. In this article, we will
+                        discuss some of the key requirements for implementing a frontend and how we addressed them
+                        in our application.
+                    </p>
+                    <h4>
+                        Must have:
+                    </h4>
+                    <ul>
+                        <li>Display the live locations of all the porters</li>
+                        <li>Display the delivery requests and their status</li>
+                        <li>Ability to request a delivery</li>
+                        <li>Ability to add and remove porters from the system</li>
+                        <li>Ability to add and remove beacons from the system</li>
+                    </ul>
+                    <h4>
+                        Should have:
+                    </h4>
+                    <ul>
+                        <li>User should be able to get real-time feedback about porters' responses</li>
+                        <li>Ability to add and remove transport locations from the system</li>
+                    </ul>
+                    <h4>
+                        Could have:
+                    </h4>
+                    <ul>
+                        <li>Ability to assign deliveries according to priority</li>
+                        <li>See the live locations of all crash calls/integrate into Crash 2222 calls.</li>
+                        <li>Ability to track individual high priority assets</li>
+                    </ul>
+                </section>
+                <section id="approach">
+                    <h2>Initial Approach</h2>
+                    <p>
+                        In our initial approach to implementing the frontend for our application, we evaluated several
+                        popular frameworks to determine which one would best meet our needs. After careful
+                        consideration, we
+                        decided on React due to its popularity, performance, and availability of a large and active
+                        developer community. Additionally, some team members had previous experience with React, which
+                        made
+                        it a natural choice for our application. By choosing React, we were able to create reusable
+                        components and efficient updates, resulting in a user-friendly and responsive application that
+                        met
+                        the requirements of our users.
+                    </p>
+                </section>
+                <section id="code-structure">
+                    <h2>Code Structure</h2>
+                    <p>
+                        Our project's code structure is designed to promote modularity and reusability, with separate
+                        files for each of the pages and reusable components such as forms and tables. This approach
+                        allowed us to create a clean and organized codebase, making it easier to maintain and update our
+                        application over time.
+
+                        Each page of our application has its own file, containing all the necessary components, styling,
+                        and logic for that page. This approach allowed us to keep our code organized and easy to
+                        understand, making it easier for team members to work on different parts of the application
+                        independently.
+
+                        In addition, we created reusable components such as forms and tables, which we used across
+                        multiple pages. By creating these components, we were able to reduce duplicate code and promote
+                        consistency across our application.
+                    </p>
+                </section>
+                <section id="live-monitoring">
+                    <h2>Live Monitoring</h2>
+                    <p>
+                        In our application, we utilized websockets to receive real-time updates about the location and
+                        status of porters. Websockets are a bi-directional communication protocol that allows for
+                        efficient and seamless data transfer between the server and client. This means that our frontend
+                        was able to receive instant updates about porter positions and any status updates.
+                    </p>
+                    <p>
+                        By using websockets, we were able to ensure that our application was always up-to-date with the
+                        latest information, providing users with real-time tracking of porter positions. This was
+                        particularly important for our application, which required fast and seamless updates to ensure
+                        that users could track porter locations accurately and efficiently.
+                    </p>
+                    <p>
+                        To implement the websockets in our React frontend, we used the react-stomp library. This library
+                        provided a convenient and efficient way to set up and manage websockets within our application,
+                        allowing us to easily receive real-time updates about the location and status of porters.
+                    </p>
+                </section>
+                <section id="floor-plan">
+                    <h2>Floor Plan</h2>
+                    <p>
+                        In our application, we implemented the floor plan initially using the devextreme-react library,
+                        which allowed us to draw the plan and add interactive elements. However, we encountered
+                        limitations when trying to display markers on the plan, which required more flexibility than the
+                        library could provide.
+
+                        To overcome this challenge, we decided to implement the floor plan using plain HTML and CSS
+                        instead. This approach allowed us to have more control over the layout and design of the plan,
+                        making it easier to add and display markers as needed.
+
+                        By implementing the floor plan with HTML and CSS, we were able to achieve the flexibility we
+                        needed, while still maintaining a clean and organized code structure.
+                    </p>
+                </section>
+                <section id="beacons-locations">
+                    <h2>Beacons and Locations</h2>
+                    <p>
+                        In our application, we needed to provide the ability to add beacons and locations by specifying
+                        their position
+                        on the floor plan, as well as a list component to view all beacons and locations in the system.
+                        Functionality of beacons and locations were very similar, so we were able to
+                        reuse many of the components we had already developed.
+                    </p>
+                    <p>
+                        To add a beacon or location, users could simply click on the position on the floor plan where
+                        they wanted to
+                        place the beacon or location, and fill out a form to provide additional information such as the
+                        location name
+                        or beacon MAC adress. This information was then sent to the backend where it was saved in the
+                        database, and the newly added item would appear on
+                        the floor plan and in the list component.
+                    </p>
+                </section>
+                <section id="porters-deliveries">
+                    <h2>Porters and Deliveries</h2>
+                    <p>
+                        Unlike beacons and locations, our porters and deliveries did not need to be positioned on the
+                        floor plan. This
+                        made the implementation of these features more straightforward, as we did not need to
+                        incorporate any specific floor plan functionality.
+
+                        To add a new porter or delivery, users simply filled out a form providing relevant information
+                        such as their name, phone number or delivery locations. This information was then sent to the
+                        backend server
+                        where it was saved to the database, and
+                        displayed in the appropriate list component.
+                    </p>
+                    <p>
+                        As with the beacon and location feature, we were able to reuse some of the same components we
+                        had developed
+                        for other parts of our application, such as the form and table components. This enabled us to
+                        maintain a consistent user interface and code structure throughout our project.
+                    </p>
+                </section>
+                <section id="firebase-hosting">
+                    <h2>Firebase Hosting</h2>
+                    <p>
+                        After we completed the development of our application, we needed to choose a platform to host
+                        our frontend. We ultimately decided on Firebase Hosting, which allowed us to deploy our frontend
+                        code easily and efficiently. We configured our hosting settings in the firebase.json file, which
+                        allowed us to specify custom rules and configurations for our deployment. One of the most
+                        beneficial features of Firebase Hosting was its ability to automatically deploy our code in the
+                        pipeline on every code commit, which helped to ensure that our app was always up-to-date and
+                        running smoothly. By choosing Firebase Hosting, we were able to streamline our deployment
+                        process and make it much more efficient.
+                    </p>
+                </section>
+                <section id="final-implementation">
+                    <h2>Final implementation</h2>
+                    <p>
+                        Due to time constraints, we were only able to implement all the must-have and should-have
+                        features within the given timeline. While we would have loved to implement all the could-have
+                        features, such ability to assign deliveries according to priority, integrating Crash calls,
+                        and ability to track individual high-priority
+                        assets, we had to prioritize our efforts to ensure the
+                        core functionality of the application was working properly.
+
+                        Despite not being able to complete all of the could-have features, we were proud of what we were
+                        able to accomplish within the project timeline. By focusing on the most important aspects of the
+                        application, we were able to create a reliable and user-friendly tool that hospital staff could
+                        use to streamline their daily operations.
+                    </p>
+                </section>
+                <br />
+                <br />
+
+            </section>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
