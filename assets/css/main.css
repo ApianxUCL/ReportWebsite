@@ -4390,6 +4390,10 @@ input, select, textarea {
 		justify-content: space-between;
 		margin-bottom: 2rem;
 	  }
+
+	.team-row p {
+		font-size: 1.1rem;
+	}
 	  
 	  .team-member {
 		display: flex;
