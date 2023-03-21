@@ -4264,7 +4264,7 @@ input, select, textarea {
 	  }
 	  
 	  .slideshow-container {
-		height: 920px;
+		height: 838px;
 		overflow: hidden;
 		padding-top: 3rem;
 	  }
@@ -4286,9 +4286,14 @@ input, select, textarea {
 	  
 	  .prevBtn,
 	  .nextBtn {
-		margin-left: 3rem;
-		border-radius: 100%;
-		background-color: rgb(255, 220, 22);
+		border-radius: 60%;
+		border: 3px solid white!important;
+		background-color: rgb(252, 221, 136);
+		cursor: pointer;
+		margin-right: 2rem;
+		font-size: larger;
+		font-weight: bolder;
+		display: table-row;
 	  }
 	  
 	  .buttons-container {
