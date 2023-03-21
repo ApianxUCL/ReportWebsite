@@ -4264,7 +4264,7 @@ input, select, textarea {
 	  }
 	  
 	  .slideshow-container {
-		height: 838px;
+		height: 810px;
 		overflow: hidden;
 		padding-top: 3rem;
 	  }
@@ -4288,12 +4288,19 @@ input, select, textarea {
 	  .nextBtn {
 		border-radius: 60%;
 		border: 3px solid white!important;
+		color: #181920;
 		background-color: rgb(252, 221, 136);
 		cursor: pointer;
 		margin-right: 2rem;
 		font-size: larger;
 		font-weight: bolder;
 		display: table-row;
+	  }
+
+	  .prevBtn:hover,
+	  .nextBtn:hover {
+		background-color: rgba(252, 188, 13, 0.925);
+		color: #10002e!important;
 	  }
 	  
 	  .buttons-container {
