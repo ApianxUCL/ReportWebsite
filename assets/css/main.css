@@ -3135,8 +3135,8 @@ input, select, textarea {
 			border-color: #ffc43b;
 		}
 
-		.spotlight.style2 .content {
-			border-color: #5480f1;
+		.spotlight.style1 .content {
+			border-color: #ffb300;
 		}
 
 		.spotlight.style3 .content {
@@ -3193,61 +3193,61 @@ input, select, textarea {
 		padding: 6em 0 4em 0;
 	}
 
-		.wrapper.style2 {
+		.wrapper.style1 {
 			background: #ffc43b;
 		}
 
-			.wrapper.style2 input[type="text"]:focus,
-			.wrapper.style2 input[type="password"]:focus,
-			.wrapper.style2 input[type="email"]:focus,
-			.wrapper.style2 select:focus,
-			.wrapper.style2 textarea:focus {
+			.wrapper.style1 input[type="text"]:focus,
+			.wrapper.style1 input[type="password"]:focus,
+			.wrapper.style1 input[type="email"]:focus,
+			.wrapper.style1 select:focus,
+			.wrapper.style1 textarea:focus {
 				border-color: rgba(255, 255, 255, 0.5);
 			}
 
-			.wrapper.style2 input[type="submit"]:hover, .wrapper.style2 input[type="submit"]:active,
-			.wrapper.style2 input[type="reset"]:hover,
-			.wrapper.style2 input[type="reset"]:active,
-			.wrapper.style2 input[type="button"]:hover,
-			.wrapper.style2 input[type="button"]:active,
-			.wrapper.style2 .button:hover,
-			.wrapper.style2 .button:active {
+			.wrapper.style1 input[type="submit"]:hover, .wrapper.style1 input[type="submit"]:active,
+			.wrapper.style1 input[type="reset"]:hover,
+			.wrapper.style1 input[type="reset"]:active,
+			.wrapper.style1 input[type="button"]:hover,
+			.wrapper.style1 input[type="button"]:active,
+			.wrapper.style1 .button:hover,
+			.wrapper.style1 .button:active {
 				background-color: rgba(255, 255, 255, 0.075) !important;
 				box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
 				color: #ffffff !important;
 			}
 
-			.wrapper.style2 input[type="submit"]:active,
-			.wrapper.style2 input[type="reset"]:active,
-			.wrapper.style2 input[type="button"]:active,
-			.wrapper.style2 .button:active {
+			.wrapper.style1 input[type="submit"]:active,
+			.wrapper.style1 input[type="reset"]:active,
+			.wrapper.style1 input[type="button"]:active,
+			.wrapper.style1 .button:active {
 				background-color: rgba(255, 255, 255, 0.25) !important;
 			}
 
-			.wrapper.style2 input[type="submit"].primary,
-			.wrapper.style2 input[type="reset"].primary,
-			.wrapper.style2 input[type="button"].primary,
-			.wrapper.style2 .button.primary {
+			.wrapper.style1 input[type="submit"].primary,
+			.wrapper.style1 input[type="reset"].primary,
+			.wrapper.style1 input[type="button"].primary,
+			.wrapper.style1 .button.primary {
 				background-color: #ffffff;
 				color: #ffc43b !important;
 			}
 
-				.wrapper.style2 input[type="submit"].primary:hover, .wrapper.style2 input[type="submit"].primary:active,
-				.wrapper.style2 input[type="reset"].primary:hover,
-				.wrapper.style2 input[type="reset"].primary:active,
-				.wrapper.style2 input[type="button"].primary:hover,
-				.wrapper.style2 input[type="button"].primary:active,
-				.wrapper.style2 .button.primary:hover,
-				.wrapper.style2 .button.primary:active {
+				.wrapper.style1 input[type="submit"].primary:hover, .wrapper.style1 input[type="submit"].primary:active,
+				.wrapper.style1 input[type="reset"].primary:hover,
+				.wrapper.style1 input[type="reset"].primary:active,
+				.wrapper.style1 input[type="button"].primary:hover,
+				.wrapper.style1 input[type="button"].primary:active,
+				.wrapper.style1 .button.primary:hover,
+				.wrapper.style1 .button.primary:active {
 					background-color: rgba(255, 255, 255, 0.075) !important;
 					box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
 					color: #ffffff !important;
 				}
 
-				.wrapper.style2 input[type="submit"].primary:active,
-				.wrapper.style2 input[type="reset"].primary:active,
-				.wrapper.style2 input[type="button"].primary:active,
-				.wrapper.style2 .button.primary:active {
+				.wrapper.style1 input[type="submit"].primary:active,
+				.wrapper.style1 input[type="reset"].primary:active,
+				.wrapper.style1 input[type="button"].primary:active,
+				.wrapper.style1 .button.primary:active {
 					background-color: rgba(255, 255, 255, 0.25) !important;
 				}
 
@@ -3448,7 +3448,7 @@ input, select, textarea {
 		background-image: url("../../images/banner.jpg");
 		background-position: center center;
 		background-size: cover;
-		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+		box-shadow: 0 0.25em 0.5em 0 rgba(255, 255, 255, 0);
 		min-height: 100vh;
 		position: relative;
 		text-align: center;
@@ -3464,10 +3464,10 @@ input, select, textarea {
 		}
 
 		#banner:after {
-			background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
-			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
-			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
-			background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
+			background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.9), rgba(23, 24, 32, 0.171)), url("images/overlay.png");;
+			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.9), rgba(23, 24, 32, 0.171)), url("images/overlay.png");;
+			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.9), rgba(23, 24, 32, 0.171)), url("images/overlay.png");;
+			background-image: linear-gradient(top, rgba(23, 24, 32, 0.9), rgba(23, 24, 32, 0.171)), url("images/overlay.png");;
 			content: '';
 			display: block;
 			height: 100%;
