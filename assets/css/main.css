@@ -4360,7 +4360,7 @@ input, select, textarea {
 	  .gradient-text:hover {
 		background-image: linear-gradient(120deg, #48e4ff, #0095eb,#31e0ff,#0095eb,#31e0ff,#0095eb,#31e0ff,#0095eb,#48e4ff);
 		animation-name: fade;
-		animation-duration: 0.5s;
+		animation-duration: 0.9s;
 	  }
 	  
 	  @keyframes fade {
