@@ -2517,7 +2517,6 @@ input, select, textarea {
 			position: absolute;
 			left: 0;
 			top: 0;
-			background-image: url("images/overlay.png");
 			width: 100%;
 			height: 100%;
 			z-index: 1;
@@ -3136,8 +3135,8 @@ input, select, textarea {
 			border-color: #ffc43b;
 		}
 
-		.spotlight.style2 .content {
-			border-color: #5480f1;
+		.spotlight.style1 .content {
+			border-color: #ffb300;
 		}
 
 		.spotlight.style3 .content {
@@ -3194,61 +3193,61 @@ input, select, textarea {
 		padding: 6em 0 4em 0;
 	}
 
-		.wrapper.style2 {
+		.wrapper.style1 {
 			background: #ffc43b;
 		}
 
-			.wrapper.style2 input[type="text"]:focus,
-			.wrapper.style2 input[type="password"]:focus,
-			.wrapper.style2 input[type="email"]:focus,
-			.wrapper.style2 select:focus,
-			.wrapper.style2 textarea:focus {
+			.wrapper.style1 input[type="text"]:focus,
+			.wrapper.style1 input[type="password"]:focus,
+			.wrapper.style1 input[type="email"]:focus,
+			.wrapper.style1 select:focus,
+			.wrapper.style1 textarea:focus {
 				border-color: rgba(255, 255, 255, 0.5);
 			}
 
-			.wrapper.style2 input[type="submit"]:hover, .wrapper.style2 input[type="submit"]:active,
-			.wrapper.style2 input[type="reset"]:hover,
-			.wrapper.style2 input[type="reset"]:active,
-			.wrapper.style2 input[type="button"]:hover,
-			.wrapper.style2 input[type="button"]:active,
-			.wrapper.style2 .button:hover,
-			.wrapper.style2 .button:active {
+			.wrapper.style1 input[type="submit"]:hover, .wrapper.style1 input[type="submit"]:active,
+			.wrapper.style1 input[type="reset"]:hover,
+			.wrapper.style1 input[type="reset"]:active,
+			.wrapper.style1 input[type="button"]:hover,
+			.wrapper.style1 input[type="button"]:active,
+			.wrapper.style1 .button:hover,
+			.wrapper.style1 .button:active {
 				background-color: rgba(255, 255, 255, 0.075) !important;
 				box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
 				color: #ffffff !important;
 			}
 
-			.wrapper.style2 input[type="submit"]:active,
-			.wrapper.style2 input[type="reset"]:active,
-			.wrapper.style2 input[type="button"]:active,
-			.wrapper.style2 .button:active {
+			.wrapper.style1 input[type="submit"]:active,
+			.wrapper.style1 input[type="reset"]:active,
+			.wrapper.style1 input[type="button"]:active,
+			.wrapper.style1 .button:active {
 				background-color: rgba(255, 255, 255, 0.25) !important;
 			}
 
-			.wrapper.style2 input[type="submit"].primary,
-			.wrapper.style2 input[type="reset"].primary,
-			.wrapper.style2 input[type="button"].primary,
-			.wrapper.style2 .button.primary {
+			.wrapper.style1 input[type="submit"].primary,
+			.wrapper.style1 input[type="reset"].primary,
+			.wrapper.style1 input[type="button"].primary,
+			.wrapper.style1 .button.primary {
 				background-color: #ffffff;
 				color: #ffc43b !important;
 			}
 
-				.wrapper.style2 input[type="submit"].primary:hover, .wrapper.style2 input[type="submit"].primary:active,
-				.wrapper.style2 input[type="reset"].primary:hover,
-				.wrapper.style2 input[type="reset"].primary:active,
-				.wrapper.style2 input[type="button"].primary:hover,
-				.wrapper.style2 input[type="button"].primary:active,
-				.wrapper.style2 .button.primary:hover,
-				.wrapper.style2 .button.primary:active {
+				.wrapper.style1 input[type="submit"].primary:hover, .wrapper.style1 input[type="submit"].primary:active,
+				.wrapper.style1 input[type="reset"].primary:hover,
+				.wrapper.style1 input[type="reset"].primary:active,
+				.wrapper.style1 input[type="button"].primary:hover,
+				.wrapper.style1 input[type="button"].primary:active,
+				.wrapper.style1 .button.primary:hover,
+				.wrapper.style1 .button.primary:active {
 					background-color: rgba(255, 255, 255, 0.075) !important;
 					box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
 					color: #ffffff !important;
 				}
 
-				.wrapper.style2 input[type="submit"].primary:active,
-				.wrapper.style2 input[type="reset"].primary:active,
-				.wrapper.style2 input[type="button"].primary:active,
-				.wrapper.style2 .button.primary:active {
+				.wrapper.style1 input[type="submit"].primary:active,
+				.wrapper.style1 input[type="reset"].primary:active,
+				.wrapper.style1 input[type="button"].primary:active,
+				.wrapper.style1 .button.primary:active {
 					background-color: rgba(255, 255, 255, 0.25) !important;
 				}
 
@@ -3449,7 +3448,7 @@ input, select, textarea {
 		background-image: url("../../images/banner.jpg");
 		background-position: center center;
 		background-size: cover;
-		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+		box-shadow: 0 0.25em 0.5em 0 rgba(255, 255, 255, 0);
 		min-height: 100vh;
 		position: relative;
 		text-align: center;
@@ -3465,10 +3464,10 @@ input, select, textarea {
 		}
 
 		#banner:after {
-			background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
-			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
-			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
-			background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
+			background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.9), rgba(23, 24, 32, 0.171)), url("images/overlay.png");;
+			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.9), rgba(23, 24, 32, 0.171)), url("images/overlay.png");;
+			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.9), rgba(23, 24, 32, 0.171)), url("images/overlay.png");;
+			background-image: linear-gradient(top, rgba(23, 24, 32, 0.9), rgba(23, 24, 32, 0.171)), url("images/overlay.png");;
 			content: '';
 			display: block;
 			height: 100%;
@@ -4103,3 +4102,221 @@ input, select, textarea {
 					}
 
 	}
+
+	.testingBg {
+		background-image: linear-gradient(
+		  to right,
+		  rgb(238, 52, 255),
+		  rgb(255, 36, 182)
+		);
+		border-radius: 5%;
+	  }
+	  
+	  .uiBg {
+		background-image: linear-gradient(
+		  to right,
+		  rgb(255, 184, 52),
+		  rgb(255, 216, 110)
+		);
+		border-radius: 5%;
+	  }
+	  
+	  .systemBg {
+		background-image: linear-gradient(
+		  to right,
+		  rgb(23, 182, 255),
+		  rgb(0, 243, 243)
+		);
+		border-radius: 5%;
+	  }
+	  
+	  .systemBg2 {
+		background-image: linear-gradient(
+		  to right,
+		  rgb(255, 77, 77),
+		  rgb(255, 31, 31)
+		);
+		border-radius: 5%;
+	  }
+	  
+	  .systemBg3 {
+		background-image: linear-gradient(
+		  to right,
+		  rgb(77, 255, 91),
+		  rgb(0, 243, 122)
+		);
+		border-radius: 5%;
+	  }
+	  
+	  .systemBg4 {
+		background-image: linear-gradient(
+		  to right,
+		  rgb(255, 208, 77),
+		  rgb(243, 109, 0)
+		);
+		border-radius: 5%;
+	  }
+	  
+	  .iterationsBg {
+		background-image: linear-gradient(
+		  to right,
+		  rgba(255, 220, 23, 0.25),
+		  rgba(255, 196, 0, 0.25)
+		);
+		width: 80%;
+		border-radius: 5%!important;
+	  }
+	  
+	  .iterationBg {
+		border-radius: 3%!important;
+		background-image: linear-gradient(
+		  to right,
+		  rgb(230, 157, 0),
+		  rgb(241, 198, 80),
+		  rgb(255, 216, 108)
+		);
+		width: 85%!important;
+		height: 85%!important;
+	  }
+	  
+	  .iterationLightBg {
+		border-radius: 3%!important;
+		width: 75%!important;
+		height: 75%!important;
+	  }
+	  
+	  .iterationSmallBg {
+		border-radius: 7%!important;
+		width: 35%!important;
+		height: 35%!important;
+	  }
+	  
+	  .iterationBgBigger {
+		border-radius: 3%!important;
+		background-image: linear-gradient(
+		  to right,
+		  rgb(230, 157, 0),
+		  rgb(241, 198, 80),
+		  rgb(255, 216, 108)
+		);
+		width: 96%!important;
+		height: 96%!important;
+	  }
+	  
+	  .description {
+		color:#ffe17d;
+		font-size:large;
+	  }
+	  
+	  .descriptionTesting {
+		color:#f940ff;
+		font-size:large;
+	  }
+	  
+	  .descriptionSystem {
+		color:#8592ff;
+		font-size:large;
+	  }
+	  
+	  .center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	  }
+	  
+	  .implementation-container {
+		border-radius: 15%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 750px;
+		background-image: linear-gradient(
+		  to bottom,
+		  rgb(230, 157, 0),
+		  rgb(238, 187, 45),
+		  rgb(255, 216, 108)
+		);
+		color: black!important;
+		padding: 3rem 1rem 3rem 2rem;
+		margin-bottom: 3rem;
+		font-weight: bold;
+	  }
+	  
+	  .implementation-container h3 {
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bolder;
+	  }
+	  
+	  .feature-container {
+		width: 70%; /* set the desired width */
+		height: 100%;
+	  }
+	  
+	  .slideshow-container {
+		height: 920px;
+		overflow: hidden;
+		padding-top: 3rem;
+	  }
+	  
+	  .slideshow-container h3 {
+		text-align: center;
+		padding-top: 50px;
+		margin-right: 6rem;
+		margin-bottom: -0.4rem;
+	  }
+	  
+	  .slideshow-container img {
+		margin-bottom: -4rem;
+	  }
+	  
+	  .slideshow-buttons {
+		display: inline-block;
+	  }
+	  
+	  .prevBtn,
+	  .nextBtn {
+		margin-left: 3rem;
+		border-radius: 100%;
+		background-color: rgb(255, 220, 22);
+	  }
+	  
+	  .buttons-container {
+		width: 20%;
+		display: inline-block;
+		justify-content: space-between;
+		align-items:flex-start;
+		margin-right: 1.25rem;
+	  }
+	  
+	  .prev-btn,
+	  .next-btn {
+		border-radius: 60%;
+		border: 3px solid white!important;
+		background-color: rgb(252, 221, 136);
+		cursor: pointer;
+		margin-bottom: 20px;
+		font-size: larger;
+		font-weight: bolder;
+		display: block;
+	  }
+	  
+	  .prev-btn:hover,
+	  .next-btn:hover {
+		background-color: rgba(252, 188, 13, 0.678);
+		color: #383838!important;
+	  }
+	  
+	  .subheadingLinks {
+		background-color: #c0c0c018;
+	  }
+	  
+	  .subheadingLinks a {
+		color: rgba(146, 135, 104, 0.452)!important;
+		margin-right: 2rem;
+	  }
+	  
+	  .subheadingLinks a:hover {
+		color: rgb(255, 70, 163)!important;
+		margin-right: 2rem;
+	  }
