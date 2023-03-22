@@ -331,22 +331,48 @@
 							<h2>Floor Plan</h2>
 							<p>
 								In our application, we implemented the floor plan initially using the devextreme-react
-								library,
-								which allowed us to draw the plan and add interactive elements. However, we encountered
-								limitations when trying to display markers on the plan, which required more flexibility
-								than the
-								library could provide.
-
-								To overcome this challenge, we decided to implement the floor plan using plain HTML and
-								CSS
-								instead. This approach allowed us to have more control over the layout and design of the
-								plan,
-								making it easier to add and display markers as needed.
-
-								By implementing the floor plan with HTML and CSS, we were able to achieve the
-								flexibility we
-								needed, while still maintaining a clean and organized code structure.
+								library, which allowed us to draw a basic plan and add interactive elements to it:
 							</p>
+							<img width="65%" src="../images/old floorplan.png">	
+							<p>
+								However, we encountered limitations when trying to display markers on the plan, which required more flexibility
+								than the library could provide. Furthermore, it became very clear that in hospital settings, a floor plan
+								would be much more complex in terms of room layout, as well as having multiple buildings and floors. Our concerns
+								were proven to be true when our client handed us over a two-floor plan of Wansbeck Hospital, the hospital where
+								our project would be initially deployed.<br/>
+								
+								With the future expandability of our web app in mind, it would be wrong to base our entire solution on just one
+								hospital floor plan, breaking it down into individual room components and floors and storing everything, which
+								would also take a considerable amount of time to fetch from our backend and load.<br/>
+
+								As a result, we decided to display each floor of the hospital as an image, and overlay circular markers on top
+								of it to act as porter, beacon or delivery locations.<br/>
+								
+								To implement this, we coded the floor plan using Javascript and CSS, whilst also exporting it into a React
+								component to be used in our Live Monitoring, Beacons and Deliveries page.
+							</p>
+							<h3>Overlaying Markers on Top of the Floor Plan</h3>
+							<p>
+								As mentioned previously, with future expandability in mind, we wanted to create an interactive map that would scale
+								perfectly no matter the original resolution of the image, how zoomed into the image a user was, or how scaled an image
+								is by the page that uses it. Hence, we stored the marker's positions as x and y percentage offsets from the top left
+								of the image rather than storing them as x and y pixel values.
+								This allowed us to add a 'zoom in/out' functionality for hospital staff to observe a more detailed delivery tracking view.
+								Additionally, it gave us the advantage that markers would always appear correctly positioned on the floor plan, even if it
+								was loaded in multiple sizes across our web app. This approach also ensured that the interactive map would scale correctly
+								regardless of the image's resolution, and enabled us to avoid having to store and fetch individual room components and
+								floors.							
+							</p>
+							<img src="../images/marker code.JPG">	
+							<p>
+								The 'calculateMarkerPosition' function above is what is responsible to convert markers' percentage offsets (markerPosition.x
+								and markerPosition.y) to pixel values depending on the current resolutions of the image (imageSize.width and imageSize.height),
+								the zoomLevel a hospital staff member is currently using and the percentage an image is restricted by in the floor plan component(
+								This is usually 100% to indicate no restriction but sometimes images with extremely large resolutions provided need to be scaled
+								down before they are exported).
+							</p>
+							<h3>Adding Delivery Locations and Beacons to the Floor Plan</h3>
+							<h3>Final Product</h3>
 							<img src="../images/floorPlan.jpg">
 						</section>
 						<section id="beacons-locations">
