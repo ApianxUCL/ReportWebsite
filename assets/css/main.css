@@ -110,9 +110,13 @@ input, select, textarea {
 	}
 
 		a:hover {
-			color: #ffc43b !important;
+			color: #ffd982 !important;
 			border-bottom-color: transparent;
 		}
+
+	a.active {
+		color: #ffb710 !important;
+	}	
 
 	strong, b {
 		color: #ffffff;

@@ -99,7 +99,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="../Implementation.html">Implementation</a>
+						<a class="active" href="../Implementation.html">Implementation</a>
 						<ul>
 							<li>
 								<a href="../Implementation/AndroidAppArticle.html">Android App</a>
@@ -329,11 +329,12 @@
 						</section>
 						<section id="floor-plan">
 							<h2>Floor Plan</h2>
+							<h3>Initial Attempt</h3>
 							<p>
 								In our application, we implemented the floor plan initially using the devextreme-react
 								library, which allowed us to draw a basic plan and add interactive elements to it:
 							</p>
-							<img width="65%" src="../images/old floorplan.png">	
+							<img width="60%" src="../images/old floorplan.png">	
 							<p>
 								However, we encountered limitations when trying to display markers on the plan, which required more flexibility
 								than the library could provide. Furthermore, it became very clear that in hospital settings, a floor plan
@@ -366,12 +367,18 @@
 							<img src="../images/marker code.JPG">	
 							<p>
 								The 'calculateMarkerPosition' function above is what is responsible to convert markers' percentage offsets (markerPosition.x
-								and markerPosition.y) to pixel values depending on the current resolutions of the image (imageSize.width and imageSize.height),
+								and markerPosition.y) to dynamic pixel values depending on the current resolutions of the image (imageSize.width and imageSize.height),
 								the zoomLevel a hospital staff member is currently using and the percentage an image is restricted by in the floor plan component(
 								This is usually 100% to indicate no restriction but sometimes images with extremely large resolutions provided need to be scaled
 								down before they are exported).
 							</p>
 							<h3>Adding Delivery Locations and Beacons to the Floor Plan</h3>
+							<p>
+								To make it simple for hospital staff to indicate where they have placed physical beacons on a floorplan or point out where deliveries
+								should be picked up from and delivered to, we added functionality to our component, so that if it is called from the 'Beacons' or
+								'Deliveries' page, a beacon marker appears when the map is clicked, and users can save this beacon and its corresponding MAC-address:
+							</p>
+							<img style="width: 80%;" src="../images/beacon selection.gif">
 							<h3>Final Product</h3>
 							<img src="../images/floorPlan.jpg">
 						</section>
