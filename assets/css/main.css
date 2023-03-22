@@ -4451,4 +4451,29 @@ input, select, textarea {
 	  .member-links a i {
 		font-size: 18px;
 	  }
+
+	  .techRow {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 3rem;
+	  }
 	  
+	  .techItem {
+		text-align: center;
+		margin: 0 2.75rem;
+	  }
+	  
+	  .techItem img {
+		display: block;
+		border-radius: 30%;
+		height: 11rem;
+		width: 11rem;
+		margin: 0 auto;
+	  }
+	  
+	  .techItem p {
+		color: #ffe799;  
+		margin: 1.6rem 0 0;
+		font-size: 1.25rem;
+	  }

@@ -236,6 +236,33 @@
 										<button class="next-btn">&#9660;</button>
 									</div>
 								</div>
+								<h2>Main Tools & Dependencies</h2>
+								<div class="techRow">
+									<div class="techItem">
+									  <a href="https://kotlinlang.org/">
+										<img src="../images/tech/kotlin.jpg">
+										<p><br/>Kotlin was the main programming language used to develop our application.</p>
+									  </a>
+									</div>
+									<div class="techItem">
+									  <a href="https://developer.android.com/studio">
+										<img src="../images/tech/android studio.jpg">
+										<p>The app was developed in Android Studio which made it easy to export and debug our implementation</p>
+									  </a>
+									</div>
+									<div class="techItem">
+									  <a href="https://gradle.org/">
+										<img src="../images/tech/gradle.jpg">
+										<p><br/>Gradle was used everytime we wanted to build executable versions of our app.</p>
+									  </a>
+									</div>
+									<div class="techItem">
+									  <a href="https://developer.android.com/studio/command-line/adb">
+										<img src="../images/tech/adb.jpg">
+										<p>The android debug bridge was used to debug our app on physical devices with live terminal feedback.</p>
+									  </a>
+									</div>
+								  </div>
 							</section>
 							<section id="approach">
 								<h2>Team Background</h2>
@@ -248,6 +275,20 @@
 									including Android Developers and LinkedIn Learning.
 								</p>
 								<h2>Initial Approach</h2>
+								<div class="techRow">
+									<div class="techItem">
+									  <a href="https://developer.android.com/guide/topics/connectivity/bluetooth">
+										<img src="../images/tech/android bluetooth.jpg">
+										<p>The Android Bluetooth library allowed us to start and stop scanning for BLE devices.</p>
+									  </a>
+									</div>
+									<div class="techItem">
+									  <a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView">
+										<img src="../images/tech/recyclerview.jpg">
+										<p>The Recycler View allowed us to display details about detected beacons as a dynamically growing/shrinking table.</p>
+									  </a>
+									</div>
+								  </div>
 								<p>The first step was to successfully implement a foundational part of our Android application,
 									which was the ability to scan for
 									BLE devices. This was a difficult task to implement, as we were just getting used to the Android
@@ -359,6 +400,20 @@
 									identity on our app, we can reduce excess technology and save funds for more critical equipment.
 								</p>
 								<h3>Implementing requirements 1 & 2</h3>
+								<div class="techRow">
+									<div class="techItem">
+									  <a href="https://developer.android.com/reference/android/telephony/SmsManager">
+										<img src="../images/tech/smsmanager.jpg">
+										<p>The Android SMSManager library allowed us to send SMS texts upon responding to a delivery request.</p>
+									  </a>
+									</div>
+									<div class="techItem">
+									  <a href="https://developer.android.com/reference/java/net/HttpURLConnection">
+										<img src="../images/tech/httpurlconnection.jpg">
+										<p>The HTTPURLConnection class allowed us to send a HTTP request the our backend to verify a porter's identity.</p>
+									  </a>
+									</div>
+								  </div>
 								<p>
 									To design our application, we followed an iterative design approach. We felt that this would be
 									the right approach as we were fortunate enough to participate
@@ -461,7 +516,7 @@
 								</p>
 							</section>
 							<section id="fragment-split">
-								<h2>Separation of Concerns</h2>
+								<h2>Separation of Concerns - Splitting Fragments</h2>
 								<p>
 									After informing our clients that we had met the core app requirements that were essential for
 									the first launch, we then looked to iterate over our current
@@ -472,6 +527,26 @@
 									<p class="description">Figure 4: Login screen iterations.
 									</p>
 								</span>
+								<div class="techRow">
+									<div class="techItem">
+										<a href="https://developer.android.com/reference/java/net/HttpURLConnection">
+										  <img src="../images/tech/httpurlconnection.jpg">
+										  <p>The HTTPURLConnection class allowed us to send a HTTP request the our backend to verify a porter's credentials and one-time pin.</p>
+										</a>
+									  </div>
+									<div class="techItem">
+									  <a href="https://developer.android.com/reference/android/util/Xml?hl=en">
+										<img src="../images/tech/xml.jpg">
+										<p><br/>Using an XML file for the Login page allowed us to create a scalable fragment that works for all screen resolutions.</p>
+									  </a>
+									</div>
+									<div class="techItem">
+										<a href="https://developer.android.com/guide/fragments">
+										  <img src="../images/tech/fragment.jpg">
+										  <p>Separating our app into fragments made it intuitive to transfer data from the login page to the porter page.</p>
+										</a>
+									  </div>
+								  </div>
 								<p>
 									The most obvious improvement which could be made based on our previous implementations was the
 									login functionality, which was not up to industry standards. Especially when it
@@ -581,6 +656,26 @@
 							</section>
 							<section id="enhancing-security">
 								<h3>Making Login More Secure</h3>
+								<div class="techRow">
+									<div class="techItem">
+										<a href="https://firebase.google.com/docs/cloud-messaging">
+										  <img src="../images/tech/fcm.jpg">
+										  <p><br/>Firebase Cloud Messaging (FCM) allowed us to create a two-way secure communication channel with our backend via a token exchange.</p>
+										</a>
+									  </div>
+									<div class="techItem">
+									  <a href="https://developer.android.com/reference/android/content/BroadcastReceiver">
+										<img src="../images/tech/broadcast receiver.png">
+										<p><br/>Using a Broadcast Receiver allowed us to trigger a notification whenever a Firebase message was received.</p>
+									  </a>
+									</div>
+									<div class="techItem">
+										<a href="https://developer.android.com/reference/java/net/HttpURLConnection">
+										  <img src="../images/tech/httpurlconnection.jpg">
+										  <p>The HTTPURLConnection class allowed us to send a HTTP request the our backend to register a porter's FCM token.</p>
+										</a>
+									  </div>
+								  </div>
 								<p>
 									At this point, we had a fully functional login page, where porters' login credentials were
 									verified against our backend server database records to check whether there was
@@ -617,7 +712,7 @@
 									a few lines of code to our app's dependencies which specified that we wanted to use Firebase's
 									messaging and token services.
 								</p>
-								<h3>Firebase Messaging implementation steps</h3>
+								<h3>Firebase Messaging Implementation Steps</h3>
 								<p>
 									Now that we had access to all the necessary resources, we moved on to implement the new feature.
 									Upon launching our app and specifically the Login Fragment, our Firebase Messaging
@@ -696,6 +791,20 @@
 							</section>
 							<section id="enhancing-ux">
 								<h2>Improving porter (user) experience</h2>
+								<div class="techRow">
+									<div class="techItem">
+										<a href="">
+										  <img src="../images/tech/shared preferences.jpg">
+										  <p><br/>Accessing a device's shared preferences allowed us to locally store a porter's credentials so that they do not have to login every single time the app was launched.</p>
+										</a>
+									  </div>
+									<div class="techItem">
+										<a href="https://developer.android.com/reference/java/net/HttpURLConnection">
+										  <img src="../images/tech/httpurlconnection.jpg">
+										  <p><br/>The HTTPURLConnection class allowed us to send a HTTP request the our backend to indicate a porter's availability.</p>
+										</a>
+									  </div>
+								  </div>
 								<p>
 									As we have already stated, user experience was a top priority for our mobile application, as we
 									didn't want to slow down porters trying to perform their daily tasks.
@@ -777,6 +886,20 @@
 								requests via the app.
 								</p>
 								<h3>Revamping Scanner Fragment User Interface</h3>
+								<div class="techRow">
+									<div class="techItem">
+									  <a href="https://developer.android.com/reference/android/content/BroadcastReceiver">
+										<img src="../images/tech/broadcast receiver.png">
+										<p><br/>Using a local Broadcast Receiver allowed us to notify the Scanner Fragmenty to update its views whenever there was a request.</p>
+									  </a>
+									</div>
+									<div class="techItem">
+										<a href="https://developer.android.com/reference/android/util/Xml?hl=en">
+										  <img src="../images/tech/xml.jpg">
+										  <p><br/>Using an XML file for the Scanner page allowed us to create a scalable fragment that works for all screen resolutions.</p>
+										</a>
+									  </div>								  
+								  </div>
 								<p>
 									In terms of functionality, most requirements had been implemented by this point. However, the
 									Scanner Fragment was not looking very appealing to use, especially compared
@@ -828,6 +951,26 @@
 							</section>
 							<section id="final-implementation">
 								<h2>Implementing the Final Requirement</h2>
+								<div class="techRow">
+									<div class="techItem">
+									  <a href="https://developer.android.com/training/scheduling/wakelock">
+										<img src="../images/tech/wakelock.jpg">
+										<p>Using a Wake Lock keeps and Android device awake as long as the app holding it is active.</p>
+									  </a>
+									</div>
+									<div class="techItem">
+										<a href="https://developer.android.com/guide/components/foreground-services">
+										  <img src="../images/tech/foregroundservice.jpg">
+										  <p>Launching a Foreground Service for the app allowed us to keep it running as long as it is scanning for BLE beacons.</p>
+										</a>
+									  </div>
+									<div class="techItem">
+										<a href="https://developer.android.com/reference/android/app/NotificationManager">
+										  <img src="../images/tech/notificationmanager.jpg">
+										  <p>Using the Notification Manager class allowed us to generate a notification if a foreground service was running.</p>
+										</a>
+									  </div>  
+								  </div>
 								<p>
 									We were now approaching the end of our implementation process, with the only requirement left to
 									meet being: <b>The app should scan in the background for BLE beacons and
