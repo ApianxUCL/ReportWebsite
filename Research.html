@@ -257,16 +257,10 @@
 										possible.GPD and wi-Fi is used to accurately detect when someone enters or exits the building.
 										The system is interestingly capable of multiple floor location and tracking. Maps of the hospital
 										are
-										automatically built using historical tracking data of all the staff.
-									</p>
-									<h4>IMU</h4>
-
-									<p>
+										automatically built using historical tracking data of all the staff. 
+									
 										
 									</p>
-
-									<h4>GPS</h4>
-
 									<p>
 										<b>The main goals of the system are:</b><br>
 										To free up staff time<br>
@@ -275,13 +269,67 @@
 										To reliably log movement data for efficiency recommendations<br>
 									</p>
 									<p>
-										The solution is effective, minimal and cost effective, installation wise. Development of the
+										The solution is effective, minimal and cost efficient, installation wise. Development of the
 										algorithms
 										and potential problems may create heavy costs however. As the solution utilizes AI to accurately
 										location
 										track, extensive collection of phone movement data is required and will create heavy costs.
 									</p>
+									<p>
+										
+										To pick the right technology, 
+										for our solution, we further research these technologies navenio uses and weigh their pros and cons.
+									</p>
+									<h4>Inertial Measurement Unit</h4>
 
+									<p>
+										Navenio's use of IMU tracks the directional movement of a phone through the hospital.  IMU stands for Inertial Measurement Unit, which is a device that measures the orientation, velocity, and acceleration of an object. IMUs are commonly used in various applications, including aerospace, robotics, and navigation systems [].
+									</p>
+									<p>
+										An IMU typically contains a set of sensors, such as accelerometers and gyroscopes, which measure linear acceleration and angular velocity, respectively []. Some advanced IMUs may also include magnetometers and barometers, which can measure magnetic fields and atmospheric pressure, respectively [].
+									</p>
+									<p>
+										The IMU uses the data from these sensors to calculate the object's position, velocity, and orientation. The accelerometer measures the linear acceleration in three dimensions, which is then integrated to obtain velocity and position. The gyroscope measures angular velocity, which is also integrated to obtain the object's orientation.
+									</p>
+									<p>
+										However, IMUs are not perfect, and there are some common sources of error that can affect the accuracy of the measurements. For example, the accelerometer can be affected by vibrations or shocks [], while the gyroscope may drift over time due to temperature changes or manufacturing imperfections []. To mitigate these errors, IMUs may include algorithms that can filter out noise or use other sensors, such as magnetometers, to correct for drift [].
+									</p>
+									<p>
+										IMUs can track location data and movement with extremely low latency, compared to other potential 
+										tracking methods. This is likely why navenio has integrated them for their tracking solution. However 
+										IMUs are by no means a reliable technology for location tracking on their own, due to their frequent need for calibration, 
+										but more importantly the huge variation in their quality between phones. If we cannot be 
+										reliably certain of a phone's accuracy with regard to its location over time, we cannot 
+										use this technology on its own. Navenio utilizes this technology in combination with many other 
+										technologies to gauge error and correct this, in particular they cite using PDR algorithms, however 
+										due to both the costs that developing such algorithms would entail, our client's budget and 
+										the length of the project, this approach is not feasible.
+									</p>
+
+									<h4>Global Positioning System</h4>
+
+									<p>
+										GPS stands for Global Positioning System, which is a satellite-based navigation system used to determine the precise location of a receiver on the Earth's surface. The GPS system consists of a network of about 30 satellites orbiting the Earth, ground control stations, and GPS receivers.
+									</p>
+									<p>
+										A GPS receiver receives signals from multiple GPS satellites, which transmit radio signals containing information about their location and time []. The GPS receiver uses this information to calculate its own location, based on the time it takes for the signals to reach the receiver [].
+									</p>
+									<p>
+										To determine its position, the GPS receiver needs to receive signals from at least four GPS satellites. The receiver measures the time it takes for each signal to travel from the satellite to the receiver. Using the time difference between the arrival of signals from multiple satellites, the GPS receiver can determine its distance from each satellite, and thus its position on the Earth's surface [].
+									</p>
+									<p>
+										The GPS system also takes into account the effect of the Earth's atmosphere on the radio signals. The atmosphere can cause the signals to be delayed or distorted, which can affect the accuracy of the GPS measurements. To correct for this, the GPS system uses a technique called differential GPS, which compares the GPS measurements from a stationary GPS receiver at a known location to those from a mobile receiver to determine the atmospheric effects and remove them from the calculations [].
+									</p>
+									<p>
+										While GPS is generally effective at determining position, even in buildings with considerable obstacles, 
+										it struggles in several ways. GPS becomes more and more inaccurate when obstructed, and would not be 
+										suitable for a building with many thick firedoors, several floors and large metal devices to obstruct 
+										signal further, i.e. a hospital. The nature of how GPS functions also means that it is slow to update 
+										and this is not ideal for hospitals where time can be so critical and errors matter so much. As 
+										mentioned before, due to these flaws, Navenio likely integrates their other technologies, however, 
+										integrating so many technologies is out of the scope of this project due to the cost of development 
+										and low budget of our client.
+									</p>
 								</section>
 
 								<!-- two -->
@@ -305,7 +353,7 @@
 										premium firebase subscription.
 									</p>
 									<p>
-										The potential tracking options we considered were, low power BLE beacons which many
+										The potential tracking options we considered after were, low power BLE beacons which many
 										companies sold. Options we saw included Aruba, Zebra, Moko Smart and many others.
 										We considered GPS, however we knew this might not be feasible for hospitals with
 										many floors especially in the basement for example, so it was decided that this
@@ -333,7 +381,6 @@
 										<br>
 										Our client, Apian who had experience in the area also guided us to use create an Android app.
 										We decided that the app would be best written in Kotlin.
-					
 									</p>
 								</section>
 
