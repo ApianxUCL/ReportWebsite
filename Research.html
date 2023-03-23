@@ -149,33 +149,25 @@
 									<h3>Related Projects</h3>		
 									<br><br><br><br><br>							
 									<h4>UBI Solutions: Hospital Assets Tracking</h4>
+									<p></p>
 
 								</section>
+									<p>
+										Our task consists of creating a hospital porter tracking solution in order to increase 
+										the efficiency of porters within hospitals. In particular and contrary to other past 
+										projects, our solution focusses on tracking porters and setting them tasks in order to 
+										best coordinate delivery of medical freight using drones. This comes with the associated 
+										problems of timing porters based on drone arrival times.
+									</p>
+									<p>
+										It is important to review existing projects so that one may bring forward their merits in 
+										our solution. Additionally, by reviewing existing solutions, not only can we learn from the 
+										merits, we may also learn from any shortcomings and flaws with regard to previous projects.
+									</p>
 
-								<section>
-									
-									
-									<span class="image fit main bottom"><img src="images/placeholder3.jpg" alt="" /></span>
-									
-									<span class="image"><img src="images/placeholder3.jpg" alt="" /></span>
-									<section id="three" class="spotlight style1 left">
-										<span class="image"><img src="images/placeholder3.jpg" alt="" /></span>
-										<div class="content">
-											<header>
-												<h2>Research</h2>
-												<p>Todo111</p>
-											</header>
-											<p>Todo111</p>
-											<ul class="actions">
-												<li><a href="Research" class="button">Full Article</a></li>
-											</ul>
-										</div>
-										<a href="#four" class="goto-next scrolly">Next</a>
-								</section>
-
-
-
-									<img src="images/placeholder.png" alt="" />
+									<h4>UBI Solutions</h4>
+									<span class="image fit main bottom"><img src="../images/" alt=""
+										class="iterationBg" />
 									<p>
 										UBI Solutions is a French software company primarily focussed on providing asset
 										tracking solutions. It creates a variety of solutions for corporations in the food
@@ -184,7 +176,7 @@
 										company's focus is providing an effective solution tailored to a client.
 									</p>
 									<p>
-										In this review we will look at one solution, picked among many of the projects
+										In this review we will look at one solution, picked among many of their projects
 										due to its similarity to the context of our own project. It was in part picked randomly
 										from several similar projects, due to said projects also being similarly well documented
 										with similar merits.
@@ -213,25 +205,62 @@
 										tasks. Both features missing are quite essential and something we would have to explore
 										ourselves.
 									</p>
+									<h4>RFID and NFC Tags</h4>
+									<p>
+										More notably, we see that UBI Solutions has picked BLE (Bluetooth Low Energy) tags instead of alternatives such 
+										as RFID(Radio-Frequency Identification) tags and NFC(Near Field Communication) tags. BLE tags have much further range of detection than RFID tags </b><sub>[]</sub>. 
+										This enables better tracking of assets which we may not be able to scan individually due to their high 
+										number. For our project problem, hospital porters will often be in a hurry and may be stressed.
+										In addition, hospital porters typically will not be used to scanning a tag whenever they walk 
+										past checkpoints. In hospitals, there is not time for error and mistake due to needing time 
+										to form a habit. As such, we similarly regard RFID tags as an inappropriate solution due to 
+										high potential for mistakes. This is quite different to UBI Solutions who most likely picked 
+										BLE beacons due to their concern for security.
+									</p>
+									<p>
+										NFC tags which UBI Solutions has used for other projects, and likely also considered for 
+										their hospital asset tracking solution are also inappropriate for our project due to the 
+										reasons outlined above. They are also only effective at short ranges. 
+									</p>
+									<h4>BLE Tags</h4>
+									<p>
+										One might also be concerned that many BLE, RFID and NFC tags are not able to perform two way 
+										communication. From our requirements, we need the hospital 
+										porters to be able to reject tasks and set their busy status. This is for the sake of both porter 
+										information privacy, breaks and in case they are busy with other tasks that are set without the 
+										system, i.e. a Doctor directly asks a porter.
+										However, it should be noted that in our solution, the tags will not be performing the communication. 
+										The tags will serve as markers of positions in the hospital and smartphones which pick up on their 
+										mac addresses will then post these addresses as location dater to the web server.
+									</p>
+									<p>
+										Further research on BLE beacons not only determines that they are typically long reaching enough 
+										and strong enough signal for the purposes of our project, but that they, like the name implies, are 
+										low energy and low maintenance </b><sub>[]</sub>. They would minimally add to the operating costs of the hospital 
+										and are not likely to break. They are also extremely cheap and having many of these dotted around a 
+										hospital should not pose a problem with expenses.
+									</p>
 
 									<h4>Navenio: Hospital Staff Tracking</h4>
 
 									<p>
 										Navenio is an Oxford based company focussed on increasing ROI of hospitals. They achieve
 										this with their smartphone based location tracking and task assignment solution to assign tasks.
-										They have utilize a mixture of IUD, GPS and wifi to accurately track staff locations. Further
+										They have utilize a mixture of IMU (inertial measurement unit), GPS and wifi to accurately track staff locations. Further
 										to this, they utilize a task assignment system and collect logistic data with some amount of
 										automated processing to generate recommendations to increase efficiency.
 									</p>
 									<p>
-										As mentioned, Navenio's solution utilizes IUD, GPS and wifi to accurately track staff location.
-										They utilize PDR algorithms to adjust for ways a smartphone is held and deep learning based
+										As mentioned, Navenio's solution utilizes IMU, GPS and wifi to accurately track staff location.
+										They utilize PDR (Pedestrian Dead Reckoning) algorithms to adjust for ways a smartphone is held and deep learning based
 										correction
 										of inertia discrepancies due to positioning of the phone. They also make use of camera data where
 										possible.GPD and wi-Fi is used to accurately detect when someone enters or exits the building.
 										The system is interestingly capable of multiple floor location and tracking. Maps of the hospital
 										are
-										automatically built using historical tracking data of all the staff.
+										automatically built using historical tracking data of all the staff. 
+									
+										
 									</p>
 									<p>
 										<b>The main goals of the system are:</b><br>
@@ -241,13 +270,131 @@
 										To reliably log movement data for efficiency recommendations<br>
 									</p>
 									<p>
-										The solution is effective, minimal and cost effective, installation wise. Development of the
+										The solution is effective, minimal and cost efficient, installation wise. 
+										Development of the
 										algorithms
-										and potential problems may create heavy costs however. As the solution utilizes AI to accurately
+										and potential problems may create heavy costs however. As the solution utilizes 
+										AI to accurately
 										location
-										track, extensive collection of phone movement data is required and will create heavy costs.
+										track, extensive collection of phone movement data is required and will 
+										create heavy costs.
+									</p>
+									<p>
+										
+										To pick the right technology, 
+										for our solution, we further research these technologies navenio uses and 
+										weigh their pros and cons.
+									</p>
+									<h4>Inertial Measurement Unit</h4>
+
+									<p>
+										Navenio's use of IMU tracks the directional movement of a phone through the 
+										hospital.  IMU stands for Inertial Measurement Unit, which is a device that 
+										measures the orientation, velocity, and acceleration of an object. IMUs are 
+										commonly used in various applications, including aerospace, robotics, and 
+										navigation systems </b><sub>[]</sub>.
+									</p>
+									<p>
+										An IMU typically contains a set of sensors, such as accelerometers and 
+										gyroscopes, which measure linear acceleration and angular velocity, 
+										respectively </b><sub>[]</sub>. Some advanced IMUs may also include 
+										magnetometers and barometers, which can measure magnetic fields and 
+										atmospheric pressure, respectively </b><sub>[]</sub>.
+									</p>
+									<p>
+										The IMU uses the data from these sensors to calculate the object's 
+										position, velocity, and orientation. The accelerometer measures the 
+										linear acceleration in three dimensions, which is then integrated to 
+										obtain velocity and position. The gyroscope measures angular velocity, 
+										which is also integrated to obtain the object's orientation.
+									</p>
+									<p>
+										However, IMUs are not perfect, and there are some common sources 
+										of error that can affect the accuracy of the measurements. For 
+										example, the accelerometer can be affected by vibrations or shocks 
+										</b><sub>[]</sub>, while the gyroscope may drift over time due to 
+										temperature changes or manufacturing imperfections </b><sub>[]</sub>. 
+										To mitigate these errors, IMUs may include algorithms that can filter 
+										out noise or use other sensors, such as magnetometers, to correct for 
+										drift </b><sub>[]</sub>.
+									</p>
+									<p>
+										IMUs can track location data and movement with extremely 
+										low latency, compared to other potential 
+										tracking methods. This is likely why navenio has 
+										integrated them for their tracking solution. However 
+										IMUs are by no means a reliable technology for location 
+										tracking on their own, due to their frequent need for calibration, 
+										but more importantly the huge variation in their 
+										quality between phones. If we cannot be 
+										reliably certain of a phone's accuracy with regard 
+										to its location over time, we cannot 
+										use this technology on its own. Navenio 
+										utilizes this technology in combination with many other 
+										technologies to gauge error and correct this, in 
+										particular they cite using PDR algorithms, however 
+										due to both the costs that developing such algorithms 
+										would entail, our client's budget and 
+										the length of the project, this approach is not feasible.
 									</p>
 
+									<h4>Global Positioning System</h4>
+
+									<p>
+										GPS stands for Global Positioning System, which is 
+										a satellite-based navigation system used to 
+										determine the precise location of a receiver 
+										on the Earth's surface. The GPS system consists 
+										of a network of about 30 satellites orbiting the 
+										Earth, ground control stations, and GPS receivers.
+									</p>
+									<p>
+										A GPS receiver receives signals from multiple GPS 
+										satellites, which transmit radio signals containing 
+										information about their location and time </b><sub>[]</sub>. 
+										The GPS receiver uses this information to calculate 
+										its own location, based on the time it takes for the 
+										signals to reach the receiver </b><sub>[]</sub>.
+									</p>
+									<p>
+										To determine its position, the GPS receiver needs to 
+										receive signals from at least four GPS satellites. 
+										The receiver measures the time it takes for each signal 
+										to travel from the satellite to the receiver. Using 
+										the time difference between the arrival of signals 
+										from multiple satellites, the GPS receiver can 
+										determine its distance from each satellite, and 
+										thus its position on the Earth's surface </b><sub>[]</sub>.
+									</p>
+									<p>
+										The GPS system also takes into account the effect of 
+										the Earth's atmosphere on the radio signals. The 
+										atmosphere can cause the signals to be delayed or 
+										distorted, which can affect the accuracy of the GPS 
+										measurements. To correct for this, the GPS system 
+										uses a technique called differential GPS, which compares 
+										the GPS measurements from a stationary GPS receiver 
+										at a known location to those from a mobile receiver 
+										to determine the atmospheric effects and remove them 
+										from the calculations </b><sub>[]</sub>.
+									</p>
+									<p>
+										While GPS is generally effective at determining 
+										position, even in buildings with considerable obstacles, 
+										it struggles in several ways. GPS becomes more 
+										and more inaccurate when obstructed, and would not be 
+										suitable for a building with many thick firedoors, 
+										several floors and large metal devices to obstruct 
+										signal further, i.e. a hospital. The nature of how 
+										GPS functions also means that it is slow to update 
+										and this is not ideal for hospitals where time can 
+										be so critical and errors matter so much. As 
+										mentioned before, due to these flaws, Navenio likely 
+										integrates their other technologies, however, 
+										integrating so many technologies is out of the scope 
+										of this project due to the cost of development 
+										and low budget of our client.
+									</p>
 								</section>
 
 								<!-- two -->
@@ -255,12 +402,18 @@
 									<h3>Technology Review</h3>
 									<img src="images/placeholder.png" alt="" />
 									<p>
-										Following the client meeting, we wrote up requirements, which can be seen in the requirements
-										section of the portfolio blog. In an attempt to try and refine our requirements further
-										we conducted market research. Having set up the relevant communication channels with
-										Apian such as Slack, WhatsApp and Email, we tried to confirm a tech stack with our client.
-										This involved investigating the pricings, discussing budgets and caveats with different
+										Following the client meeting, we wrote up requirements, 
+										which can be seen in the requirements
+										section of the portfolio blog. In an attempt 
+										to try and refine our requirements further, 
+										we conducted market research. Having set up 
+										the relevant communication channels with
+										Apian such as Slack, WhatsApp and Email, we 
+										tried to confirm a tech stack with our client.
+										This involved investigating the pricings, discussing 
+										budgets and caveats with different
 										technologies and their competitors.
+									</p>
 									<p>
 										Knowing our client was working on a small budget, being a startup, we took a greater
 										focus on budget options for Bluetooth tracking and communication. For instance, we asked
@@ -270,7 +423,7 @@
 										premium firebase subscription.
 									</p>
 									<p>
-										The potential tracking options we considered were, low power BLE beacons which many
+										The potential tracking options we considered after were, low power BLE beacons which many
 										companies sold. Options we saw included Aruba, Zebra, Moko Smart and many others.
 										We considered GPS, however we knew this might not be feasible for hospitals with
 										many floors especially in the basement for example, so it was decided that this
@@ -298,7 +451,6 @@
 										<br>
 										Our client, Apian who had experience in the area also guided us to use create an Android app.
 										We decided that the app would be best written in Kotlin.
-					
 									</p>
 								</section>
 
