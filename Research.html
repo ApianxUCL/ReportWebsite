@@ -157,32 +157,23 @@
 									<h3>Related Projects</h3>		
 									<br><br><br><br><br>							
 									<h4>UBI Solutions: Hospital Assets Tracking</h4>
+									<p></p>
 
 								</section>
+									<p>
+										Our task consists of creating a hospital porter tracking solution in order to increase 
+										the efficiency of porters within hospitals. In particular and contrary to other past 
+										projects, our solution focusses on tracking porters and setting them tasks in order to 
+										best coordinate delivery of medical freight using drones. This comes with the associated 
+										problems of timing porters based on drone arrival times.
+									</p>
+									<p>
+										It is important to review existing projects so that one may bring forward their merits in 
+										our solution. Additionally, by reviewing existing solutions, not only can we learn from the 
+										merits, we may also learn from any shortcomings and flaws with regard to previous projects.
+									</p>
 
-								<section>
-									
-									
-									<span class="image fit main bottom"><img src="images/placeholder3.jpg" alt="" /></span>
-									
-									<span class="image"><img src="images/placeholder3.jpg" alt="" /></span>
-									<section id="three" class="spotlight style1 left">
-										<span class="image"><img src="images/placeholder3.jpg" alt="" /></span>
-										<div class="content">
-											<header>
-												<h2>Research</h2>
-												<p>Todo111</p>
-											</header>
-											<p>Todo111</p>
-											<ul class="actions">
-												<li><a href="Research" class="button">Full Article</a></li>
-											</ul>
-										</div>
-										<a href="#four" class="goto-next scrolly">Next</a>
-								</section>
-
-
-
+									<h4>UBI Solutions</h4>
 									<img src="images/placeholder.png" alt="" />
 									<p>
 										UBI Solutions is a French software company primarily focussed on providing asset
@@ -192,7 +183,7 @@
 										company's focus is providing an effective solution tailored to a client.
 									</p>
 									<p>
-										In this review we will look at one solution, picked among many of the projects
+										In this review we will look at one solution, picked among many of their projects
 										due to its similarity to the context of our own project. It was in part picked randomly
 										from several similar projects, due to said projects also being similarly well documented
 										with similar merits.
@@ -221,19 +212,54 @@
 										tasks. Both features missing are quite essential and something we would have to explore
 										ourselves.
 									</p>
+									<h4>RFID and NFC Tags</h4>
+									<p>
+										More notably, we see that UBI Solutions has picked BLE (Bluetooth Low Energy) tags instead of alternatives such 
+										as RFID(Radio-Frequency Identification) tags and NFC(Near Field Communication) tags. BLE tags have much further range of detection than RFID tags []. 
+										This enables better tracking of assets which we may not be able to scan individually due to their high 
+										number. For our project problem, hospital porters will often be in a hurry and may be stressed.
+										In addition, hospital porters typically will not be used to scanning a tag whenever they walk 
+										past checkpoints. In hospitals, there is not time for error and mistake due to needing time 
+										to form a habit. As such, we similarly regard RFID tags as an inappropriate solution due to 
+										high potential for mistakes. This is quite different to UBI Solutions who most likely picked 
+										BLE beacons due to their concern for security.
+									</p>
+									<p>
+										NFC tags which UBI Solutions has used for other projects, and likely also considered for 
+										their hospital asset tracking solution are also inappropriate for our project due to the 
+										reasons outlined above. They are also only effective at short ranges. 
+									</p>
+									<h4>BLE Tags</h4>
+									<p>
+										One might also be concerned that many BLE, RFID and NFC tags are not able to perform two way 
+										communication. From our requirements, we need the hospital 
+										porters to be able to reject tasks and set their busy status. This is for the sake of both porter 
+										information privacy, breaks and in case they are busy with other tasks that are set without the 
+										system, i.e. a Doctor directly asks a porter.
+										However, it should be noted that in our solution, the tags will not be performing the communication. 
+										The tags will serve as markers of positions in the hospital and smartphones which pick up on their 
+										mac addresses will then post these addresses as location dater to the web server.
+									</p>
+									<p>
+										Further research on BLE beacons not only determines that they are typically long reaching enough 
+										and strong enough signal for the purposes of our project, but that they, like the name implies, are 
+										low energy and low maintenance []. They would minimally add to the operating costs of the hospital 
+										and are not likely to break. They are also extremely cheap and having many of these dotted around a 
+										hospital should not pose a problem with expenses.
+									</p>
 
 									<h4>Navenio: Hospital Staff Tracking</h4>
 
 									<p>
 										Navenio is an Oxford based company focussed on increasing ROI of hospitals. They achieve
 										this with their smartphone based location tracking and task assignment solution to assign tasks.
-										They have utilize a mixture of IUD, GPS and wifi to accurately track staff locations. Further
+										They have utilize a mixture of IMU (inertial measurement unit), GPS and wifi to accurately track staff locations. Further
 										to this, they utilize a task assignment system and collect logistic data with some amount of
 										automated processing to generate recommendations to increase efficiency.
 									</p>
 									<p>
-										As mentioned, Navenio's solution utilizes IUD, GPS and wifi to accurately track staff location.
-										They utilize PDR algorithms to adjust for ways a smartphone is held and deep learning based
+										As mentioned, Navenio's solution utilizes IMU, GPS and wifi to accurately track staff location.
+										They utilize PDR (Pedestrian Dead Reckoning) algorithms to adjust for ways a smartphone is held and deep learning based
 										correction
 										of inertia discrepancies due to positioning of the phone. They also make use of camera data where
 										possible.GPD and wi-Fi is used to accurately detect when someone enters or exits the building.
@@ -241,6 +267,10 @@
 										are
 										automatically built using historical tracking data of all the staff.
 									</p>
+									<h4>IMU</h4>
+										
+									<h4>GPS</h4>
+
 									<p>
 										<b>The main goals of the system are:</b><br>
 										To free up staff time<br>
