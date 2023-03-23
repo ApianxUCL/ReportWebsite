@@ -5,23 +5,35 @@
 		<title>PorterBLE</title>
 		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		<script>
+			var slidePosition = 0;
+		
+			function plusSlides(n) {
+				slidePosition += n;
+				SlideShow();
+			}
+		
+			function currentSlide(n) {
+				slidePosition = n - 1; // subtract 1 to match slide index
+				SlideShow();
+			}
+		
+			function SlideShow() {
+				var i;
+				var slides = document.getElementsByClassName("Containers");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				if (slidePosition >= slides.length) {slidePosition = 0}
+				if (slidePosition < 0) {slidePosition = slides.length - 1}
+				slides[slidePosition].style.display = "block";
+			}
+		
 			$(document).ready(function () {
-				var numSlides = $('.slide-container').length;
-				var currentSlide = 0;
-
-				$('.prevBtn').click(function () {
-					$('.slide-container').eq(currentSlide).hide();
-					currentSlide = (currentSlide - 1 + numSlides) % numSlides;
-					$('.slide-container').eq(currentSlide).show();
-				});
-
-				$('.nextBtn').click(function () {
-					$('.slide-container').eq(currentSlide).hide();
-					currentSlide = (currentSlide + 1) % numSlides;
-					$('.slide-container').eq(currentSlide).show();
-				});
+				SlideShow();
 			});
 		</script>
+		
+		
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -64,14 +76,6 @@
 									<li><a href="Research.html#one">Related Projects</a></li>
 									<li><a href="Research.html#two">Technology Review</a></li>
 									<li><a href="Research.html#three">Bibliography</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="Algorithms.html">Algorithms</a>
-								<ul>
-									<li><a href="#">one</a></li>
-									<li><a href="#">two</a></li>
-									<li><a href="#">three</a></li>
 								</ul>
 							</li>
 							<li>
@@ -198,27 +202,42 @@
 
 								<!-- two -->
 								<section id="two">
-									<h3>Sketches</h3>
-									<div class="slideshow-container">
-										<div class="slideshow-buttons">
-											<button class="prevBtn">&#9664;</button>
-											<button class="nextBtn">&#9654;</button>
+									<h3>Sketches (Sketch 1: Top, Sketch 2: Bottom)</h3>
+									<div style="width: 60%;">
+									<div class="slideshow-container fade">
+
+										<!-- Full images with numbers and message Info -->
+										<div class="Containers">
+										  <div class="MessageInfo">1 / 4</div>
+										  <img src="images/apian_sketch1.jpg" style="width:100%; border-radius: 5%;">
+										</div>									  
+										<div class="Containers">
+										  <div class="MessageInfo">2 / 4</div>
+										  <img src="images/apian_sketch2.jpg" style="width:100%; border-radius: 5%;">
 										</div>
-										<div class="slide-container">
-											<h3>Sketch 1:</h3>
-											<img src="images/APIAN_sketch.jpg" width="45%" style="margin: 5px 0px 5px 0px;" alt="" />
-											<img src="images/APIAN_sketch_2.jpg" width="45%" style="margin: 5px 0px 5px 0px;" alt="" />
-											<img src="images/APIAN_sketch_3.jpg" width="45%" alt="" />
-											<img src="images/APIAN_sketch_4.jpg" width="45%" alt="" />
+										<div class="Containers">
+											<div class="MessageInfo">3 / 4</div>
+											<img src="images/apian_sketch3.jpg" style="width:100%; border-radius: 5%;">
+										  </div>									  
+										  <div class="Containers">
+											<div class="MessageInfo">4 / 4</div>
+											<img src="images/apian_sketch4.jpg" style="width:100%; border-radius: 5%;">
 										</div>
-										<div class="slide-container">
-											<h3>Sketch 2:</h3>
-											<img src="images/APIAN_sketch_5.jpg" width="45%" style="margin: 5px 0px 5px 0px;" alt="" />
-											<img src="images/APIAN_sketch_6.jpg" width="45%" style="margin: 5px 0px 5px 0px;" alt="" />
-											<img src="images/APIAN_sketch_7.jpg" width="45%" alt="" />
-											<img src="images/APIAN_sketch_8.jpg" width="45%" alt="" />
-										</div>
-									</div>
+									  
+										<!-- Back and forward buttons -->
+										<a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+										<a class="forward" onclick="plusSlides(1)">&#10095;</a>
+									  </div>
+									  <br>
+									  
+										<!-- The circles/dots -->
+										<div style="text-align:center; margin-bottom: 2rem; margin-top: -2rem;">
+											<span class="dots" onclick="currentSlide(1)"></span>
+											<span class="dots" onclick="currentSlide(2)"></span>
+											<span class="dots" onclick="currentSlide(3)"></span>
+											<span class="dots" onclick="currentSlide(4)"></span>
+										</div> 
+									</div>  
 									<p>
 										In our first sketch, usability and simplicity were our main priorities, so that hospital staff
 										do not experience any difficulties
