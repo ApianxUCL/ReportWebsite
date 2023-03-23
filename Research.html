@@ -166,7 +166,8 @@
 									</p>
 
 									<h4>UBI Solutions</h4>
-									<img src="images/placeholder.png" alt="" />
+									<span class="image fit main bottom"><img src="../images/Second App Implementation.png" alt=""
+										class="iterationBg" />
 									<p>
 										UBI Solutions is a French software company primarily focussed on providing asset
 										tracking solutions. It creates a variety of solutions for corporations in the food
@@ -207,7 +208,7 @@
 									<h4>RFID and NFC Tags</h4>
 									<p>
 										More notably, we see that UBI Solutions has picked BLE (Bluetooth Low Energy) tags instead of alternatives such 
-										as RFID(Radio-Frequency Identification) tags and NFC(Near Field Communication) tags. BLE tags have much further range of detection than RFID tags []. 
+										as RFID(Radio-Frequency Identification) tags and NFC(Near Field Communication) tags. BLE tags have much further range of detection than RFID tags </b><sub>[]</sub>. 
 										This enables better tracking of assets which we may not be able to scan individually due to their high 
 										number. For our project problem, hospital porters will often be in a hurry and may be stressed.
 										In addition, hospital porters typically will not be used to scanning a tag whenever they walk 
@@ -235,7 +236,7 @@
 									<p>
 										Further research on BLE beacons not only determines that they are typically long reaching enough 
 										and strong enough signal for the purposes of our project, but that they, like the name implies, are 
-										low energy and low maintenance []. They would minimally add to the operating costs of the hospital 
+										low energy and low maintenance </b><sub>[]</sub>. They would minimally add to the operating costs of the hospital 
 										and are not likely to break. They are also extremely cheap and having many of these dotted around a 
 										hospital should not pose a problem with expenses.
 									</p>
@@ -269,65 +270,129 @@
 										To reliably log movement data for efficiency recommendations<br>
 									</p>
 									<p>
-										The solution is effective, minimal and cost efficient, installation wise. Development of the
+										The solution is effective, minimal and cost efficient, installation wise. 
+										Development of the
 										algorithms
-										and potential problems may create heavy costs however. As the solution utilizes AI to accurately
+										and potential problems may create heavy costs however. As the solution utilizes 
+										AI to accurately
 										location
-										track, extensive collection of phone movement data is required and will create heavy costs.
+										track, extensive collection of phone movement data is required and will 
+										create heavy costs.
 									</p>
 									<p>
 										
 										To pick the right technology, 
-										for our solution, we further research these technologies navenio uses and weigh their pros and cons.
+										for our solution, we further research these technologies navenio uses and 
+										weigh their pros and cons.
 									</p>
 									<h4>Inertial Measurement Unit</h4>
 
 									<p>
-										Navenio's use of IMU tracks the directional movement of a phone through the hospital.  IMU stands for Inertial Measurement Unit, which is a device that measures the orientation, velocity, and acceleration of an object. IMUs are commonly used in various applications, including aerospace, robotics, and navigation systems [].
+										Navenio's use of IMU tracks the directional movement of a phone through the 
+										hospital.  IMU stands for Inertial Measurement Unit, which is a device that 
+										measures the orientation, velocity, and acceleration of an object. IMUs are 
+										commonly used in various applications, including aerospace, robotics, and 
+										navigation systems </b><sub>[]</sub>.
 									</p>
 									<p>
-										An IMU typically contains a set of sensors, such as accelerometers and gyroscopes, which measure linear acceleration and angular velocity, respectively []. Some advanced IMUs may also include magnetometers and barometers, which can measure magnetic fields and atmospheric pressure, respectively [].
+										An IMU typically contains a set of sensors, such as accelerometers and 
+										gyroscopes, which measure linear acceleration and angular velocity, 
+										respectively </b><sub>[]</sub>. Some advanced IMUs may also include 
+										magnetometers and barometers, which can measure magnetic fields and 
+										atmospheric pressure, respectively </b><sub>[]</sub>.
 									</p>
 									<p>
-										The IMU uses the data from these sensors to calculate the object's position, velocity, and orientation. The accelerometer measures the linear acceleration in three dimensions, which is then integrated to obtain velocity and position. The gyroscope measures angular velocity, which is also integrated to obtain the object's orientation.
+										The IMU uses the data from these sensors to calculate the object's 
+										position, velocity, and orientation. The accelerometer measures the 
+										linear acceleration in three dimensions, which is then integrated to 
+										obtain velocity and position. The gyroscope measures angular velocity, 
+										which is also integrated to obtain the object's orientation.
 									</p>
 									<p>
-										However, IMUs are not perfect, and there are some common sources of error that can affect the accuracy of the measurements. For example, the accelerometer can be affected by vibrations or shocks [], while the gyroscope may drift over time due to temperature changes or manufacturing imperfections []. To mitigate these errors, IMUs may include algorithms that can filter out noise or use other sensors, such as magnetometers, to correct for drift [].
+										However, IMUs are not perfect, and there are some common sources 
+										of error that can affect the accuracy of the measurements. For 
+										example, the accelerometer can be affected by vibrations or shocks 
+										</b><sub>[]</sub>, while the gyroscope may drift over time due to 
+										temperature changes or manufacturing imperfections </b><sub>[]</sub>. 
+										To mitigate these errors, IMUs may include algorithms that can filter 
+										out noise or use other sensors, such as magnetometers, to correct for 
+										drift </b><sub>[]</sub>.
 									</p>
 									<p>
-										IMUs can track location data and movement with extremely low latency, compared to other potential 
-										tracking methods. This is likely why navenio has integrated them for their tracking solution. However 
-										IMUs are by no means a reliable technology for location tracking on their own, due to their frequent need for calibration, 
-										but more importantly the huge variation in their quality between phones. If we cannot be 
-										reliably certain of a phone's accuracy with regard to its location over time, we cannot 
-										use this technology on its own. Navenio utilizes this technology in combination with many other 
-										technologies to gauge error and correct this, in particular they cite using PDR algorithms, however 
-										due to both the costs that developing such algorithms would entail, our client's budget and 
+										IMUs can track location data and movement with extremely 
+										low latency, compared to other potential 
+										tracking methods. This is likely why navenio has 
+										integrated them for their tracking solution. However 
+										IMUs are by no means a reliable technology for location 
+										tracking on their own, due to their frequent need for calibration, 
+										but more importantly the huge variation in their 
+										quality between phones. If we cannot be 
+										reliably certain of a phone's accuracy with regard 
+										to its location over time, we cannot 
+										use this technology on its own. Navenio 
+										utilizes this technology in combination with many other 
+										technologies to gauge error and correct this, in 
+										particular they cite using PDR algorithms, however 
+										due to both the costs that developing such algorithms 
+										would entail, our client's budget and 
 										the length of the project, this approach is not feasible.
 									</p>
 
 									<h4>Global Positioning System</h4>
 
 									<p>
-										GPS stands for Global Positioning System, which is a satellite-based navigation system used to determine the precise location of a receiver on the Earth's surface. The GPS system consists of a network of about 30 satellites orbiting the Earth, ground control stations, and GPS receivers.
+										GPS stands for Global Positioning System, which is 
+										a satellite-based navigation system used to 
+										determine the precise location of a receiver 
+										on the Earth's surface. The GPS system consists 
+										of a network of about 30 satellites orbiting the 
+										Earth, ground control stations, and GPS receivers.
 									</p>
 									<p>
-										A GPS receiver receives signals from multiple GPS satellites, which transmit radio signals containing information about their location and time []. The GPS receiver uses this information to calculate its own location, based on the time it takes for the signals to reach the receiver [].
+										A GPS receiver receives signals from multiple GPS 
+										satellites, which transmit radio signals containing 
+										information about their location and time </b><sub>[]</sub>. 
+										The GPS receiver uses this information to calculate 
+										its own location, based on the time it takes for the 
+										signals to reach the receiver </b><sub>[]</sub>.
 									</p>
 									<p>
-										To determine its position, the GPS receiver needs to receive signals from at least four GPS satellites. The receiver measures the time it takes for each signal to travel from the satellite to the receiver. Using the time difference between the arrival of signals from multiple satellites, the GPS receiver can determine its distance from each satellite, and thus its position on the Earth's surface [].
+										To determine its position, the GPS receiver needs to 
+										receive signals from at least four GPS satellites. 
+										The receiver measures the time it takes for each signal 
+										to travel from the satellite to the receiver. Using 
+										the time difference between the arrival of signals 
+										from multiple satellites, the GPS receiver can 
+										determine its distance from each satellite, and 
+										thus its position on the Earth's surface </b><sub>[]</sub>.
 									</p>
 									<p>
-										The GPS system also takes into account the effect of the Earth's atmosphere on the radio signals. The atmosphere can cause the signals to be delayed or distorted, which can affect the accuracy of the GPS measurements. To correct for this, the GPS system uses a technique called differential GPS, which compares the GPS measurements from a stationary GPS receiver at a known location to those from a mobile receiver to determine the atmospheric effects and remove them from the calculations [].
+										The GPS system also takes into account the effect of 
+										the Earth's atmosphere on the radio signals. The 
+										atmosphere can cause the signals to be delayed or 
+										distorted, which can affect the accuracy of the GPS 
+										measurements. To correct for this, the GPS system 
+										uses a technique called differential GPS, which compares 
+										the GPS measurements from a stationary GPS receiver 
+										at a known location to those from a mobile receiver 
+										to determine the atmospheric effects and remove them 
+										from the calculations </b><sub>[]</sub>.
 									</p>
 									<p>
-										While GPS is generally effective at determining position, even in buildings with considerable obstacles, 
-										it struggles in several ways. GPS becomes more and more inaccurate when obstructed, and would not be 
-										suitable for a building with many thick firedoors, several floors and large metal devices to obstruct 
-										signal further, i.e. a hospital. The nature of how GPS functions also means that it is slow to update 
-										and this is not ideal for hospitals where time can be so critical and errors matter so much. As 
-										mentioned before, due to these flaws, Navenio likely integrates their other technologies, however, 
-										integrating so many technologies is out of the scope of this project due to the cost of development 
+										While GPS is generally effective at determining 
+										position, even in buildings with considerable obstacles, 
+										it struggles in several ways. GPS becomes more 
+										and more inaccurate when obstructed, and would not be 
+										suitable for a building with many thick firedoors, 
+										several floors and large metal devices to obstruct 
+										signal further, i.e. a hospital. The nature of how 
+										GPS functions also means that it is slow to update 
+										and this is not ideal for hospitals where time can 
+										be so critical and errors matter so much. As 
+										mentioned before, due to these flaws, Navenio likely 
+										integrates their other technologies, however, 
+										integrating so many technologies is out of the scope 
+										of this project due to the cost of development 
 										and low budget of our client.
 									</p>
 								</section>
@@ -337,11 +402,16 @@
 									<h3>Technology Review</h3>
 									<img src="images/placeholder.png" alt="" />
 									<p>
-										Following the client meeting, we wrote up requirements, which can be seen in the requirements
-										section of the portfolio blog. In an attempt to try and refine our requirements further, 
-										we conducted market research. Having set up the relevant communication channels with
-										Apian such as Slack, WhatsApp and Email, we tried to confirm a tech stack with our client.
-										This involved investigating the pricings, discussing budgets and caveats with different
+										Following the client meeting, we wrote up requirements, 
+										which can be seen in the requirements
+										section of the portfolio blog. In an attempt 
+										to try and refine our requirements further, 
+										we conducted market research. Having set up 
+										the relevant communication channels with
+										Apian such as Slack, WhatsApp and Email, we 
+										tried to confirm a tech stack with our client.
+										This involved investigating the pricings, discussing 
+										budgets and caveats with different
 										technologies and their competitors.
 									</p>
 									<p>
