@@ -121,7 +121,7 @@
 					<div class="container">
 						<header class="major">
 							<h2>Research</h2>
-							<p>The process of defining and refining project requirements.</p>
+							<p>Conducting Research on the Past Solutions and Different Technologies</p>
 						</header>
 						<div class="row gtr-150">
 							<div class="col-2 col-8-medium">
@@ -144,7 +144,7 @@
 
 								<!-- one -->
 								<section id="one">
-									<h3>Related Projects</h3>
+									<h3>Related Projects Review</h3>
 									<p>
 										Our task consists of creating a hospital porter tracking solution in order to increase 
 										the efficiency of porters within hospitals. In particular and contrary to other past 
@@ -178,8 +178,11 @@
 										assets such as bed sheets moving throughout the hospital. They work on a gateway system
 										where BLE gateways track individual BLE tags throughout the hospital. BLE tags each have
 										unique identifiers that they transmit. In addition to tracking, the tags are fitted with
-										shock, temperature and humidity sensors where relevant to track the health of the asset.
+										shock, temperature and humidity sensors where relevant to track the health of the asset
+										<sub>[]</sub>.
+
 									</p>
+									<h4>Goals of the Solution</h4>
 									<p>
 										<b>The main goals of the system are:</b><br>
 										To free up staff time<br>
@@ -188,6 +191,7 @@
 										To reliably log asset usage data<br>
 										Implement automatic preventative care of assets<br>
 									</p>
+									<h4>Effectiveness of the Solution</h4>
 									<p>
 										The solution is effective, minimal and cost effective. It has a lot of the features
 										that we would need for a hospital porter tracking system, where instead of assets we would
@@ -210,6 +214,7 @@
 										high potential for mistakes. This is quite different to UBI Solutions who most likely picked 
 										BLE beacons due to their concern for security.
 									</p>
+									<h4>Discussion on Merits and Pitfalls of NFC tags</h4>
 									<p>
 										NFC tags which UBI Solutions has used for other projects, and likely also considered for 
 										their hospital asset tracking solution are also inappropriate for our project due to the 
@@ -227,12 +232,14 @@
 										The tags will serve as markers of positions in the hospital and smartphones which pick up on their 
 										mac addresses will then post these addresses as location dater to the web server.
 									</p>
+									<h4>Discussion on Merits and Pitfalls of BLE</h4>
 									<p>
 										Further research on BLE beacons not only determines that they are typically long reaching enough 
 										and strong enough signal for the purposes of our project, but that they, like the name implies, are 
 										low energy and low maintenance <sub>[]</sub>. They would minimally add to the operating costs of the hospital 
 										and are not likely to break. They are also extremely cheap and having many of these dotted around a 
-										hospital should not pose a problem with expenses.
+										hospital should not pose a problem with expenses. BLE beacons do however need to be installed 
+										and require careful planning.
 									</p>
 
 									<h4>Navenio: Hospital Staff Tracking</h4>
@@ -253,10 +260,9 @@
 										possible.GPD and wi-Fi is used to accurately detect when someone enters or exits the building.
 										The system is interestingly capable of multiple floor location and tracking. Maps of the hospital
 										are
-										automatically built using historical tracking data of all the staff. 
-									
-										
+										automatically built using historical tracking data of all the staff. 										
 									</p>
+									<h4>Goals of the Solution</h4>
 									<p>
 										<b>The main goals of the system are:</b><br>
 										To free up staff time<br>
@@ -264,6 +270,7 @@
 										Provide a solution that has no dependency on installing infrastructure<br>
 										To reliably log movement data for efficiency recommendations<br>
 									</p>
+									<h4>Effectiveness of the Solution</h4>
 									<p>
 										The solution is effective, minimal and cost efficient, installation wise. 
 										Development of the
@@ -285,7 +292,7 @@
 
 									<p>
 										Navenio's use of IMU tracks the directional movement of a phone through the 
-										hospital.  IMU stands for Inertial Measurement Unit, which is a device that 
+										hospital. IMU stands for Inertial Measurement Unit, which is a device that 
 										measures the orientation, velocity, and acceleration of an object. IMUs are 
 										commonly used in various applications, including aerospace, robotics, and 
 										navigation systems <sub>[]</sub>.
@@ -314,6 +321,7 @@
 										out noise or use other sensors, such as magnetometers, to correct for 
 										drift <sub>[]</sub>.
 									</p>
+									<h4>Discussion on Merits and Pitfalls of IMU</h4>
 									<p>
 										IMUs can track location data and movement with extremely 
 										low latency, compared to other potential 
@@ -350,8 +358,13 @@
 										information about their location and time <sub>[]</sub>. 
 										The GPS receiver uses this information to calculate 
 										its own location, based on the time it takes for the 
-										signals to reach the receiver <sub>[]</sub>.
+										signals to reach the receiver <sub>[]</sub>. This mechanism 
+										is 
+										shown in the diagram below:
 									</p>
+
+									<span class="image fit main bottom"><img src="images/GPS.PNG" alt="" class="iterationBg"/>
+
 									<p>
 										To determine its position, the GPS receiver needs to 
 										receive signals from at least four GPS satellites. 
@@ -374,6 +387,7 @@
 										to determine the atmospheric effects and remove them 
 										from the calculations <sub>[]</sub>.
 									</p>
+									<h4>Discussion on GPS Merits and Pitfalls</h4>
 									<p>
 										While GPS is generally effective at determining 
 										position, even in buildings with considerable obstacles, 
