@@ -137,8 +137,6 @@
 										</ol>
 										<br>
 									</section>
-
-									
 								</section>
 
 							</div>
@@ -146,12 +144,7 @@
 
 								<!-- one -->
 								<section id="one">
-									<h3>Related Projects</h3>		
-									<br><br><br><br><br>							
-									<h4>UBI Solutions: Hospital Assets Tracking</h4>
-									<p></p>
-
-								</section>
+									<h3>Related Projects</h3>
 									<p>
 										Our task consists of creating a hospital porter tracking solution in order to increase 
 										the efficiency of porters within hospitals. In particular and contrary to other past 
@@ -164,22 +157,21 @@
 										our solution. Additionally, by reviewing existing solutions, not only can we learn from the 
 										merits, we may also learn from any shortcomings and flaws with regard to previous projects.
 									</p>
-
+								
 									<h4>UBI Solutions</h4>
-									<span class="image fit main bottom"><img src="../images/" alt=""
-										class="iterationBg" />
+									<span class="image fit main bottom"><img src="images/UBI Solutions.PNG" alt=""/>
 									<p>
 										UBI Solutions is a French software company primarily focussed on providing asset
 										tracking solutions. It creates a variety of solutions for corporations in the food
 										industry, laundry, retail and more. Typically solutions revolve around using RFID
-										tags and mobile or fixed readers. [1] However, other solutions are also used and the
+										tags and mobile or fixed readers. <sub>[]</sub> However, other solutions are also used and the
 										company's focus is providing an effective solution tailored to a client.
 									</p>
 									<p>
 										In this review we will look at one solution, picked among many of their projects
 										due to its similarity to the context of our own project. It was in part picked randomly
 										from several similar projects, due to said projects also being similarly well documented
-										with similar merits.
+										with similar merits. <sub>[]</sub>
 									</p>
 									<p>
 										UBI Solutions' Hospital Assets Tracking makes use of BLE tags and beacons to track
@@ -206,9 +198,10 @@
 										ourselves.
 									</p>
 									<h4>RFID and NFC Tags</h4>
+									<span class="image fit main bottom"><img src="images/RFID.PNG" alt="" class="iterationBg"/>
 									<p>
 										More notably, we see that UBI Solutions has picked BLE (Bluetooth Low Energy) tags instead of alternatives such 
-										as RFID(Radio-Frequency Identification) tags and NFC(Near Field Communication) tags. BLE tags have much further range of detection than RFID tags </b><sub>[]</sub>. 
+										as RFID(Radio-Frequency Identification) tags and NFC(Near Field Communication) tags. BLE tags have much further range of detection than RFID tags <sub>[]</sub>. 
 										This enables better tracking of assets which we may not be able to scan individually due to their high 
 										number. For our project problem, hospital porters will often be in a hurry and may be stressed.
 										In addition, hospital porters typically will not be used to scanning a tag whenever they walk 
@@ -223,6 +216,7 @@
 										reasons outlined above. They are also only effective at short ranges. 
 									</p>
 									<h4>BLE Tags</h4>
+									<span class="image fit main bottom"><img src="images/BLE.PNG" alt="" class="iterationBg"/>
 									<p>
 										One might also be concerned that many BLE, RFID and NFC tags are not able to perform two way 
 										communication. From our requirements, we need the hospital 
@@ -236,13 +230,14 @@
 									<p>
 										Further research on BLE beacons not only determines that they are typically long reaching enough 
 										and strong enough signal for the purposes of our project, but that they, like the name implies, are 
-										low energy and low maintenance </b><sub>[]</sub>. They would minimally add to the operating costs of the hospital 
+										low energy and low maintenance <sub>[]</sub>. They would minimally add to the operating costs of the hospital 
 										and are not likely to break. They are also extremely cheap and having many of these dotted around a 
 										hospital should not pose a problem with expenses.
 									</p>
 
 									<h4>Navenio: Hospital Staff Tracking</h4>
-
+									
+									<span class="image fit main bottom"><img src="images/navenio.PNG" alt="" class="iterationBg"/>
 									<p>
 										Navenio is an Oxford based company focussed on increasing ROI of hospitals. They achieve
 										this with their smartphone based location tracking and task assignment solution to assign tasks.
@@ -286,20 +281,21 @@
 										weigh their pros and cons.
 									</p>
 									<h4>Inertial Measurement Unit</h4>
+									<span class="image fit main bottom"><img src="images/IMU.PNG" alt="" class="iterationBg"/>
 
 									<p>
 										Navenio's use of IMU tracks the directional movement of a phone through the 
 										hospital.  IMU stands for Inertial Measurement Unit, which is a device that 
 										measures the orientation, velocity, and acceleration of an object. IMUs are 
 										commonly used in various applications, including aerospace, robotics, and 
-										navigation systems </b><sub>[]</sub>.
+										navigation systems <sub>[]</sub>.
 									</p>
 									<p>
 										An IMU typically contains a set of sensors, such as accelerometers and 
 										gyroscopes, which measure linear acceleration and angular velocity, 
-										respectively </b><sub>[]</sub>. Some advanced IMUs may also include 
+										respectively <sub>[]</sub>. Some advanced IMUs may also include 
 										magnetometers and barometers, which can measure magnetic fields and 
-										atmospheric pressure, respectively </b><sub>[]</sub>.
+										atmospheric pressure, respectively <sub>[]</sub>.
 									</p>
 									<p>
 										The IMU uses the data from these sensors to calculate the object's 
@@ -312,11 +308,11 @@
 										However, IMUs are not perfect, and there are some common sources 
 										of error that can affect the accuracy of the measurements. For 
 										example, the accelerometer can be affected by vibrations or shocks 
-										</b><sub>[]</sub>, while the gyroscope may drift over time due to 
-										temperature changes or manufacturing imperfections </b><sub>[]</sub>. 
+										<sub>[]</sub>, while the gyroscope may drift over time due to 
+										temperature changes or manufacturing imperfections <sub>[]</sub>. 
 										To mitigate these errors, IMUs may include algorithms that can filter 
 										out noise or use other sensors, such as magnetometers, to correct for 
-										drift </b><sub>[]</sub>.
+										drift <sub>[]</sub>.
 									</p>
 									<p>
 										IMUs can track location data and movement with extremely 
@@ -351,10 +347,10 @@
 									<p>
 										A GPS receiver receives signals from multiple GPS 
 										satellites, which transmit radio signals containing 
-										information about their location and time </b><sub>[]</sub>. 
+										information about their location and time <sub>[]</sub>. 
 										The GPS receiver uses this information to calculate 
 										its own location, based on the time it takes for the 
-										signals to reach the receiver </b><sub>[]</sub>.
+										signals to reach the receiver <sub>[]</sub>.
 									</p>
 									<p>
 										To determine its position, the GPS receiver needs to 
@@ -364,7 +360,7 @@
 										the time difference between the arrival of signals 
 										from multiple satellites, the GPS receiver can 
 										determine its distance from each satellite, and 
-										thus its position on the Earth's surface </b><sub>[]</sub>.
+										thus its position on the Earth's surface <sub>[]</sub>.
 									</p>
 									<p>
 										The GPS system also takes into account the effect of 
@@ -376,7 +372,7 @@
 										the GPS measurements from a stationary GPS receiver 
 										at a known location to those from a mobile receiver 
 										to determine the atmospheric effects and remove them 
-										from the calculations </b><sub>[]</sub>.
+										from the calculations <sub>[]</sub>.
 									</p>
 									<p>
 										While GPS is generally effective at determining 
@@ -458,11 +454,11 @@
 								<section id="three">
 									<h3>Bibliography</h3>
 									<ul>
-										<li><li>1</li>
-										<li>2</li>
-										<li>3</li>
-										<li>4</li>
-										<li>5</li> 
+										<li>
+											Mishra, R. (2020). Fragment Lifecycle in Android.
+											[online] GeeksforGeeks. Available at:
+											https://www.geeksforgeeks.org/fragment-lifecycle-in-android/ [Accessed 14 Mar. 2023].
+										</li>
 									</ul>
 								</section>
 													
