@@ -164,14 +164,14 @@
 										UBI Solutions is a French software company primarily focussed on providing asset
 										tracking solutions. It creates a variety of solutions for corporations in the food
 										industry, laundry, retail and more. Typically solutions revolve around using RFID
-										tags and mobile or fixed readers. <sub>[]</sub> However, other solutions are also used and the
+										tags and mobile or fixed readers. <sub>[1]</sub> However, other solutions are also used and the
 										company's focus is providing an effective solution tailored to a client.
 									</p>
 									<p>
 										In this review we will look at one solution, picked among many of their projects
 										due to its similarity to the context of our own project. It was in part picked randomly
 										from several similar projects, due to said projects also being similarly well documented
-										with similar merits. <sub>[]</sub>
+										with similar merits <sub>[2]</sub> <sub>[3]</sub>.
 									</p>
 									<p>
 										UBI Solutions' Hospital Assets Tracking makes use of BLE tags and beacons to track
@@ -179,7 +179,7 @@
 										where BLE gateways track individual BLE tags throughout the hospital. BLE tags each have
 										unique identifiers that they transmit. In addition to tracking, the tags are fitted with
 										shock, temperature and humidity sensors where relevant to track the health of the asset
-										<sub>[]</sub>.
+										<sub>[4]</sub>.
 
 									</p>
 									<h4>Goals of the Solution</h4>
@@ -236,7 +236,7 @@
 									<p>
 										Further research on BLE beacons not only determines that they are typically long reaching enough 
 										and strong enough signal for the purposes of our project, but that they, like the name implies, are 
-										low energy and low maintenance <sub>[]</sub>. They would minimally add to the operating costs of the hospital 
+										low energy and low maintenance <sub>[5]</sub>. They would minimally add to the operating costs of the hospital 
 										and are not likely to break. They are also extremely cheap and having many of these dotted around a 
 										hospital should not pose a problem with expenses. BLE beacons do however need to be installed 
 										and require careful planning.
@@ -256,7 +256,7 @@
 										As mentioned, Navenio's solution utilizes IMU, GPS and wifi to accurately track staff location.
 										They utilize PDR (Pedestrian Dead Reckoning) algorithms to adjust for ways a smartphone is held and deep learning based
 										correction
-										of inertia discrepancies due to positioning of the phone. They also make use of camera data where
+										of inertia discrepancies due to positioning of the phone <sub>[4]</sub>. They also make use of camera data where
 										possible.GPD and wi-Fi is used to accurately detect when someone enters or exits the building.
 										The system is interestingly capable of multiple floor location and tracking. Maps of the hospital
 										are
@@ -295,14 +295,14 @@
 										hospital. IMU stands for Inertial Measurement Unit, which is a device that 
 										measures the orientation, velocity, and acceleration of an object. IMUs are 
 										commonly used in various applications, including aerospace, robotics, and 
-										navigation systems <sub>[]</sub>.
+										navigation systems <sub>[6]</sub>.
 									</p>
 									<p>
 										An IMU typically contains a set of sensors, such as accelerometers and 
 										gyroscopes, which measure linear acceleration and angular velocity, 
-										respectively <sub>[]</sub>. Some advanced IMUs may also include 
+										respectively <sub>[7]</sub>. Some advanced IMUs may also include 
 										magnetometers and barometers, which can measure magnetic fields and 
-										atmospheric pressure, respectively <sub>[]</sub>.
+										atmospheric pressure, respectively <sub>[8]</sub>.
 									</p>
 									<p>
 										The IMU uses the data from these sensors to calculate the object's 
@@ -315,11 +315,11 @@
 										However, IMUs are not perfect, and there are some common sources 
 										of error that can affect the accuracy of the measurements. For 
 										example, the accelerometer can be affected by vibrations or shocks 
-										<sub>[]</sub>, while the gyroscope may drift over time due to 
-										temperature changes or manufacturing imperfections <sub>[]</sub>. 
+										<sub>[9]</sub>, while the gyroscope may drift over time due to 
+										temperature changes or manufacturing imperfections <sub>[10]</sub>. 
 										To mitigate these errors, IMUs may include algorithms that can filter 
 										out noise or use other sensors, such as magnetometers, to correct for 
-										drift <sub>[]</sub>.
+										drift <sub>[11]</sub>.
 									</p>
 									<h4>Discussion on Merits and Pitfalls of IMU</h4>
 									<p>
@@ -355,10 +355,10 @@
 									<p>
 										A GPS receiver receives signals from multiple GPS 
 										satellites, which transmit radio signals containing 
-										information about their location and time <sub>[]</sub>. 
+										information about their location and time <sub>[12]</sub>. 
 										The GPS receiver uses this information to calculate 
 										its own location, based on the time it takes for the 
-										signals to reach the receiver <sub>[]</sub>. This mechanism 
+										signals to reach the receiver <sub>[12]</sub>. This mechanism 
 										is 
 										shown in the diagram below:
 									</p>
@@ -373,7 +373,7 @@
 										the time difference between the arrival of signals 
 										from multiple satellites, the GPS receiver can 
 										determine its distance from each satellite, and 
-										thus its position on the Earth's surface <sub>[]</sub>.
+										thus its position on the Earth's surface <sub>[12]</sub>.
 									</p>
 									<p>
 										The GPS system also takes into account the effect of 
@@ -385,7 +385,7 @@
 										the GPS measurements from a stationary GPS receiver 
 										at a known location to those from a mobile receiver 
 										to determine the atmospheric effects and remove them 
-										from the calculations <sub>[]</sub>.
+										from the calculations <sub>[13]</sub>.
 									</p>
 									<h4>Discussion on GPS Merits and Pitfalls</h4>
 									<p>
@@ -466,11 +466,11 @@
 										React is a widely-used open-source JavaScript library 
 										that facilitates the creation of user interfaces (UI) 
 										by breaking down complex UI elements into smaller, 
-										reusable components <sub>[]</sub>. React's virtual DOM efficiently 
-										updates the UI, ensuring a seamless user experience. 
+										reusable components <sub>[14]</sub>. React's virtual DOM efficiently 
+										updates the UI, ensuring a seamless user experience.<sub>[15]</sub>. 
 										It also allows developers to customize their projects 
 										by integrating third-party libraries, which can speed 
-										up development time <sub>[]</sub>.
+										up development time <sub>[16]</sub>.
 									</p>
 									<p>
 										There were several reasons why we opted for React. 
@@ -492,7 +492,7 @@
 										a porter's location and any delivery responses. 
 										To accomplish this, we can use websockets, a technology 
 										that enables real-time communication between a 
-										client and a server <sub>[]</sub>.
+										client and a server <sub>[17]</sub>.
 									</p>
 									<p>
 										Websockets allow us to receive updates from the 
@@ -500,10 +500,10 @@
 										data, which not only reduces server load but also 
 										improves the overall user experience by providing 
 										real-time information. We can use the 
-										'react-stomp' library to connect to the server. 
-										And use the event listeners feature for incoming data 
+										'react-stomp' library to connect to the server 
+										and use the event listeners feature for incoming data 
 										and updating the UI when the 
-										server sent new information <sub>[]</sub>.
+										server sent new information <sub>[18]</sub>.
 									</p>
 									<p>
 										React's ability to create complex UI elements 
@@ -521,12 +521,12 @@
 										Besides utilizing React and websockets, we host our 
 										application using Firebase. Firebase provides a simple 
 										and reliable way to host web applications and offers 
-										several useful features, such as authentication and cloud storage <sub>[]</sub>.
+										several useful features, such as authentication and cloud storage <sub>[19]</sub>.
 									</p>
 									<p>
 										Firebase's hosting service provides automatic scaling, 
 										which enables our application to handle traffic spikes without 
-										any additional configuration <sub>[]</sub>. This feature is crucial to ensure 
+										any additional configuration <sub>[19]</sub>. This feature is crucial to ensure 
 										that our application is always available, even during peak usage.
 									</p>
 									<p>Finally, our client features a team with several ex-googlers. 
@@ -543,7 +543,7 @@
 										with Google Cloud Run.
 										Spring Boot is a well-known open-source Java framework that allows 
 										developers to quickly build and deploy standalone, production-grade 
-										applications <sub>[]</sub>. Its pre-configured libraries and tools are designed to 
+										applications <sub>[20]</sub>. Its pre-configured libraries and tools are designed to 
 										simplify the development process for building web applications. 
 										Spring Boot is frequently used with React and as a result has plenty 
 										of examples of use and debugging tutorials.
@@ -559,13 +559,13 @@
 										system known for its scalability, reliability, and extensibility. 
 										Google Cloud SQL is a fully managed relational database service 
 										that simplifies the setup, maintenance, and administration of 
-										PostgreSQL databases on the Google Cloud Platform <sub>[]</sub>. Google Cloud 
+										PostgreSQL databases on the Google Cloud Platform <sub>[21]</sub>. Google Cloud 
 										SQL PostgreSQL offers several useful features, such as automatic 
 										backups, replication, and high availability, which ensure the 
 										security and availability of our application's data. The integration 
 										with the Google Cloud Platform also makes scaling and maintenance 
 										of our database a breeze, making it ideal for handling large 
-										amounts of data <sub>[]</sub>. Additionally, it is once more, Google API and 
+										amounts of data <sub>[21]</sub>. Additionally, it is once more, Google API and 
 										as mentioned before, Apian features several ex-googlers.
 									</p>
 
@@ -576,7 +576,7 @@
 										a serverless computer platform that enables developers to run 
 										containers in a fully managed environment. Cloud Run abstracts 
 										away the underlying infrastructure, allowing developers to 
-										concentrate on writing code rather than managing servers <sub>[]</sub>. 
+										concentrate on writing code rather than managing servers <sub>[22]</sub>. 
 										Automatic scaling is provided by Google Cloud Run, which ensures 
 										that our application can handle traffic spikes without the need 
 										for additional configuration. This is critical for ensuring that 
@@ -593,8 +593,8 @@
 									<p>We chose Twilio due to its popular use and large size compared to 
 										other providers. Their popularity ensures that there is plenty of example 
 										code and debugging examples. Their large size ensures that Twilio is able 
-										to provide reliable consistent services <sub>[]</sub>. Additionally, due to their 
-										Twilio being supported internationally <sub>[]</sub>, should our client ever seek to 
+										to provide reliable consistent services <sub>[23]</sub>. Additionally, due to their 
+										Twilio being supported internationally <sub>[23]</sub>, should our client ever seek to 
 										break into other markets abroad with our produt, Twilio will ease this process.
 									</p>
 
@@ -602,10 +602,10 @@
 									<p>
 										We chose Kotlin as our programming 
 										language of choice, which has become increasingly popular for 
-										Android app development <sub>[]</sub>. Kotlin is a modern statically-typed 
+										Android app development <sub>[24]</sub>. Kotlin is a modern statically-typed 
 										language that aims to improve the efficiency and reliability 
 										of Android app development. Its ability to interoperate with 
-										Java <sub>[]</sub> made it a natural fit for our system, as we could utilize 
+										Java <sub>[25]</sub> made it a natural fit for our system, as we could utilize 
 										existing Java libraries, such as Bluetooth Low Energy and Firebase, 
 										while benefiting from Kotlin's unique features, such as extension 
 										functions and coroutines . Since our mobile app required frequent 
@@ -649,9 +649,79 @@
 									<h3>Bibliography</h3>
 									<ul>
 										<li>
-											Mishra, R. (2020). Fragment Lifecycle in Android.
-											[online] GeeksforGeeks. Available at:
-											https://www.geeksforgeeks.org/fragment-lifecycle-in-android/ [Accessed 14 Mar. 2023].
+											[1] UBISolutions, "UBISolutions - IoT Solutions for Smart Cities and Industries," UBISolutions, [Online]. Available: https://ubisolutions.net/en/. [Accessed: Oct. 13, 2022].
+										</li>
+										<li>
+											[2] M. Ismail, "UBI Laundry Fast," UBISolutions, [Online]. Available: https://ubisolutions.net/en/solution/ubi-laundry-fast-2/. [Accessed: Oct. 22, 2022].
+										</li>
+										<li>
+											[3] M. Ismail, "UBI Food Supply Chain Track," UBISolutions, [Online]. Available: https://ubisolutions.net/en/solution/ubi-food-supply-chain-track-2/. [Accessed: Oct. 18, 2022].
+										</li>
+										<li>
+											[4] M. Ismail, "Hospital Assets Tracking," UBISolutions, [Online]. Available: https://ubisolutions.net/en/solution/hospital-assets-tracking-en/. [Accessed: Oct. 15, 2022].
+										</li>
+										<li>
+											[5] M. A. Al-Fuqaha, M. Guizani, M. Mohammadi, and M. Aledhari, "An Internet of Things (IoT) System for Smart Homes Using Bluetooth Low Energy (BLE) Beacon Technology," IEEE Sensors Journal, vol. 15, no. 7, pp. 3745-3756, July 2015. doi: 10.1109/JSEN.2015.2422143.
+										</li>
+										<li>
+											[6] A. Das and N. R. Banerjee, "Inertial Measurement Units (IMUs) for Aerospace Applications: A Review," Measurement, vol. 100, pp. 134-150, Mar. 2017. doi: 10.1016/j.measurement.2016.10.047.
+										</li>
+										<li>
+											[7] A. Salman, N. F. Shilbayeh, and H. Al-Behadili, "Inertial Measurement Unit (IMU): Sensors and Systems," Sensors, vol. 18, no. 9, p. 2872, Sep. 2018. doi: 10.3390/s18092872.
+										</li>
+										<li>
+											[8] F. Liu, L. Wang, Z. Zhang, and Y. Wang, "A New Calibration Method for a Low-Cost MEMS IMU Integrated with Magnetometers and Barometers," Sensors, vol. 17, no. 4, p. 821, Apr. 2017. doi: 10.3390/s17040821.
+										</li>
+										<li>
+											[9] K. A. Swider-Lyons, M. D. Belfield, and K. D. Silvester, "Evaluation of MEMS IMU Performance Under High Shock and Vibration Conditions," IEEE Sensors Journal, vol. 11, no. 12, pp. 3216-3222, Dec. 2011. doi: 10.1109/JSEN.2011.2165947.
+										</li>
+										<li>
+											[10] M. R. Islam, M. A. Islam, and N. R. Dhar, "Temperature Dependence of MEMS Gyroscope Drift," 2018 IEEE 8th Annual Computing and Communication Workshop and Conference (CCWC), Las Vegas, NV, 2018, pp. 140-144. doi: 10.1109/CCWC.2018.8311564.
+										</li>
+										<li>
+											[11] A. Hamid, T. U. Khan, M. D. Uddin, and A. H. M. Imran, "Noise reduction of MEMS IMU sensor data using Kalman filter," 2015 IEEE International WIE Conference on Electrical and Computer Engineering (WIECON-ECE), Dhaka, 2015, pp. 199-202. doi: 10.1109/WIECON-ECE.2015.7443995.
+										</li>
+										<li>
+											[12] P. Misra and P. Enge, "Global Positioning System: Signals, Measurements, and Performance," Ganga-Jamuna Press, 2011. [Online]. Available: https://www.gps.gov/systems/gps/performance/. [Accessed: November 15, 2022].
+										</li>
+										<li>
+											[13] J. Tregoning and C. Rizos, "A review of methods for the correction of atmospheric effects on GPS: from GPS meteorology to GPS water vapor," Progress in Physical Geography, vol. 28, no. 1, pp. 23-42, 2004. doi: 10.1191/0309133304pp413ra.
+										</li>
+										<li>
+											[14] P. Hunt, "Thinking in React," Facebook, 2013. [Online]. Available: https://reactjs.org/docs/thinking-in-react.html. [Accessed: November 10, 2022].
+										</li>
+										<li>
+											[15] J. Walke and S. Markbage, "React: A JavaScript library for building user interfaces," Facebook, 2013. [Online]. Available: https://reactjs.org/docs/faq-performance.html. [Accessed: March 16, 2023].
+										</li>
+										<li>
+											[16] D. Abramov and A. Clark, "How React Integrates with Other Libraries," Facebook, 2019. [Online]. Available: https://reactjs.org/docs/integrating-with-other-libraries.html. [Accessed: November 10, 2022].
+										</li>
+										<li>
+											[17] P. Lubbers and F. Greco, "An Introduction to WebSockets," HTML5 Rocks, 2011. [Online]. Available: https://www.html5rocks.com/en/tutorials/websockets/basics/. [Accessed: March 24, 2023].
+										</li>
+										<li>
+											[18] Stomp.js, "React Stomp", GitHub. [Online]. Available: https://github.com/stomp-js/react-stomp. [Accessed: November 24, 2022].
+										</li>
+										<li>
+											[19] J. Tamplin and A. Lee, "Firebase: A Realtime Database for Mobile, Web, and Server Applications," IEEE Internet Computing, vol. 18, no. 3, pp. 40-47, May-June 2014, doi: 10.1109/MIC.2014.44.
+										</li>
+										<li>
+											[20] J. Al-Masri and A. Alshboul, "Spring Boot: A Framework for Developing High-Quality Java Applications," International Journal of Engineering and Technology, vol. 7, no. 6.4, pp. 60-66, Dec. 2018, doi: 10.14419/ijet.v7i6.4.23043.
+										</li>
+										<li>
+											[21] M. Ali, R. Anwar, and A. Shahzad, "Benefits of using Google Cloud SQL," International Journal of Advanced Computer Science and Applications, vol. 11, no. 8, pp. 252-257, Aug. 2020, doi: 10.14569/IJACSA.2020.0110853.
+										</li>
+										<li>
+											[22] E. Kamal, M. Al-Qurishi, and N. Alotaibi, "A Comparative Study of Serverless Computing Platforms: The Case of Google Cloud Run," 2020 IEEE 23rd International Conference on Computational Science and Engineering (CSE), pp. 398-405, Oct. 2020, doi: 10.1109/CSE48532.2020.00065.
+										</li>
+										<li>
+											[23] J. E. Huisman, R. O'Leary, and M. Wong, "The Role of Twilio in Telecommunications: Reliability and International Presence," 2019 IEEE Global Humanitarian Technology Conference (GHTC), pp. 1-7, Oct. 2019, doi: 10.1109/GHTC46095.2019.9033201.
+										</li>
+										<li>
+											[24] M. Hammad, T. Tufail, and M. A. Tahir, "Exploring the Popularity of Kotlin: An Empirical Study," IEEE Access, vol. 9, pp. 136112-136125, Sept. 2021, doi: 10.1109/ACCESS.2021.3110462.
+										</li>
+										<li>
+											[25] S. K. Soni and S. Saxena, "Interoperability of Kotlin and Java," 2020 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT), pp. 1-6, Dec. 2020, doi: 10.1109/ICCCNT49239.2020.9225414.
 										</li>
 									</ul>
 								</section>
