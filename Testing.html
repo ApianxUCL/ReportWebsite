@@ -261,98 +261,197 @@
 										to ensure compatibility with both devices, allowing us to produce notifications on both devices without encountering any errors.<br/><br/>
 										As part of our commitment to delivering a high-quality product to our client, we ensured that all device compatibility tests were thoroughly documented:
 										<table>
+
 											<tr>
+
+
 											  <th></th>
+
 											  <th>Samsung</th>
+
 											  <th>Xiaomi</th>
+
 											  <th>Google</th>
+
 											  <th>Emulator</th>
+
+
 											</tr>
+
 											<tr>
+
+
 												<td>HTTP POST working</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
+
 											</tr>
+
 											<tr>
+
+
 												<td>HTTP GET working</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
+
 											</tr>
+
 											<tr>
+
+
 												<td>Triggers Foreground Service</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
+
 											</tr>
+
 											<tr>
+
+
 												<td>Generates Firebase Token</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>N/A</td>
+
+
 											</tr>
+
 											<tr>
+
+
 												<td>Sends SMS</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>N/A</td>
-											</tr>  
+
+
+											</tr>
+
 											<tr>
+
+
 											  <td>Receives Firebase Message</td>
+
 											  <td>&#10003;</td>
+
 											  <td>&#10003;</td>
+
 											  <td>&#10003;</td>
+
 											  <td>N/A</td>
+
+
 											</tr>
+
 											<tr>
+
+
 											  <td>Scans for BLE beacons</td>
+
 											  <td>&#10003;</td>
+
 											  <td>&#10003;</td>
+
 											  <td>&#10003;</td>
+
 											  <td>N/A</td>
+
+
 											</tr>
+
 											<tr>
+
+
 											  <td>Triggers Notification</td>
+
 											  <td>&#10003;</td>
+
 											  <td>&#10003;</td>
+
 											  <td>&#10003;</td>
+
 											  <td>&#10003;</td>
+
+
 											</tr>
+
 											<tr>
+
+
 												<td>Runs app in background (Screen on)</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 											</tr>
+
 											<tr>
+
 												<td>Runs app in background (Screen off)</td>
+
 												<td>&#10007;</td>
+
 												<td>&#10003;</td>
+
 												<td>&#10003;</td>
+
 												<td>N/A</td>
+
+
 											</tr>
+
 										  </table>
 										  
-										This documentation will serve as a valuable resource for our client in the future, particularly in the event of any new bugs or issues that may arise. By
-										providing this documentation, our client can refer back to the tests conducted and use them as a reference point to identify potential causes of any new
-										bugs. This approach not only ensured that our client had the necessary information to troubleshoot any issues but also demonstrated our commitment to
+										This documentation will serve as a valuable resource for our client in the future, particularly in the event of any new bugs or issues that may arise.
+										By providing this documentation, our client can refer back to the tests conducted and use them as a reference point to identify potential causes of any new
+										bugs.
+										This approach not only ensured that our client had the necessary information to troubleshoot any issues but also demonstrated our commitment to
 										transparency and accountability throughout the development process.
 									</p>
 								</section>
 								<section id="integration-testing">
 									<h3>Integration Testing</h3>
 									<p>
-										Integration testing is another critical component of our software development process. We use
+										Integration testing is another critical component of our software development process. We used
 										integration testing to verify that different components of our application, such as the backend
 										and
-										frontend, work together correctly and meet the requirements. We use MockMVC and React Testing
+										frontend, work together correctly and meet the requirements. We used MockMVC and React Testing
 										Library as our primary integration testing tools.
 									</p>
 									<p>
@@ -375,13 +474,18 @@
 										correctly and provided a seamless user experience.
 									</p>
 									<p>
-										We conduct integration testing by creating test cases that simulate the flow of data and
-										interactions between different components of our application. We then run these test cases using
+										We conducted integration testing by creating test cases that simulated the flow of data and
+										interactions between different components of our application. This was vital in ensuring that
+										our system functioned end-to-end
+										in the appropriate
+										way.
+										We then run these test cases using
 										our
 										testing tool to verify that the actual output and behavior of our application match the expected
 										output and behavior. Here are some of the test cases that we created for our application:
 									</p>
 									<img src="./images/IntegrationTest.jpg" >
+									<p></p>
 								</section>
 								<section id="manual-testing">
 									<h3>Manual Testing</h3>
@@ -389,7 +493,10 @@
 										In addition to our automated testing procedures, manual testing was a vital aspect of our mobile app development process. Manual testing
 										allowed us to thoroughly evaluate the functionality of our application and ensure that it met all the required specifications. We
 										conducted these tests to verify the app's user interface, functionality, and usability, guaranteeing that the user experience was
-										intuitive and straightforward.<br/><br/>
+										intuitive and straightforward.
+
+										<br/><br/>
+
 										We conducted manual testing to simulate potential hospital scenarios where porters would repeatedly close and launch their application,
 										switch between apps, and log in and out of the system multiple times. These tests were crucial because they provided us with valuable
 										insights into how our application would operate in real-world hospital scenarios, allowing us to identify and address any potential issues.<br/><br/>
@@ -398,7 +505,10 @@
 										beacons in the background and transmit them to the backend every 5 seconds. However, when we conducted manual testing by repeatedly closing
 										and launching the app, we observed that the beacons were being transmitted more frequently than every 5 seconds. Upon investigation, we
 										discovered that every time the user launched the app and clicked on 'Available' to start scanning, a new secondary service was created
-										if they had not pressed 'Unavailable' before closing the app, which stops the foreground service.<br/><br/>
+										if they had not pressed 'Unavailable' before closing the app, which stops the foreground service.
+
+										<br/><br/>
+
 										To address this issue, we implemented a factory design model for our foreground service. The factory model ensured that at any given time,
 										there would be a maximum of one foreground service running per device. This approach enabled us to prevent multiple foreground services from
 										launching simultaneously and ensure that the app would transmit beacon data to the backend every 5 seconds, providing optimal performance and
@@ -407,37 +517,53 @@
 								</section>
 								<section id="user-testing">
 									<h3>User Acceptance Testing</h3>
-									<b style="color: rgb(255, 70, 163);">
-										"Absolutely fit for purpose. It's simple and straightforward. This is exactly what it needs to be."
-									</b>
-									<div class="video-container">
-										<iframe class="video" src="https://www.youtube.com/embed/D4TUMseYWIM"></iframe>
-									  </div>				
 									<p>
-										During the testing phase, we invited porters from the hospital to use our application and
+										During the testing phase, we invited porters from Wansbeck Hospital; where our client was performing trial drone flights,
+										to use our application and
 										provide
-										us valuable first-hand feedback. This feedback was crucial in identifying any usability issues
+										us with valuable first-hand feedback. This feedback was crucial in identifying any usability issues
 										and
 										making necessary improvements to the application. We observed the porters as they used the
 										application,
-										noting any issues they encountered or features they found confusing.
+										noting any issues they encountered or features they found confusing. Below is a video of a lead porter, who was impressed by our
+										solution and was willing to provide
+										extensive feedback to us with ways we could extend it.
 									</p>
-				
+
+									<b style="color: rgb(255, 70, 163);">
+
+										"Absolutely fit for purpose.
+										It's simple and straightforward.
+										This is exactly what it needs to be." [3:03]
+
+									</b>
+
+									<div class="video-container">
+
+										<iframe class="video" src="https://www.youtube.com/embed/D4TUMseYWIM">
+
+										</iframe>
+
+									  </div>								
 									<p>
+
 										We also conducted feedback sessions with the porters to gather their thoughts on the
 										application's
 										functionality, usability, and overall experience. This feedback allowed us to make necessary
 										changes
 										to the application and ensure that it met the porters' needs and requirements.
+
 									</p>
 				
 									<p>
+
 										Involving the porters in the testing process was a valuable step in ensuring that our
 										application
 										provided a high-quality user experience and met the needs of its users. Their feedback allowed
 										us to
 										identify and address any issues before the application was deployed, ensuring that it was fully
 										functional and user-friendly.
+										
 									</p>
 				
 									<h3>Conclusion</h3>
