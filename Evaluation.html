@@ -174,7 +174,7 @@
 											<td>Accurately track the live locations of porters
 											<td style="text-align: center;">MUST
 											<td style="text-align: center;">&#10003;</td>
-											<td>Ioakim & Modestas</td>	
+											<td>Ioakim</td>	
 										  <tr>
 											<td>2
 											<td>Display the live locations of all porters to doctors on PC.
@@ -327,14 +327,38 @@
 									</thead>
 									<tbody>
 										<tr>
+
 										<td>1
-										<td> Highly accurate porter tracking 
+
+										<td>
+											Highly accurate porter tracking, which could not be achieved due to privacy laws preventing us from keeping
+											track of the specific real-time location of porters.
+											As a team, we were prepared to implement exact position triangulation via the signal strength detected from
+											a range of beacons:
+
+											<br/>
+
+											<img style="width: 35%;" src="./images/position triangulation.gif">
+
+											<br/>
+											
+											However, our client informed us that we should focus on other aspects of the project
+											since this task, legally speaking, could not be achieved.
+
 										<td>Medium
 										
 										<tr>
+
 										<td>2
-										<td> Android App stops running in the background once the phone is turned off. This is due to Android's latest update.
-										<td>Medium
+
+										<td>
+											On some devices, the Android App stops running in the background once the phone's screen is turned off. This is due to specific device manufacturer's attempts
+											to reduce battery consumption at all costs, even if it means force stopping foreground services, like the one we implemented, that are meant to be running at all times.
+											From a programming point of view, there is no way we could overcome this, as a phone may overwrite the command of a foreground service and put it
+											to sleep. For more info on Android manufacturers who stricly restrict app services to save battery, <a href="https://dontkillmyapp.com/">click here.</a> 
+										
+										<td>
+											Medium
 										<tr>									
 									</tbody>
 									</table>
@@ -346,7 +370,7 @@
 								<section id="two">
 									<h3>Evaluation</h3>
 									<p>
-										<h3>User Interface</h3>
+										<h4>User Interface</h4>
 										It's important to mention that our project consists of two parts, an Android Application that scans
 										for BLE devices and a Web ApplicationThroughout the development of our project, we made sure to keep in
 										mind that our users are medical staffs. This means that the UI/UX and workflow of the
@@ -384,7 +408,7 @@
 						
 						
 						
-										<h3>Functionalities</h3>
+										<h4>Functionalities</h4>
 										<p>
 						
 											We've always prioritise the client's requirement of this project. All the "Must Have" that are
@@ -417,7 +441,7 @@
 						
 										</p>
 						
-										<h3>Stability-Efficiency</h3>
+										<h4>Stability-Efficiency</h4>
 										<p>
 											Our delivery request system works perfectly. Once a medical staff disptacher sends a request to a
 											porter through our web app, the porter receives it instantly with the option for them to accept or
@@ -433,7 +457,7 @@
 						
 										</p>
 						
-										<h3>Compatibility</h3>
+										<h4>Compatibility</h4>
 										<p>
 											Our Android App is available for download using the APK. You may download the file through our
 											public Website : https://porterble-ui-c29ff.web.app/appInstructions .
@@ -441,7 +465,7 @@
 						
 										</p>
 						
-										<h3>Maintainability</h3>
+										<h4>Maintainability</h4>
 										<p>
 											With careful design and planning before actually writing code, we were able to avoid "dead code",
 											bugs, and other vulenerabilities. Our code is well documented and every step of the way we would
@@ -454,7 +478,7 @@
 						
 						
 										</p>
-										<h3>Project Management</h3>
+										<h4>Project Management</h4>
 										<p>
 											At the start of this project, our project management wasn't exactly the best. After a couple of
 											meetings between the client and our team, we finally were able
