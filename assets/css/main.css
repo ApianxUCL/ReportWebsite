@@ -4468,6 +4468,22 @@ input, select, textarea {
 
 	* {box-sizing:border-box}
 
+	.demonstrationGifs {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 3rem;
+		margin-top: 0.3rem;
+	}
+	
+	.demonstrationGifs img {
+		max-width: 40%;
+		height: auto;
+		object-fit: contain;
+		flex: 1;
+	}
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
